@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="슬라이드 이미지 준비 중">
+  <rect width="1600" height="900" fill="#f8fafc"/>
+  <g fill="none" stroke="#cbd5e1" stroke-width="4">
+    <rect x="52" y="52" width="1496" height="796" rx="24" stroke-dasharray="14 18"/>
+    <rect x="662" y="286" width="276" height="220" rx="24"/>
+    <path d="M706 450l66-68 54 48 38-38 30 30"/>
+    <circle cx="860" cy="344" r="25"/>
+  </g>
+</svg>

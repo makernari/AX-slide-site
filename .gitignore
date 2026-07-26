@@ -1,0 +1,35 @@
+# GitHub Pages build output
+/.pages-dist/
+
+# Local migration notes
+/GITHUB_REMOTE_RECREATE_GUIDE.md
+
+# Local project and source material
+/.agents/
+/.codex/
+/docs/
+/prompts/
+/references/
+/AGENTS.md
+/PLANS.md
+/CODEX_AX_강의교안_마스터작업지시서.md
+/*.xlsx
+/*.pdf
+
+# Non-runtime data
+/data/curriculum.json
+/data/slide-manifest.csv
+/data/slide-map.json
+
+# Source-generation files not required by Pages
+/scripts/build_phase_0_2.py
+/scripts/__pycache__/
+/assets/slides/.gitkeep
+
+# Python, editor, and operating-system artifacts
+__pycache__/
+*.py[cod]
+/.vscode/
+/.idea/
+.DS_Store
+Thumbs.db
