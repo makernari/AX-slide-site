@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">마케팅 목표 콘텐츠 채널 정렬 삼각형</title>
+  <desc id="desc">마케팅 목표, 콘텐츠 역할, 적용 채널과 중앙의 사람 검증이 정렬되어야 함을 보여주는 설명용 개념도</desc>
+  <rect width="1600" height="900" fill="#fffaf5"/>
+  <text x="90" y="86" font-family="Arial, Noto Sans KR, sans-serif" font-size="28" fill="#78716c">설명용 판단 구조 · 실제 UI 아님 · 실제 성과를 보장하지 않음</text>
+  <text x="90" y="150" font-family="Arial, Noto Sans KR, sans-serif" font-size="52" font-weight="700" fill="#1c1917">좋은 첫 과제는 목표·콘텐츠·채널이 서로 맞습니다</text>
+  <path d="M800 230L320 720H1280Z" fill="#fff" stroke="#57534e" stroke-width="8"/>
+  <g font-family="Arial, Noto Sans KR, sans-serif">
+    <g transform="translate(630 205)"><rect width="340" height="150" rx="28" fill="#ffedd5" stroke="#ea580c" stroke-width="4"/><text x="170" y="58" text-anchor="middle" font-size="34" font-weight="700" fill="#9a3412">목표</text><text x="170" y="110" text-anchor="middle" font-size="25" fill="#44403c">인지도 · 참여 · 전환</text></g>
+    <g transform="translate(155 640)"><rect width="410" height="150" rx="28" fill="#fdf4ff" stroke="#c026d3" stroke-width="4"/><text x="205" y="58" text-anchor="middle" font-size="34" font-weight="700" fill="#86198f">콘텐츠 역할</text><text x="205" y="110" text-anchor="middle" font-size="25" fill="#44403c">정보 · 공감 · 행동</text></g>
+    <g transform="translate(1035 640)"><rect width="410" height="150" rx="28" fill="#eff6ff" stroke="#2563eb" stroke-width="4"/><text x="205" y="58" text-anchor="middle" font-size="34" font-weight="700" fill="#1e3a8a">적용 채널</text><text x="205" y="110" text-anchor="middle" font-size="25" fill="#44403c">입력에 확인된 채널</text></g>
+    <circle cx="800" cy="565" r="145" fill="#f0fdf4" stroke="#16a34a" stroke-width="5"/>
+    <text x="800" y="535" text-anchor="middle" font-size="34" font-weight="700" fill="#166534">사람의 검증</text>
+    <text x="800" y="590" text-anchor="middle" font-size="24" fill="#44403c">브랜드 · 사실 · 저작권</text>
+    <text x="800" y="628" text-anchor="middle" font-size="24" fill="#44403c">채널 적합성</text>
+  </g>
+</svg>

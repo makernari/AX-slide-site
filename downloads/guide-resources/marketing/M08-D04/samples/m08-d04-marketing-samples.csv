@@ -1,0 +1,7 @@
+"tool_id","tool_name","purpose","input","output","permission","human_approval"
+"T1","brand_lookup","브랜드 자료 조회","자료 ID","근거 요약","read","no"
+"T2","content_draft","콘텐츠 초안","근거 요약","콘텐츠 초안","write_draft","no"
+"T3","brand_review","브랜드 검토","콘텐츠 초안","검토 상태","write","yes"
+"T4","notion_draft","Notion 등록 초안","검토된 콘텐츠","등록 미리보기","write_draft","yes"
+"T5","notion_publish","Notion 등록","등록 미리보기","등록 결과","external_write","yes"
+"T6","stop","실행 중지","실행 ID","중지 결과","control","yes"

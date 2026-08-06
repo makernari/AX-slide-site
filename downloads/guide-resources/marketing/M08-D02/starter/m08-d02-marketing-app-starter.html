@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>콘텐츠 카피 점검기</title>
+  <style>
+    body{font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6}
+    textarea{width:100%;min-height:160px;padding:12px;box-sizing:border-box}
+    button{margin-top:12px;padding:10px 18px}
+    #result{margin-top:20px;padding:16px;background:#f4f6f8;white-space:pre-wrap}
+  </style>
+</head>
+<body>
+  <h1>콘텐츠 카피 점검기</h1>
+  <p>목표, 대상, 핵심 메시지, 채널이 보이는 카피를 입력하세요.</p>
+  <textarea id="input" aria-label="점검할 문장"></textarea>
+  <button id="check" type="button">점검하기</button>
+  <button id="reset" type="button">초기화</button>
+  <div id="result" aria-live="polite">결과가 여기에 표시됩니다.</div>
+  <script>
+    const criteria = ["목표","대상","메시지","채널"];
+    const input = document.querySelector("#input");
+    const result = document.querySelector("#result");
+
+    document.querySelector("#check").addEventListener("click", () => {
+      const value = input.value.trim();
+      if (!value) {
+        result.textContent = "입력 필요: 점검할 문장을 작성하세요.";
+        return;
+      }
+      result.textContent = criteria.map((item) =>
+        value.includes(item) ? "확인: " + item : "확인 필요: " + item
+      ).join("\n");
+    });
+
+    document.querySelector("#reset").addEventListener("click", () => {
+      input.value = "";
+      result.textContent = "결과가 여기에 표시됩니다.";
+      input.focus();
+    });
+  </script>
+</body>
+</html>

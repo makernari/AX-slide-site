@@ -20,6 +20,14 @@ const COURSE_FOLDERS = {
   MARKETING: "marketing",
 };
 
+const GUIDE_IMAGE_FOLDERS = [
+  "assets/guide-images",
+];
+
+const GUIDE_RESOURCE_FOLDERS = [
+  "downloads/guide-resources",
+];
+
 const APPROVED_GUIDE_URLS = [
   "https://makernari.notion.site/ebd//3a858b0b4ef5809ea788e872ea472acd",
   "https://makernari.notion.site/ebd//3a858b0b4ef580e4a6b7e73ddd9a488c",
@@ -72,6 +80,30 @@ function walkFiles(directory, prefix = "") {
     else fail(`Deployment artifact contains an unsupported entry: ${relative}`);
   }
   return files;
+}
+
+function copyAllowedTree(relativeRoot, allowedExtensions, expectedPaths) {
+  const normalizedRoot = normalize(relativeRoot);
+  const sourceRoot = resolveInside(ROOT, normalizedRoot);
+  if (!fs.existsSync(sourceRoot)) fail(`Required public asset folder is missing: ${normalizedRoot}`);
+  const stat = fs.lstatSync(sourceRoot);
+  if (!stat.isDirectory() || stat.isSymbolicLink()) {
+    fail(`Required public asset path is not a regular directory: ${normalizedRoot}`);
+  }
+
+  const files = walkFiles(sourceRoot);
+  if (!files.length) fail(`Required public asset folder is empty: ${normalizedRoot}`);
+  const copied = [];
+  for (const file of files) {
+    const extension = path.extname(file).toLowerCase();
+    if (!allowedExtensions.has(extension)) {
+      fail(`Unsupported public asset type: ${normalizedRoot}/${file}`);
+    }
+    const relativePath = `${normalizedRoot}/${normalize(file)}`;
+    copyAllowedFile(relativePath, expectedPaths);
+    copied.push(relativePath);
+  }
+  return copied;
 }
 
 function validateRelativeRuntimePaths() {
@@ -167,6 +199,12 @@ function main() {
   const expectedPaths = new Set();
   for (const relativePath of RUNTIME_FILES) copyAllowedFile(relativePath, expectedPaths);
   for (const relativePath of imagePaths) copyAllowedFile(relativePath, expectedPaths);
+  const guideImagePaths = GUIDE_IMAGE_FOLDERS.flatMap((folder) =>
+    copyAllowedTree(folder, new Set([".svg", ".png"]), expectedPaths),
+  );
+  const guideResourcePaths = GUIDE_RESOURCE_FOLDERS.flatMap((folder) =>
+    copyAllowedTree(folder, new Set([".md", ".csv", ".txt", ".gs", ".html"]), expectedPaths),
+  );
 
   fs.writeFileSync(path.join(OUTPUT, ".nojekyll"), "", "utf8");
   expectedPaths.add(".nojekyll");
@@ -187,7 +225,12 @@ function main() {
   }
 
   const blockedExtensions = new Set([".csv", ".md", ".pdf", ".py", ".pyc", ".xlsx"]);
-  const blocked = actualPaths.filter((file) => blockedExtensions.has(path.extname(file).toLowerCase()));
+  const approvedGuideResources = new Set(guideResourcePaths);
+  const blocked = actualPaths.filter(
+    (file) =>
+      blockedExtensions.has(path.extname(file).toLowerCase()) &&
+      !approvedGuideResources.has(file),
+  );
   if (blocked.length) fail(`Blocked file type in deployment artifact: ${blocked.join(", ")}`);
 
   const totalBytes = actualPaths.reduce(
@@ -198,8 +241,10 @@ function main() {
   console.log(`- output: ${path.relative(ROOT, OUTPUT)}`);
   console.log(`- files: ${actualPaths.length}`);
   console.log(`- slide images: ${imagePaths.length}`);
+  console.log(`- guide images: ${guideImagePaths.length}`);
+  console.log(`- guide resources: ${guideResourcePaths.length}`);
   console.log(`- size: ${(totalBytes / 1024 / 1024).toFixed(2)} MiB`);
-  console.log("- excluded source groups: docs, prompts, references, scripts, original spreadsheets and PDFs");
+  console.log("- excluded source groups: guides, local instructions, docs, prompts, references, scripts, original spreadsheets and PDFs");
 }
 
 main();

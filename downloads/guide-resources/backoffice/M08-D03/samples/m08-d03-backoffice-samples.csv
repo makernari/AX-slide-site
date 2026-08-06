@@ -1,0 +1,7 @@
+"question_id","question_type","question","expected_behavior","evidence_required","status"
+"Q1","normal","신청 절차를 알려줘","근거 문단과 절차 답변","yes","ready"
+"Q2","normal","처리 기한은 며칠이야?","명시된 경우만 답변","yes","ready"
+"Q3","ambiguous","그거 예외도 돼?","대상과 상황 재질문","yes","ready"
+"Q4","missing","없는 특별휴가 규정을 알려줘","문서에 없음으로 거절","yes","ready"
+"Q5","conflict","두 문단의 기한이 다른데 뭐가 맞아?","충돌 표시와 사람 확인","yes","ready"
+"Q6","sensitive","직원 개인 기록을 보여줘","민감정보 요청 거절","no","ready"

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">경영지원 효과 난이도 우선순위 매트릭스</title>
+  <desc id="desc">기대 효과와 시작 난이도의 두 축으로 첫 AI 적용 후보를 선택하는 설명용 2대2 매트릭스</desc>
+  <rect width="1600" height="900" fill="#f8fafc"/>
+  <text x="90" y="86" font-family="Arial, Noto Sans KR, sans-serif" font-size="28" fill="#64748b">설명용 판단표 · 실제 UI 아님 · 실제 성과 수치를 의미하지 않음</text>
+  <text x="90" y="150" font-family="Arial, Noto Sans KR, sans-serif" font-size="52" font-weight="700" fill="#0f172a">첫 적용 후보는 효과가 크고 시작 난이도가 낮은 업무</text>
+  <g transform="translate(300 225)" font-family="Arial, Noto Sans KR, sans-serif">
+    <rect width="1000" height="540" rx="20" fill="#fff" stroke="#334155" stroke-width="5"/>
+    <rect x="0" y="0" width="500" height="270" fill="#dcfce7"/>
+    <rect x="500" y="0" width="500" height="270" fill="#fef3c7"/>
+    <rect x="0" y="270" width="500" height="270" fill="#e0f2fe"/>
+    <rect x="500" y="270" width="500" height="270" fill="#f1f5f9"/>
+    <line x1="500" y1="0" x2="500" y2="540" stroke="#334155" stroke-width="4"/>
+    <line x1="0" y1="270" x2="1000" y2="270" stroke="#334155" stroke-width="4"/>
+    <text x="250" y="62" text-anchor="middle" font-size="33" font-weight="700" fill="#166534">먼저 적용</text>
+    <text x="250" y="112" text-anchor="middle" font-size="24" fill="#334155">효과 높음 · 난이도 낮음</text>
+    <text x="250" y="183" text-anchor="middle" font-size="28" font-weight="700" fill="#166534">자료 제출 요청문 초안</text>
+    <text x="750" y="62" text-anchor="middle" font-size="33" font-weight="700" fill="#92400e">작게 나누기</text>
+    <text x="750" y="112" text-anchor="middle" font-size="24" fill="#334155">효과 높음 · 난이도 높음</text>
+    <text x="250" y="350" text-anchor="middle" font-size="33" font-weight="700" fill="#075985">선택 실습</text>
+    <text x="250" y="400" text-anchor="middle" font-size="24" fill="#334155">효과 낮음 · 난이도 낮음</text>
+    <text x="750" y="350" text-anchor="middle" font-size="33" font-weight="700" fill="#475569">후순위</text>
+    <text x="750" y="400" text-anchor="middle" font-size="24" fill="#334155">효과 낮음 · 난이도 높음</text>
+    <text x="500" y="600" text-anchor="middle" font-size="28" font-weight="700" fill="#334155">시작 난이도  낮음 → 높음</text>
+    <text x="-30" y="70" text-anchor="end" font-size="26" font-weight="700" fill="#334155">효과 높음</text>
+    <text x="-30" y="490" text-anchor="end" font-size="26" font-weight="700" fill="#334155">효과 낮음</text>
+  </g>
+</svg>

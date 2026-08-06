@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">경영지원 M05-D01 4차시 전체 흐름</title>
+  <desc id="desc">과정 이해, AI 역할, Google 환경 준비, 진단 Gem과 15일 목표의 네 단계를 보여주는 설명용 개념도</desc>
+  <rect width="1600" height="900" fill="#f8fafc"/>
+  <text x="90" y="96" font-family="Arial, Noto Sans KR, sans-serif" font-size="28" fill="#64748b">설명용 개념도 · 실제 UI 아님</text>
+  <text x="90" y="164" font-family="Arial, Noto Sans KR, sans-serif" font-size="54" font-weight="700" fill="#0f172a">경영지원 M05-D01 · 4차시 실행 흐름</text>
+  <line x1="235" y1="440" x2="1365" y2="440" stroke="#94a3b8" stroke-width="8" stroke-linecap="round"/>
+  <g font-family="Arial, Noto Sans KR, sans-serif">
+    <g transform="translate(80 280)">
+      <rect width="330" height="330" rx="28" fill="#eff6ff" stroke="#2563eb" stroke-width="4"/>
+      <circle cx="165" cy="76" r="42" fill="#2563eb"/><text x="165" y="90" text-anchor="middle" font-size="38" font-weight="700" fill="#fff">1</text>
+      <text x="165" y="160" text-anchor="middle" font-size="34" font-weight="700" fill="#1e3a8a">과정과 업무 이해</text>
+      <text x="165" y="216" text-anchor="middle" font-size="25" fill="#334155">기대 카드 작성</text>
+      <text x="165" y="256" text-anchor="middle" font-size="25" fill="#334155">반복 업무 신호 찾기</text>
+    </g>
+    <g transform="translate(450 280)">
+      <rect width="330" height="330" rx="28" fill="#f5f3ff" stroke="#7c3aed" stroke-width="4"/>
+      <circle cx="165" cy="76" r="42" fill="#7c3aed"/><text x="165" y="90" text-anchor="middle" font-size="38" font-weight="700" fill="#fff">2</text>
+      <text x="165" y="160" text-anchor="middle" font-size="34" font-weight="700" fill="#4c1d95">AI 역할 연결</text>
+      <text x="165" y="216" text-anchor="middle" font-size="25" fill="#334155">업무 문제를 작업으로</text>
+      <text x="165" y="256" text-anchor="middle" font-size="25" fill="#334155">사람 검증 기준 정하기</text>
+    </g>
+    <g transform="translate(820 280)">
+      <rect width="330" height="330" rx="28" fill="#ecfeff" stroke="#0891b2" stroke-width="4"/>
+      <circle cx="165" cy="76" r="42" fill="#0891b2"/><text x="165" y="90" text-anchor="middle" font-size="38" font-weight="700" fill="#fff">3</text>
+      <text x="165" y="160" text-anchor="middle" font-size="34" font-weight="700" fill="#164e63">Google 환경</text>
+      <text x="165" y="216" text-anchor="middle" font-size="25" fill="#334155">폴더·Docs 만들기</text>
+      <text x="165" y="256" text-anchor="middle" font-size="25" fill="#334155">저장 후 다시 찾기</text>
+    </g>
+    <g transform="translate(1190 280)">
+      <rect width="330" height="330" rx="28" fill="#ecfdf5" stroke="#059669" stroke-width="4"/>
+      <circle cx="165" cy="76" r="42" fill="#059669"/><text x="165" y="90" text-anchor="middle" font-size="38" font-weight="700" fill="#fff">4</text>
+      <text x="165" y="160" text-anchor="middle" font-size="34" font-weight="700" fill="#065f46">진단과 목표</text>
+      <text x="165" y="216" text-anchor="middle" font-size="25" fill="#334155">AI 후보 3개 비교</text>
+      <text x="165" y="256" text-anchor="middle" font-size="25" fill="#334155">15일 목표 확정</text>
+    </g>
+  </g>
+  <rect x="300" y="710" width="1000" height="92" rx="46" fill="#0f172a"/>
+  <text x="800" y="768" text-anchor="middle" font-family="Arial, Noto Sans KR, sans-serif" font-size="31" font-weight="700" fill="#fff">최종 결과: 우선 적용 업무 1개 + 검증 기준이 있는 15일 학습 목표</text>
+</svg>

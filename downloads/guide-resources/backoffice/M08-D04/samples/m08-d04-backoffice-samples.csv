@@ -1,0 +1,7 @@
+"tool_id","tool_name","purpose","input","output","permission","human_approval"
+"T1","request_lookup","업무 요청 조회","요청 ID","요청 요약","read","no"
+"T2","report_draft","보고서 초안","요청 요약","문서 초안","write_draft","no"
+"T3","approval_request","승인 요청","문서 초안","승인 상태","write","yes"
+"T4","mail_draft","메일 초안","승인된 요약","메일 초안","write_draft","yes"
+"T5","mail_send","메일 발송","메일 초안","발송 결과","external_write","yes"
+"T6","stop","실행 중지","실행 ID","중지 결과","control","yes"

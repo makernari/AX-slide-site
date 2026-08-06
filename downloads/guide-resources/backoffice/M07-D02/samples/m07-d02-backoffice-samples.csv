@@ -1,0 +1,7 @@
+"source_column","target_property","data_type","example_value","required","test_status"
+"요청ID","요청 ID","text","REQ-101","yes","ready"
+"업무유형","업무 유형","select","교육","yes","ready"
+"우선순위","우선순위","select","보통","yes","ready"
+"상태","상태","status","접수","yes","ready"
+"요약","AI 요약","text","교육 일정 문의","no","ready"
+"보고서링크","보고서","url","https://example.invalid/report","no","replace"

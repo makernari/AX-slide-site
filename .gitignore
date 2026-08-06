@@ -4,6 +4,12 @@
 # Local migration notes
 /GITHUB_REMOTE_RECREATE_GUIDE.md
 
+# Local Codex instructions and Notion guide documents
+/CODEX_NOTION_GUIDE_GENERATION_INSTRUCTIONS.md
+/CODEX_GUIDE_IMAGE_ASSETS_ADDON.md
+/CODEX_GUIDE_DEPTH_AND_PRACTICE_ASSETS_ADDON.md
+/guides/
+
 # Local project and source material
 /.agents/
 /.codex/

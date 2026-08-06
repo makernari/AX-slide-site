@@ -1,0 +1,7 @@
+"source_column","target_property","data_type","example_value","required","test_status"
+"요청ID","요청 ID","text","CNT-101","yes","ready"
+"채널","채널","select","SNS-A","yes","ready"
+"목표","목표","select","인지","yes","ready"
+"콘텐츠유형","콘텐츠 유형","select","정보형","yes","ready"
+"상태","상태","status","기획","yes","ready"
+"보고서링크","기획서","url","https://example.invalid/plan","no","replace"
