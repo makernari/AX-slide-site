@@ -271,8 +271,8 @@ function validateDeck(slides, course) {
     dayGroups.get(groupKey).push(slide);
   }
 
-  if (selected.length !== 322) {
-    fail(`${course}: 과정별 슬라이드는 322장이어야 합니다 (실제 ${selected.length})`);
+  if (selected.length !== 392) {
+    fail(`${course}: 과정별 슬라이드는 392장이어야 합니다 (실제 ${selected.length})`);
   }
   if (dayGroups.size !== 15) {
     fail(`${course}: 일자는 15개여야 합니다 (실제 ${dayGroups.size})`);

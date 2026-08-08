@@ -8,10 +8,37 @@ const OUTPUT = path.join(ROOT, ".pages-dist");
 
 const RUNTIME_FILES = [
   "index.html",
+  "backoffice/index.html",
+  "marketing/index.html",
   "assets/css/app.css",
   "assets/js/app.js",
+  "assets/images/favicon.svg",
   "assets/images/placeholders/missing-slide.svg",
   "data/slide-manifest.json",
+];
+
+const ENTRYPOINTS = [
+  {
+    path: "index.html",
+    appRoot: "./",
+    stylesheet: "./assets/css/app.css",
+    script: "./assets/js/app.js",
+    courseLock: null,
+  },
+  {
+    path: "backoffice/index.html",
+    appRoot: "../",
+    stylesheet: "../assets/css/app.css",
+    script: "../assets/js/app.js",
+    courseLock: "backoffice",
+  },
+  {
+    path: "marketing/index.html",
+    appRoot: "../",
+    stylesheet: "../assets/css/app.css",
+    script: "../assets/js/app.js",
+    courseLock: "marketing",
+  },
 ];
 
 const COURSE_FOLDERS = {
@@ -70,25 +97,51 @@ function walkFiles(directory, prefix = "") {
 }
 
 function validateRelativeRuntimePaths() {
-  const index = fs.readFileSync(requireRegularFile("index.html"), "utf8");
-  const localReferences = [...index.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)]
-    .map((match) => match[1])
-    .filter((value) => !value.startsWith("#") && !/^https?:\/\//i.test(value));
+  for (const entrypoint of ENTRYPOINTS) {
+    const html = fs.readFileSync(requireRegularFile(entrypoint.path), "utf8");
+    const localReferences = [...html.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)]
+      .map((match) => match[1])
+      .filter((value) => !value.startsWith("#") && !/^https?:\/\//i.test(value));
 
-  const invalidReferences = localReferences.filter((value) => !value.startsWith("./"));
-  if (invalidReferences.length) {
-    fail(`index.html contains non-relative local paths: ${invalidReferences.join(", ")}`);
-  }
-  for (const required of ["./assets/css/app.css", "./assets/js/app.js"]) {
-    if (!localReferences.includes(required)) fail(`index.html is missing runtime reference: ${required}`);
+    for (const reference of localReferences) {
+      const entryDirectory = path.dirname(resolveInside(ROOT, entrypoint.path));
+      const resolvedReference = path.resolve(entryDirectory, reference);
+      if (resolvedReference !== ROOT && !resolvedReference.startsWith(`${ROOT}${path.sep}`)) {
+        fail(`${entrypoint.path} contains a path outside the site root: ${reference}`);
+      }
+      const relativeReference = normalize(path.relative(ROOT, resolvedReference));
+      requireRegularFile(relativeReference);
+    }
+
+    for (const required of [entrypoint.stylesheet, entrypoint.script]) {
+      if (!localReferences.includes(required)) {
+        fail(`${entrypoint.path} is missing runtime reference: ${required}`);
+      }
+    }
+    if (!html.includes(`data-app-root="${entrypoint.appRoot}"`)) {
+      fail(`${entrypoint.path} is missing data-app-root="${entrypoint.appRoot}"`);
+    }
+    if (entrypoint.courseLock) {
+      if (!html.includes(`data-course-lock="${entrypoint.courseLock}"`)) {
+        fail(`${entrypoint.path} is missing its ${entrypoint.courseLock} course lock`);
+      }
+    } else if (/\bdata-course-lock=/.test(html)) {
+      fail(`${entrypoint.path} must remain the unlocked course selector`);
+    }
+
+    const externalUrls = [...new Set(html.match(/https:\/\/[^"'`\s]+/g) ?? [])].sort();
+    if (externalUrls.length) {
+      fail(`Unexpected external URL in ${entrypoint.path}: ${externalUrls.join(", ")}`);
+    }
   }
 
   const app = fs.readFileSync(requireRegularFile("assets/js/app.js"), "utf8");
   for (const required of [
-    'const MANIFEST_URL = "./data/slide-manifest.json";',
-    'const SLIDE_ASSET_ROOT = "./assets/slides/";',
+    "const APP_ROOT = new URL(",
+    'const MANIFEST_URL = new URL("data/slide-manifest.json", APP_ROOT).href;',
+    'const SLIDE_ASSET_ROOT = new URL("assets/slides/", APP_ROOT).href;',
   ]) {
-    if (!app.includes(required)) fail(`app.js relative path contract is missing: ${required}`);
+    if (!app.includes(required)) fail(`app.js site-root path contract is missing: ${required}`);
   }
 
   const externalUrls = [...new Set(app.match(/https:\/\/[^"'`\s]+/g) ?? [])].sort();
@@ -103,8 +156,8 @@ function validateManifest() {
   if (!manifest || !Array.isArray(manifest.slides)) {
     fail("data/slide-manifest.json must contain a slides array");
   }
-  if (manifest.slides.length !== 430) {
-    fail(`Expected 430 manifest slides, found ${manifest.slides.length}`);
+  if (manifest.slides.length !== 535) {
+    fail(`Expected 535 manifest slides, found ${manifest.slides.length}`);
   }
 
   const imagePaths = [];

@@ -1,8 +1,12 @@
 (() => {
   "use strict";
 
-  const MANIFEST_URL = "./data/slide-manifest.json";
-  const SLIDE_ASSET_ROOT = "./assets/slides/";
+  const APP_ROOT = new URL(
+    document.documentElement.dataset.appRoot || "./",
+    document.baseURI,
+  );
+  const MANIFEST_URL = new URL("data/slide-manifest.json", APP_ROOT).href;
+  const SLIDE_ASSET_ROOT = new URL("assets/slides/", APP_ROOT).href;
   const STORAGE_KEY = "ax-slide-site-course";
 
   const COURSE_META = {
@@ -23,6 +27,13 @@
       className: "marketing",
     },
   };
+
+  const configuredCourseLock = document.documentElement.dataset.courseLock
+    ?.trim()
+    .toLowerCase();
+  const LOCKED_COURSE = COURSE_META[configuredCourseLock]
+    ? configuredCourseLock
+    : null;
 
   const COURSE_ASSET_FOLDER = {
     COMMON: "common",
@@ -115,13 +126,24 @@
 
   function parseRoute() {
     const raw = window.location.hash.replace(/^#\/?/, "");
-    if (!raw) return { screen: "select" };
+    if (!raw) {
+      return LOCKED_COURSE
+        ? { screen: "course", course: LOCKED_COURSE }
+        : { screen: "select" };
+    }
     const segments = raw
       .split("/")
       .filter(Boolean)
       .map((segment) => decodeURIComponent(segment));
-    if (segments[0] === "select") return { screen: "select" };
+    if (segments[0] === "select") {
+      return LOCKED_COURSE
+        ? { screen: "course", course: LOCKED_COURSE }
+        : { screen: "select" };
+    }
     const [course, module, day, order] = segments;
+    if (LOCKED_COURSE && course !== LOCKED_COURSE) {
+      return { screen: "course", course: LOCKED_COURSE };
+    }
     if (!COURSE_META[course]) return { screen: "not-found" };
     if (!module) return { screen: "course", course };
     if (!day) return { screen: "module", course, module };
@@ -147,7 +169,7 @@
   }
 
   function siteHeader(courseKey = null) {
-    const courseActions = courseKey
+    const courseActions = courseKey && !LOCKED_COURSE
       ? `
         <button class="text-button" type="button" data-route="${route("select")}">과정 변경</button>
       `
@@ -490,6 +512,14 @@
         ${placeholderMarkup(slide)}
       `
       : placeholderMarkup(slide);
+    const courseChangeAction = LOCKED_COURSE
+      ? ""
+      : `
+        <button class="text-button" type="button" data-route="${route("select")}">
+          <span class="change-label">과정 변경</span>
+          <span aria-hidden="true">↺</span>
+        </button>
+      `;
 
     state.currentViewer = {
       courseKey,
@@ -518,10 +548,7 @@
               <span class="fullscreen-label">전체 화면</span>
               <span aria-hidden="true">⛶</span>
             </button>
-            <button class="text-button" type="button" data-route="${route("select")}">
-              <span class="change-label">과정 변경</span>
-              <span aria-hidden="true">↺</span>
-            </button>
+            ${courseChangeAction}
           </div>
         </header>
         <section class="viewer-stage-area" aria-label="현재 슬라이드">
@@ -627,7 +654,7 @@
         );
         break;
       default:
-        renderNotFound();
+        renderNotFound(LOCKED_COURSE);
     }
     window.requestAnimationFrame(() => app.focus({ preventScroll: true }));
   }

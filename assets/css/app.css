@@ -79,6 +79,10 @@ button:disabled {
   min-height: 100vh;
 }
 
+#app:focus {
+  outline: none;
+}
+
 .loading-view,
 .system-message {
   min-height: 100vh;
@@ -627,8 +631,8 @@ button:disabled {
 
 .slide-frame {
   position: relative;
-  width: min(100%, calc((100vh - 164px) * 16 / 9));
-  max-height: calc(100vh - 164px);
+  width: min(100%, calc((100vh - 176px) * 16 / 9));
+  max-height: calc(100vh - 176px);
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #f8fafc;
