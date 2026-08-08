@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="1152" viewBox="0 0 2048 1152">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FBFCFE"/><stop offset="1" stop-color="#F1F4FA"/></linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E6614F"/><stop offset="1" stop-color="#7357C8"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#E6614F" stop-opacity=".22"/><stop offset=".72" stop-color="#E6614F" stop-opacity=".05"/><stop offset="1" stop-color="#E6614F" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#16213A" flood-opacity=".12"/></filter>
+    <filter id="softShadow" x="-20%" y="-30%" width="140%" height="180%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#16213A" flood-opacity=".10"/></filter>
+    <pattern id="dots" width="36" height="36" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#9DABC1" opacity=".18"/></pattern>
+  </defs>
+  <rect width="2048" height="1152" fill="url(#bg)"/>
+  <rect width="2048" height="1152" fill="url(#dots)"/>
+  <circle cx="1882" cy="142" r="270" fill="url(#halo)"/>
+  <style>
+    .meta{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:25px;font-weight:800;letter-spacing:1px}
+    .title{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:72px;font-weight:900;letter-spacing:-3px;fill:#201D2C}
+    .subtitle{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:31px;font-weight:650;letter-spacing:-.8px;fill:#625A6B}
+    .label{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:31px;font-weight:850;letter-spacing:-1px}
+    .final{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:36px;font-weight:900;letter-spacing:-1px}
+    .core{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:29px;font-weight:850;letter-spacing:-.8px}
+    .small{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:23px;font-weight:650;letter-spacing:-.4px}
+    .step{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:20px;font-weight:900;letter-spacing:1px}
+    .ghost{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:64px;font-weight:900;opacity:.13}
+  </style>
+  <rect x="104" y="60" width="154" height="48" rx="24" fill="url(#brand)"/>
+  <text x="181" y="93" text-anchor="middle" class="meta" fill="#FFFFFF">심화 자료</text>
+  <text x="1944" y="93" text-anchor="end" class="meta" fill="#E6614F">마케팅 · M05 D01</text>
+  <text x="104" y="207" class="title">같은 콘텐츠를 AI 작업으로 다시 쓰기</text>
+  <text x="106" y="288" text-anchor="start" class="subtitle" fill="#625A6B">콘텐츠 이름보다 AI가 수행할 수 있는 동작으로 바꾸어 설명한다.</text>
+  <rect x="140" y="386" width="760" height="490" rx="42" fill="#FCEAE6" opacity=".55"/><rect x="182" y="410" width="126" height="44" rx="22" fill="#E6614F"/><text x="245" y="440" text-anchor="middle" class="step" fill="#FFFFFF">구조화 작업</text><g filter="url(#softShadow)"><rect x="194" y="485" width="650" height="150" rx="28" fill="#FFFFFF" stroke="#E6614F" stroke-width="3"/></g><circle cx="268" cy="560" r="49" fill="#FCEAE6"/><g transform="translate(231 523) scale(0.74)"><circle cx="50" cy="50" r="35" fill="none" stroke="#E6614F" stroke-width="7"/><circle cx="50" cy="50" r="12" fill="#7357C8"/><path d="M50 7v13M50 80v13M7 50h13M80 50h13" stroke="#E6614F" stroke-width="7" stroke-linecap="round"/></g><text x="564" y="572" text-anchor="middle" class="label" fill="#201D2C">리서치→요약</text><g filter="url(#softShadow)"><rect x="194" y="675" width="650" height="150" rx="28" fill="#FFFFFF" stroke="#E6614F" stroke-width="3"/></g><circle cx="268" cy="750" r="49" fill="#FCEAE6"/><g transform="translate(231 713) scale(0.74)"><rect x="12" y="12" width="76" height="76" rx="13" fill="none" stroke="#E6614F" stroke-width="7"/><path d="M50 12v76M12 50h76" stroke="#7357C8" stroke-width="6"/></g><text x="564" y="762" text-anchor="middle" class="label" fill="#201D2C">기획→구조화</text><rect x="1148" y="386" width="760" height="490" rx="42" fill="#F0ECFA" opacity=".55"/><rect x="1190" y="410" width="126" height="44" rx="22" fill="#7357C8"/><text x="1253" y="440" text-anchor="middle" class="step" fill="#FFFFFF">생성·분석</text><g filter="url(#softShadow)"><rect x="1202" y="485" width="650" height="150" rx="28" fill="#FFFFFF" stroke="#7357C8" stroke-width="3"/></g><circle cx="1276" cy="560" r="49" fill="#F0ECFA"/><g transform="translate(1239 523) scale(0.74)"><rect x="15" y="22" width="62" height="68" rx="14" fill="none" stroke="#7357C8" stroke-width="7"/><path d="M31 45h30M31 62h22" stroke="#7357C8" stroke-width="7" stroke-linecap="round"/><path d="M80 5l7 16 16 7-16 7-7 16-7-16-16-7 16-7z" fill="#E6614F"/></g><text x="1572" y="572" text-anchor="middle" class="label" fill="#201D2C">카피→변형</text><g filter="url(#softShadow)"><rect x="1202" y="675" width="650" height="150" rx="28" fill="#FFFFFF" stroke="#7357C8" stroke-width="3"/></g><circle cx="1276" cy="750" r="49" fill="#F0ECFA"/><g transform="translate(1239 713) scale(0.74)"><path d="M18 76V42M50 76V22M82 76V52" stroke="#7357C8" stroke-width="8" stroke-linecap="round"/><path d="M13 36l30-18 31 20 18-25" fill="none" stroke="#E6614F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g><text x="1572" y="762" text-anchor="middle" class="label" fill="#201D2C">성과→분석</text><g filter="url(#shadow)"><circle cx="1024" cy="628" r="86" fill="#FFFFFF" stroke="url(#brand)" stroke-width="8"/></g><path d="M984 628h80M1004 606l-22 22 22 22M1044 606l22 22-22 22" fill="none" stroke="#E6614F" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

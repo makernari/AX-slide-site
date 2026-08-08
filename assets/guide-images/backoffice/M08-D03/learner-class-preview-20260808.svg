@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">경영지원 M08-D03 4시간 수업 진행 인포그래픽</title>
+  <desc id="desc">1차시부터 4차시까지 핵심 활동과 결과물을 순서대로 보여 주는 수강생용 미리보기</desc>
+  <rect width="1600" height="900" fill="#F6F9FF"/>
+  <circle cx="1460" cy="-10" r="230" fill="#EAF2FF"/>
+  <circle cx="80" cy="858" r="160" fill="#EAF2FF"/>
+  <rect x="54" y="42" width="1492" height="816" rx="38" fill="#FFFFFF" stroke="#D8E2EF" stroke-width="3"/>
+  <rect x="54" y="42" width="1492" height="164" rx="38" fill="#102A56"/>
+  <rect x="54" y="168" width="1492" height="38" fill="#102A56"/>
+  <rect x="88" y="76" width="196" height="36" rx="18" fill="#FFFFFF" fill-opacity="0.16"/>
+  <text x="186" y="101" text-anchor="middle" font-size="17" font-weight="850" fill="#FFFFFF">LEARNER PREVIEW</text>
+  <text x="88" y="154" font-size="34" font-weight="900" fill="#FFFFFF">M08-D03 · RAG 이론과 문서 Q&amp;A</text>
+  <rect x="1254" y="82" width="244" height="78" rx="24" fill="#FFFFFF"/>
+  <text x="1376" y="112" text-anchor="middle" font-size="17" font-weight="800" fill="#102A56">경영지원 과정</text>
+  <text x="1376" y="145" text-anchor="middle" font-size="25" font-weight="900" fill="#2563EB">총 4시간 · 4차시</text>
+  <text x="82" y="229" font-size="18" font-weight="750" fill="#64748B">준비 → 이해 → 직접 실행 → 검수 → 저장까지, 오늘의 결과물이 만들어지는 순서</text>
+  
+      <g aria-label="1차시 RAG를 도서관 검색에 비유해 이해하고 일반 답변·파일 업로드·RAG 답변의 차이 비교">
+        <rect x="82" y="246" width="318" height="390" rx="28" fill="#FFFFFF" stroke="#D8E2EF" stroke-width="3"/>
+        <rect x="82" y="246" width="318" height="86" rx="28" fill="#2563EB"/>
+        <rect x="82" y="304" width="318" height="28" fill="#2563EB"/>
+        <circle cx="126" cy="287" r="25" fill="#FFFFFF" fill-opacity="0.20"/>
+        <text x="126" y="296" text-anchor="middle" font-size="26" font-weight="900" fill="#FFFFFF">1</text>
+        <text x="164" y="281" font-size="23" font-weight="850" fill="#FFFFFF">1차시</text>
+        <text x="164" y="309" font-size="17" font-weight="700" fill="#FFFFFF" fill-opacity="0.9">50분 · LEARN</text>
+        <text font-size="20" font-weight="780" fill="#17233B"><tspan x="106" y="372" >RAG를 도서관 검색에</tspan><tspan x="106" y="400" >비유해 이해하고 일반</tspan><tspan x="106" y="428" >답변·파일 업로드·RAG</tspan><tspan x="106" y="456" >답변의 차이 비교</tspan></text>
+        <line x1="106" y1="490" x2="376" y2="490" stroke="#E5EBF3" stroke-width="2"/>
+        <rect x="106" y="518" width="82" height="31" rx="15" fill="#EAF2FF"/>
+        <text x="147" y="540" text-anchor="middle" font-size="15" font-weight="850" fill="#102A56">OUTPUT</text>
+        <text font-size="18" font-weight="720" fill="#43516A"><tspan x="106" y="578" >규정·매뉴얼 질문에서 검색</tspan><tspan x="106" y="605" >근거가 필요한 이유 확인</tspan></text>
+      </g><path d="M 400 287 H 432" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round"/><path d="M 422 275 L 436 287 L 422 299" fill="none" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <g aria-label="2차시 준비된 RAG 템플릿에 문서를 넣고 문서 분할→검색→답변 흐름 실행">
+        <rect x="456" y="246" width="318" height="390" rx="28" fill="#FFFFFF" stroke="#D8E2EF" stroke-width="3"/>
+        <rect x="456" y="246" width="318" height="86" rx="28" fill="#0F766E"/>
+        <rect x="456" y="304" width="318" height="28" fill="#0F766E"/>
+        <circle cx="500" cy="287" r="25" fill="#FFFFFF" fill-opacity="0.20"/>
+        <text x="500" y="296" text-anchor="middle" font-size="26" font-weight="900" fill="#FFFFFF">2</text>
+        <text x="538" y="281" font-size="23" font-weight="850" fill="#FFFFFF">2차시</text>
+        <text x="538" y="309" font-size="17" font-weight="700" fill="#FFFFFF" fill-opacity="0.9">50분 · LEARN</text>
+        <text font-size="20" font-weight="780" fill="#17233B"><tspan x="480" y="372" >준비된 RAG 템플릿에</tspan><tspan x="480" y="400" >문서를 넣고 문서</tspan><tspan x="480" y="428" >분할→검색→답변 흐름 실행</tspan></text>
+        <line x1="480" y1="490" x2="750" y2="490" stroke="#E5EBF3" stroke-width="2"/>
+        <rect x="480" y="518" width="82" height="31" rx="15" fill="#EAF2FF"/>
+        <text x="521" y="540" text-anchor="middle" font-size="15" font-weight="850" fill="#102A56">OUTPUT</text>
+        <text font-size="18" font-weight="720" fill="#43516A"><tspan x="480" y="578" >규정·매뉴얼 기반 Q&amp;A</tspan><tspan x="480" y="605" >제작</tspan></text>
+      </g><path d="M 774 287 H 806" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round"/><path d="M 796 275 L 810 287 L 796 299" fill="none" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <g aria-label="3차시 정상 질문·모호한 질문·문서에 없는 질문·서로 충돌하는 질문을 입력하고 출처·정확성·거절 여부 확인">
+        <rect x="830" y="246" width="318" height="390" rx="28" fill="#FFFFFF" stroke="#D8E2EF" stroke-width="3"/>
+        <rect x="830" y="246" width="318" height="86" rx="28" fill="#2563EB"/>
+        <rect x="830" y="304" width="318" height="28" fill="#2563EB"/>
+        <circle cx="874" cy="287" r="25" fill="#FFFFFF" fill-opacity="0.20"/>
+        <text x="874" y="296" text-anchor="middle" font-size="26" font-weight="900" fill="#FFFFFF">3</text>
+        <text x="912" y="281" font-size="23" font-weight="850" fill="#FFFFFF">3차시</text>
+        <text x="912" y="309" font-size="17" font-weight="700" fill="#FFFFFF" fill-opacity="0.9">50분 · LEARN</text>
+        <text font-size="20" font-weight="780" fill="#17233B"><tspan x="854" y="372" >정상 질문·모호한</tspan><tspan x="854" y="400" >질문·문서에 없는</tspan><tspan x="854" y="428" >질문·서로 충돌하는 질문을</tspan><tspan x="854" y="456" >입력하고 출처·정확성·거…</tspan></text>
+        <line x1="854" y1="490" x2="1124" y2="490" stroke="#E5EBF3" stroke-width="2"/>
+        <rect x="854" y="518" width="82" height="31" rx="15" fill="#EAF2FF"/>
+        <text x="895" y="540" text-anchor="middle" font-size="15" font-weight="850" fill="#102A56">OUTPUT</text>
+        <text font-size="18" font-weight="720" fill="#43516A"><tspan x="854" y="578" >기한·절차·예외·존재하지</tspan><tspan x="854" y="605" >않는 규정 질문 테스트</tspan></text>
+      </g><path d="M 1148 287 H 1180" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round"/><path d="M 1170 275 L 1184 287 L 1170 299" fill="none" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <g aria-label="4차시 답변 규칙과 출력 형식을 수정하고 민감정보·저작권·공유 권한 점검">
+        <rect x="1204" y="246" width="318" height="390" rx="28" fill="#FFFFFF" stroke="#D8E2EF" stroke-width="3"/>
+        <rect x="1204" y="246" width="318" height="86" rx="28" fill="#0F766E"/>
+        <rect x="1204" y="304" width="318" height="28" fill="#0F766E"/>
+        <circle cx="1248" cy="287" r="25" fill="#FFFFFF" fill-opacity="0.20"/>
+        <text x="1248" y="296" text-anchor="middle" font-size="26" font-weight="900" fill="#FFFFFF">4</text>
+        <text x="1286" y="281" font-size="23" font-weight="850" fill="#FFFFFF">4차시</text>
+        <text x="1286" y="309" font-size="17" font-weight="700" fill="#FFFFFF" fill-opacity="0.9">50분 · LEARN</text>
+        <text font-size="20" font-weight="780" fill="#17233B"><tspan x="1228" y="372" >답변 규칙과 출력 형식을</tspan><tspan x="1228" y="400" >수정하고 민감정보·저작권·</tspan><tspan x="1228" y="428" >공유 권한 점검</tspan></text>
+        <line x1="1228" y1="490" x2="1498" y2="490" stroke="#E5EBF3" stroke-width="2"/>
+        <rect x="1228" y="518" width="82" height="31" rx="15" fill="#EAF2FF"/>
+        <text x="1269" y="540" text-anchor="middle" font-size="15" font-weight="850" fill="#102A56">OUTPUT</text>
+        <text font-size="18" font-weight="720" fill="#43516A"><tspan x="1228" y="578" >경영지원 Q&amp;A와 평가표</tspan><tspan x="1228" y="605" >완성</tspan></text>
+      </g>
+  <rect x="82" y="682" width="1436" height="128" rx="26" fill="#EAF2FF" stroke="#2563EB" stroke-opacity="0.25" stroke-width="2"/>
+  <rect x="108" y="706" width="176" height="36" rx="18" fill="#2563EB"/>
+  <text x="196" y="731" text-anchor="middle" font-size="17" font-weight="900" fill="#FFFFFF">FINAL CHECK</text>
+  <text x="314" y="728" font-size="18" font-weight="800" fill="#102A56">오늘 완성할 결과</text>
+  <text font-size="21" font-weight="760" fill="#26354F"><tspan x="314" y="762" >문서 기반 Q&amp;A · 정상·함정 질문 세트 · RAG 평가표</tspan></text>
+  <g transform="translate(1176 712)">
+    <rect width="316" height="70" rx="20" fill="#FFFFFF"/>
+    <circle cx="34" cy="35" r="20" fill="#0F766E"/>
+    <path d="M24 35 L31 42 L45 27" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="68" y="30" font-size="16" font-weight="850" fill="#102A56">200분 학습 + 40분 휴식·정리</text>
+    <text x="68" y="52" font-size="14" font-weight="650" fill="#64748B">각 차시 결과를 저장하면 다음 단계로 이동</text>
+  </g>
+  <text x="1516" y="840" text-anchor="end" font-size="13" font-weight="700" fill="#7A879B">교육용 수강생 가이드 · 2026-08-08</text>
+</svg>

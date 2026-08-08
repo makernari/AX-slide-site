@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="1152" viewBox="0 0 2048 1152">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FBFCFE"/><stop offset="1" stop-color="#F1F4FA"/></linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3157D5"/><stop offset="1" stop-color="#14A89A"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#3157D5" stop-opacity=".22"/><stop offset=".72" stop-color="#3157D5" stop-opacity=".05"/><stop offset="1" stop-color="#3157D5" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#16213A" flood-opacity=".12"/></filter>
+    <filter id="softShadow" x="-20%" y="-30%" width="140%" height="180%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#16213A" flood-opacity=".10"/></filter>
+    <pattern id="dots" width="36" height="36" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#9DABC1" opacity=".18"/></pattern>
+  </defs>
+  <rect width="2048" height="1152" fill="url(#bg)"/>
+  <rect width="2048" height="1152" fill="url(#dots)"/>
+  <circle cx="1882" cy="142" r="270" fill="url(#halo)"/>
+  <style>
+    .meta{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:25px;font-weight:800;letter-spacing:1px}
+    .title{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:80px;font-weight:900;letter-spacing:-3px;fill:#10182B}
+    .subtitle{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:31px;font-weight:650;letter-spacing:-.8px;fill:#536078}
+    .label{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:31px;font-weight:850;letter-spacing:-1px}
+    .final{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:36px;font-weight:900;letter-spacing:-1px}
+    .core{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:29px;font-weight:850;letter-spacing:-.8px}
+    .small{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:23px;font-weight:650;letter-spacing:-.4px}
+    .step{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:20px;font-weight:900;letter-spacing:1px}
+    .ghost{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:64px;font-weight:900;opacity:.13}
+  </style>
+  <rect x="104" y="60" width="154" height="48" rx="24" fill="url(#brand)"/>
+  <text x="181" y="93" text-anchor="middle" class="meta" fill="#FFFFFF">선택 자료</text>
+  <text x="1944" y="93" text-anchor="end" class="meta" fill="#3157D5">경영지원 · M05 D01</text>
+  <text x="104" y="207" class="title">반복 업무 병목 카드 분류</text>
+  <text x="106" y="288" text-anchor="start" class="subtitle" fill="#536078">빈도·대기·검토·형식 기준으로 첫 자동화 후보를 고른다.</text>
+  <path d="M612 483C790 483 804 566 885 566M1436 483C1258 483 1244 566 1163 566M612 765C790 765 804 676 885 676M1436 765C1258 765 1244 676 1163 676" fill="none" stroke="#3157D5" stroke-width="6" opacity=".6"/><g filter="url(#softShadow)"><rect x="142" y="388" width="470" height="190" rx="32" fill="#FFFFFF" stroke="#DCE4EF" stroke-width="2"/></g><rect x="166" y="412" width="130" height="142" rx="26" fill="#EDF3FC"/><g transform="translate(185 433) scale(0.9)"><circle cx="50" cy="50" r="35" fill="none" stroke="#3157D5" stroke-width="7"/><circle cx="50" cy="50" r="12" fill="#14A89A"/><path d="M50 7v13M50 80v13M7 50h13M80 50h13" stroke="#3157D5" stroke-width="7" stroke-linecap="round"/></g><text x="437" y="493" text-anchor="middle" class="label" fill="#10182B">자주 반복</text><g filter="url(#softShadow)"><rect x="142" y="670" width="470" height="190" rx="32" fill="#FFFFFF" stroke="#DCE4EF" stroke-width="2"/></g><rect x="166" y="694" width="130" height="142" rx="26" fill="#EAF8F5"/><g transform="translate(185 715) scale(0.9)"><circle cx="50" cy="50" r="40" fill="none" stroke="#3157D5" stroke-width="7"/><path d="M50 24v29l20 12" fill="none" stroke="#14A89A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g><text x="437" y="775" text-anchor="middle" class="label" fill="#10182B">대기 길음</text><g filter="url(#softShadow)"><rect x="1436" y="388" width="470" height="190" rx="32" fill="#FFFFFF" stroke="#DCE4EF" stroke-width="2"/></g><rect x="1460" y="412" width="130" height="142" rx="26" fill="#EDF3FC"/><g transform="translate(1479 433) scale(0.9)"><circle cx="50" cy="50" r="39" fill="none" stroke="#3157D5" stroke-width="7"/><path d="M29 50l14 14 29-34" fill="none" stroke="#14A89A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g><text x="1731" y="493" text-anchor="middle" class="label" fill="#10182B">검토 많음</text><g filter="url(#softShadow)"><rect x="1436" y="670" width="470" height="190" rx="32" fill="#FFFFFF" stroke="#DCE4EF" stroke-width="2"/></g><rect x="1460" y="694" width="130" height="142" rx="26" fill="#EAF8F5"/><g transform="translate(1479 715) scale(0.9)"><circle cx="50" cy="50" r="40" fill="none" stroke="#3157D5" stroke-width="7"/><path d="M50 24v29l20 12" fill="none" stroke="#14A89A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g><text x="1731" y="775" text-anchor="middle" class="label" fill="#10182B">형식 일정</text><circle cx="1024" cy="623" r="205" fill="url(#halo)"/><g filter="url(#shadow)"><path d="M1024 455l153 88v176l-153 88-153-88V543z" fill="url(#brand)"/></g><path d="M959 622h130M1024 557v130" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round" opacity=".9"/><text x="1024" y="754" text-anchor="middle" class="core" fill="#FFFFFF">핵심 후보</text>
+</svg>

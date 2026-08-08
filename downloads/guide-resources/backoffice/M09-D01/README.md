@@ -35,3 +35,31 @@
 - 실제 개인정보·조직 내부자료·고객자료·자격증명·API 키를 넣지 않습니다.
 - 도구 메뉴·요금·한도는 추측하지 않고 수업 당일 실제 계정에서 확인합니다.
 - 원문 근거·결정/조치 구분·담당 역할·기한·완료 기준·확인 필요를 사람이 최종 확인합니다.
+
+<!-- INSTRUCTOR-HTML-EXAMPLE-20260808:START -->
+
+## 강사용 브라우저 완성 예시
+
+- M09-D01 경영지원 네 차시의 결과 구조와 디자인을 한 화면에서 확인합니다.
+- [HTML 완성 예시 내려받기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/backoffice/M09-D01/solutions/m09-d01-backoffice-complete-example.html)
+- 파일을 내려받은 뒤 더블클릭하면 브라우저에서 열립니다. 실제 서비스 UI가 아닌 교육용 가상 예시입니다.
+
+<!-- INSTRUCTOR-HTML-EXAMPLE-20260808:END -->
+
+<!-- DAILY-AI-WARMUP-HTML-20260808:START -->
+
+## 수업 전 선택 5분 AI 워밍업
+
+- 오늘의 팁: AI와 일하는 내 모습을 작업대 이미지로
+- [브라우저 예시 열기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/backoffice/M09-D01/warmups/m09-d01-backoffice-ai-warmup.html)
+- 정규 4차시·240분과 필수 제출물에는 포함하지 않습니다.
+
+<!-- DAILY-AI-WARMUP-HTML-20260808:END -->
+
+<!-- REFERENCE-GUIDE-OPERATIONS-20260808:START -->
+
+## 제공 교재 운영
+
+- 전체 과정 종료 후 제공되는 원본 3종은 이 폴더에 복사하지 않으며 강사가 승인 채널로 별도 제공합니다.
+
+<!-- REFERENCE-GUIDE-OPERATIONS-20260808:END -->

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="1152" viewBox="0 0 2048 1152">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FBFCFE"/><stop offset="1" stop-color="#F1F4FA"/></linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E6614F"/><stop offset="1" stop-color="#7357C8"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#E6614F" stop-opacity=".22"/><stop offset=".72" stop-color="#E6614F" stop-opacity=".05"/><stop offset="1" stop-color="#E6614F" stop-opacity="0"/></radialGradient>
+    <linearGradient id="heroShade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#10182B" stop-opacity="0"/><stop offset="1" stop-color="#10182B" stop-opacity=".76"/></linearGradient>
+    <clipPath id="heroClip"><rect x="104" y="370" width="1840" height="550" rx="48"/></clipPath>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#16213A" flood-opacity=".12"/></filter>
+    <filter id="softShadow" x="-20%" y="-30%" width="140%" height="180%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#16213A" flood-opacity=".10"/></filter>
+    <pattern id="dots" width="36" height="36" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#9DABC1" opacity=".18"/></pattern>
+  </defs>
+  <rect width="2048" height="1152" fill="url(#bg)"/>
+  <rect width="2048" height="1152" fill="url(#dots)"/>
+  <circle cx="1882" cy="142" r="270" fill="url(#halo)"/>
+  <style>
+    .meta{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:25px;font-weight:800;letter-spacing:1px}
+    .title{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:80px;font-weight:900;letter-spacing:-3px;fill:#201D2C}
+    .subtitle{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:31px;font-weight:650;letter-spacing:-.8px;fill:#625A6B}
+    .label{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:31px;font-weight:850;letter-spacing:-1px}
+    .final{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:36px;font-weight:900;letter-spacing:-1px}
+    .core{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:29px;font-weight:850;letter-spacing:-.8px}
+    .small{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:23px;font-weight:650;letter-spacing:-.4px}
+    .step{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:20px;font-weight:900;letter-spacing:1px}
+    .ghost{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:64px;font-weight:900;opacity:.13}
+  </style>
+  <rect x="104" y="60" width="154" height="48" rx="24" fill="url(#brand)"/>
+  <text x="181" y="93" text-anchor="middle" class="meta" fill="#FFFFFF">심화 자료</text>
+  <text x="1944" y="93" text-anchor="end" class="meta" fill="#E6614F">마케팅 · M07 D02</text>
+  <text x="104" y="207" class="title">채널별 콘텐츠 요청의 분기표</text>
+  <text x="106" y="288" text-anchor="start" class="subtitle" fill="#625A6B">채널과 게시 상태를 분리해야 제작과 승인 경로가 꼬이지 않는다.</text>
+  <g filter="url(#softShadow)"><rect x="150" y="385" width="650" height="145" rx="30" fill="#FFFFFF" stroke="#DFE5EF" stroke-width="2"/></g><circle cx="235" cy="457" r="48" fill="#FCEAE6"/><g transform="translate(199 421) scale(0.72)"><circle cx="50" cy="50" r="35" fill="none" stroke="#E6614F" stroke-width="7"/><circle cx="50" cy="50" r="12" fill="#7357C8"/><path d="M50 7v13M50 80v13M7 50h13M80 50h13" stroke="#E6614F" stroke-width="7" stroke-linecap="round"/></g><text x="330" y="468" class="label" fill="#201D2C">블로그</text><path d="M820 457h190" stroke="#E6614F" stroke-width="7" stroke-linecap="round" opacity=".55"/><g filter="url(#softShadow)"><rect x="150" y="575" width="650" height="145" rx="30" fill="#FFFFFF" stroke="#DFE5EF" stroke-width="2"/></g><circle cx="235" cy="647" r="48" fill="#F0ECFA"/><g transform="translate(199 611) scale(0.72)"><circle cx="50" cy="50" r="35" fill="none" stroke="#E6614F" stroke-width="7"/><circle cx="50" cy="50" r="12" fill="#7357C8"/><path d="M50 7v13M50 80v13M7 50h13M80 50h13" stroke="#E6614F" stroke-width="7" stroke-linecap="round"/></g><text x="330" y="658" class="label" fill="#201D2C">SNS</text><path d="M820 647h190" stroke="#E6614F" stroke-width="7" stroke-linecap="round" opacity=".55"/><g filter="url(#softShadow)"><rect x="150" y="765" width="650" height="145" rx="30" fill="#FFFFFF" stroke="#DFE5EF" stroke-width="2"/></g><circle cx="235" cy="837" r="48" fill="#FCEAE6"/><g transform="translate(199 801) scale(0.72)"><circle cx="50" cy="33" r="18" fill="none" stroke="#E6614F" stroke-width="7"/><path d="M18 88c4-24 17-34 32-34s28 10 32 34" fill="none" stroke="#E6614F" stroke-width="7" stroke-linecap="round"/><path d="M64 69l9 9 17-21" fill="none" stroke="#7357C8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g><text x="330" y="848" class="label" fill="#201D2C">승인 필요</text><path d="M820 837h190" stroke="#E6614F" stroke-width="7" stroke-linecap="round" opacity=".55"/><path d="M1010 457v380" stroke="#E6614F" stroke-width="7" stroke-linecap="round" opacity=".55"/><path d="M1010 647h160" stroke="#E6614F" stroke-width="9" stroke-linecap="round"/><path d="M1148 628l21 19-21 19" fill="none" stroke="#E6614F" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><g filter="url(#shadow)"><rect x="1200" y="438" width="690" height="420" rx="52" fill="url(#brand)"/></g><circle cx="1545" cy="574" r="92" fill="#FFFFFF" opacity=".16"/><g transform="translate(1495 524) scale(1)"><circle cx="50" cy="33" r="18" fill="none" stroke="#FFFFFF" stroke-width="7"/><path d="M18 88c4-24 17-34 32-34s28 10 32 34" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/><path d="M64 69l9 9 17-21" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g><text x="1545" y="746" text-anchor="middle" class="final" fill="#FFFFFF">담당 전달</text><text x="1545" y="797" text-anchor="middle" class="small" fill="#FFFFFF" opacity=".82">담당자에게 안전하게 전달합니다</text>
+</svg>

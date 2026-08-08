@@ -2,6 +2,17 @@
 
 기준일: 2026-08-08
 
+<!-- M06-MEDIA-PIPELINE-20260808:START -->
+
+## 2026-08-08 이미지·영상·Vrew 상세 제작팩
+
+- 상세 절차: [m06-d02-backoffice-vrew-editing-practice.md](supplements/m06-d02-backoffice-vrew-editing-practice.md)
+- HTML 예시: [m06-d02-backoffice-vrew-edit-timeline.html](examples/m06-d02-backoffice-vrew-edit-timeline.html)
+- 과정: 경영지원
+- API 키: 필요 없음
+
+<!-- M06-MEDIA-PIPELINE-20260808:END -->
+
 ## 단독·연속 수강 원칙
 
 - 이 과정만 수강해도 원자료·프롬프트·템플릿·완성 예시만으로 실습할 수 있습니다.
@@ -27,3 +38,23 @@
 2. 시작 파일의 네 차시를 순서대로 수행합니다.
 3. 결과를 원자료와 대조하고 확정 정보·내부 승인·권리 조건를 확인합니다.
 4. 도구를 사용할 수 없으면 문서형 대체 결과물을 제출합니다.
+
+<!-- INSTRUCTOR-HTML-EXAMPLE-20260808:START -->
+
+## 강사용 브라우저 완성 예시
+
+- M06-D02 경영지원 네 차시의 결과 구조와 디자인을 한 화면에서 확인합니다.
+- [HTML 완성 예시 내려받기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/backoffice/M06-D02/solutions/m06-d02-backoffice-complete-example.html)
+- 파일을 내려받은 뒤 더블클릭하면 브라우저에서 열립니다. 실제 서비스 UI가 아닌 교육용 가상 예시입니다.
+
+<!-- INSTRUCTOR-HTML-EXAMPLE-20260808:END -->
+
+<!-- DAILY-AI-WARMUP-HTML-20260808:START -->
+
+## 수업 전 선택 5분 AI 워밍업
+
+- 오늘의 팁: 복잡한 절차를 3컷 업무 만화로
+- [브라우저 예시 열기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/backoffice/M06-D02/warmups/m06-d02-backoffice-ai-warmup.html)
+- 정규 4차시·240분과 필수 제출물에는 포함하지 않습니다.
+
+<!-- DAILY-AI-WARMUP-HTML-20260808:END -->

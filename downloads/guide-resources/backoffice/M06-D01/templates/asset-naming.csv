@@ -1,0 +1,4 @@
+"asset_id","type","filename","use","rights","status"
+"BO-HANGYEOL-01","character","backoffice_character_sheet_v01.png","all scenes","training synthetic","ready"
+"OBJECT-01","object","backoffice_object_v01.png","all scenes","training synthetic","ready"
+"SCENE-01","video","backoffice_scene01_v01_selected.mp4","Vrew handoff","AI-generated training example","check"

@@ -30,3 +30,34 @@
 - 교육용 가상 자료만 사용합니다.
 - 실제 인명·연락처·기관 내부 수치·운영 자격증명은 넣지 않습니다.
 - 공유 전 담당 역할·기한·수치·규정·승인 상태를 사람이 확인합니다.
+
+<!-- INSTRUCTOR-HTML-EXAMPLE-20260808:START -->
+
+## 강사용 브라우저 완성 예시
+
+- M05-D04 경영지원 네 차시의 결과 구조와 디자인을 한 화면에서 확인합니다.
+- [HTML 완성 예시 내려받기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/backoffice/M05-D04/solutions/m05-d04-backoffice-complete-example.html)
+- 파일을 내려받은 뒤 더블클릭하면 브라우저에서 열립니다. 실제 서비스 UI가 아닌 교육용 가상 예시입니다.
+
+<!-- INSTRUCTOR-HTML-EXAMPLE-20260808:END -->
+
+<!-- DAILY-AI-WARMUP-HTML-20260808:START -->
+
+## 수업 전 선택 5분 AI 워밍업
+
+- 오늘의 팁: 슬라이드 스크린샷에 빨간펜 검수 메모
+- [브라우저 예시 열기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/backoffice/M05-D04/warmups/m05-d04-backoffice-ai-warmup.html)
+- 정규 4차시·240분과 필수 제출물에는 포함하지 않습니다.
+
+<!-- DAILY-AI-WARMUP-HTML-20260808:END -->
+
+<!-- GOOGLE-AI-DETAILED-PRACTICE-HTML-20260808:START -->
+
+## NotebookLM 보고서·슬라이드 품질 사다리 + Mixboard 확장
+
+- 구분: 핵심 보강 + 선택 확장
+- [단계별 상세 실습팩](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/backoffice/M05-D04/supplements/m05-d04-backoffice-detailed-practice.md)
+- [브라우저 결과 구조 예시](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/backoffice/M05-D04/supplements/m05-d04-backoffice-detailed-practice.html)
+- NotebookLM 보고서·슬라이드는 핵심 실습, Mixboard는 빠른 학습자 선택 실습입니다.
+
+<!-- GOOGLE-AI-DETAILED-PRACTICE-HTML-20260808:END -->

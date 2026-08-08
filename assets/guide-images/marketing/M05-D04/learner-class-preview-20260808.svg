@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">마케팅 M05-D04 4시간 수업 진행 인포그래픽</title>
+  <desc id="desc">1차시부터 4차시까지 핵심 활동과 결과물을 순서대로 보여 주는 수강생용 미리보기</desc>
+  <rect width="1600" height="900" fill="#FFF9F5"/>
+  <circle cx="1460" cy="-10" r="230" fill="#FFF0E8"/>
+  <circle cx="80" cy="858" r="160" fill="#FFF0E8"/>
+  <rect x="54" y="42" width="1492" height="816" rx="38" fill="#FFFFFF" stroke="#D8E2EF" stroke-width="3"/>
+  <rect x="54" y="42" width="1492" height="164" rx="38" fill="#7C2D12"/>
+  <rect x="54" y="168" width="1492" height="38" fill="#7C2D12"/>
+  <rect x="88" y="76" width="196" height="36" rx="18" fill="#FFFFFF" fill-opacity="0.16"/>
+  <text x="186" y="101" text-anchor="middle" font-size="17" font-weight="850" fill="#FFFFFF">LEARNER PREVIEW</text>
+  <text x="88" y="154" font-size="34" font-weight="900" fill="#FFFFFF">M05-D04 · 한 자료 5종 변신과 무료 LLM 보고서 비교</text>
+  <rect x="1254" y="82" width="244" height="78" rx="24" fill="#FFFFFF"/>
+  <text x="1376" y="112" text-anchor="middle" font-size="17" font-weight="800" fill="#7C2D12">마케팅 과정</text>
+  <text x="1376" y="145" text-anchor="middle" font-size="25" font-weight="900" fill="#EA580C">총 4시간 · 4차시</text>
+  <text x="82" y="229" font-size="18" font-weight="750" fill="#64748B">준비 → 이해 → 직접 실행 → 검수 → 저장까지, 오늘의 결과물이 만들어지는 순서</text>
+  
+      <g aria-label="1차시 전날 Notebook의 동일 자료로 5~7장 슬라이드 덱과 세로형 인포그래픽을 만들고 오탈자·과장·원문 불일치 수정">
+        <rect x="82" y="246" width="318" height="390" rx="28" fill="#FFFFFF" stroke="#D8E2EF" stroke-width="3"/>
+        <rect x="82" y="246" width="318" height="86" rx="28" fill="#EA580C"/>
+        <rect x="82" y="304" width="318" height="28" fill="#EA580C"/>
+        <circle cx="126" cy="287" r="25" fill="#FFFFFF" fill-opacity="0.20"/>
+        <text x="126" y="296" text-anchor="middle" font-size="26" font-weight="900" fill="#FFFFFF">1</text>
+        <text x="164" y="281" font-size="23" font-weight="850" fill="#FFFFFF">1차시</text>
+        <text x="164" y="309" font-size="17" font-weight="700" fill="#FFFFFF" fill-opacity="0.9">50분 · LEARN</text>
+        <text font-size="20" font-weight="780" fill="#17233B"><tspan x="106" y="372" >전날 Notebook의</tspan><tspan x="106" y="400" >동일 자료로 5~7장</tspan><tspan x="106" y="428" >슬라이드 덱과 세로형</tspan><tspan x="106" y="456" >인포그래픽을 만들고…</tspan></text>
+        <line x1="106" y1="490" x2="376" y2="490" stroke="#E5EBF3" stroke-width="2"/>
+        <rect x="106" y="518" width="82" height="31" rx="15" fill="#FFF0E8"/>
+        <text x="147" y="540" text-anchor="middle" font-size="15" font-weight="850" fill="#7C2D12">OUTPUT</text>
+        <text font-size="18" font-weight="720" fill="#43516A"><tspan x="106" y="578" >콘텐츠 전략·캠페인 사례</tspan><tspan x="106" y="605" >슬라이드와 인포그래픽 제작</tspan></text>
+      </g><path d="M 400 287 H 432" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round"/><path d="M 422 275 L 436 287 L 422 299" fill="none" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <g aria-label="2차시 Notebook에서 정리한 근거 자료와 동일한 요청을 Claude·ChatGPT·Gemini 무료 버전에 입력해 보고서 초안 작성">
+        <rect x="456" y="246" width="318" height="390" rx="28" fill="#FFFFFF" stroke="#D8E2EF" stroke-width="3"/>
+        <rect x="456" y="246" width="318" height="86" rx="28" fill="#B4236B"/>
+        <rect x="456" y="304" width="318" height="28" fill="#B4236B"/>
+        <circle cx="500" cy="287" r="25" fill="#FFFFFF" fill-opacity="0.20"/>
+        <text x="500" y="296" text-anchor="middle" font-size="26" font-weight="900" fill="#FFFFFF">2</text>
+        <text x="538" y="281" font-size="23" font-weight="850" fill="#FFFFFF">2차시</text>
+        <text x="538" y="309" font-size="17" font-weight="700" fill="#FFFFFF" fill-opacity="0.9">50분 · LEARN</text>
+        <text font-size="20" font-weight="780" fill="#17233B"><tspan x="480" y="372" >Notebook에서 정리한</tspan><tspan x="480" y="400" >근거 자료와 동일한 요청을</tspan><tspan x="480" y="428" >Claude·ChatGPT</tspan><tspan x="480" y="456" >·Gemini 무료 버전…</tspan></text>
+        <line x1="480" y1="490" x2="750" y2="490" stroke="#E5EBF3" stroke-width="2"/>
+        <rect x="480" y="518" width="82" height="31" rx="15" fill="#FFF0E8"/>
+        <text x="521" y="540" text-anchor="middle" font-size="15" font-weight="850" fill="#7C2D12">OUTPUT</text>
+        <text font-size="18" font-weight="720" fill="#43516A"><tspan x="480" y="578" >배경–문제–핵심</tspan><tspan x="480" y="605" >메시지–실행안–기대효과…</tspan></text>
+      </g><path d="M 774 287 H 806" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round"/><path d="M 796 275 L 810 287 L 796 299" fill="none" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <g aria-label="3차시 원문 충실도·보고서 구조·문체·조건과 예외·실무 활용성·후속 수정 반영을 비교하고, 가장 나은 초안을 관리자 요약·실무 체크리스트·외부 공유문으로 변환">
+        <rect x="830" y="246" width="318" height="390" rx="28" fill="#FFFFFF" stroke="#D8E2EF" stroke-width="3"/>
+        <rect x="830" y="246" width="318" height="86" rx="28" fill="#EA580C"/>
+        <rect x="830" y="304" width="318" height="28" fill="#EA580C"/>
+        <circle cx="874" cy="287" r="25" fill="#FFFFFF" fill-opacity="0.20"/>
+        <text x="874" y="296" text-anchor="middle" font-size="26" font-weight="900" fill="#FFFFFF">3</text>
+        <text x="912" y="281" font-size="23" font-weight="850" fill="#FFFFFF">3차시</text>
+        <text x="912" y="309" font-size="17" font-weight="700" fill="#FFFFFF" fill-opacity="0.9">50분 · LEARN</text>
+        <text font-size="20" font-weight="780" fill="#17233B"><tspan x="854" y="372" >원문 충실도·보고서</tspan><tspan x="854" y="400" >구조·문체·조건과</tspan><tspan x="854" y="428" >예외·실무 활용성·후속</tspan><tspan x="854" y="456" >수정 반영을 비교하고,…</tspan></text>
+        <line x1="854" y1="490" x2="1124" y2="490" stroke="#E5EBF3" stroke-width="2"/>
+        <rect x="854" y="518" width="82" height="31" rx="15" fill="#FFF0E8"/>
+        <text x="895" y="540" text-anchor="middle" font-size="15" font-weight="850" fill="#7C2D12">OUTPUT</text>
+        <text font-size="18" font-weight="720" fill="#43516A"><tspan x="854" y="578" >경영진 요약·채널별</tspan><tspan x="854" y="605" >실행안·외부 공유문 변환</tspan></text>
+      </g><path d="M 1148 287 H 1180" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round"/><path d="M 1170 275 L 1184 287 L 1170 299" fill="none" stroke="#9FB0C8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <g aria-label="4차시 최종 보고서를 다듬고 업무별 AI 선택 가이드를 작성한 뒤 ChatGPT Plus 구독 목적·예산·자동갱신과 이후 심화 활용 계획 확인">
+        <rect x="1204" y="246" width="318" height="390" rx="28" fill="#FFFFFF" stroke="#D8E2EF" stroke-width="3"/>
+        <rect x="1204" y="246" width="318" height="86" rx="28" fill="#B4236B"/>
+        <rect x="1204" y="304" width="318" height="28" fill="#B4236B"/>
+        <circle cx="1248" cy="287" r="25" fill="#FFFFFF" fill-opacity="0.20"/>
+        <text x="1248" y="296" text-anchor="middle" font-size="26" font-weight="900" fill="#FFFFFF">4</text>
+        <text x="1286" y="281" font-size="23" font-weight="850" fill="#FFFFFF">4차시</text>
+        <text x="1286" y="309" font-size="17" font-weight="700" fill="#FFFFFF" fill-opacity="0.9">50분 · LEARN</text>
+        <text font-size="20" font-weight="780" fill="#17233B"><tspan x="1228" y="372" >최종 보고서를 다듬고</tspan><tspan x="1228" y="400" >업무별 AI 선택 가이드를</tspan><tspan x="1228" y="428" >작성한 뒤 ChatGPT</tspan><tspan x="1228" y="456" >Plus 구독…</tspan></text>
+        <line x1="1228" y1="490" x2="1498" y2="490" stroke="#E5EBF3" stroke-width="2"/>
+        <rect x="1228" y="518" width="82" height="31" rx="15" fill="#FFF0E8"/>
+        <text x="1269" y="540" text-anchor="middle" font-size="15" font-weight="850" fill="#7C2D12">OUTPUT</text>
+        <text font-size="18" font-weight="720" fill="#43516A"><tspan x="1228" y="578" >기획·개선 보고서 최종본과</tspan><tspan x="1228" y="605" >콘텐츠 업무별 도구 선택표…</tspan></text>
+      </g>
+  <rect x="82" y="682" width="1436" height="128" rx="26" fill="#FFF0E8" stroke="#EA580C" stroke-opacity="0.25" stroke-width="2"/>
+  <rect x="108" y="706" width="176" height="36" rx="18" fill="#EA580C"/>
+  <text x="196" y="731" text-anchor="middle" font-size="17" font-weight="900" fill="#FFFFFF">FINAL CHECK</text>
+  <text x="314" y="728" font-size="18" font-weight="800" fill="#7C2D12">오늘 완성할 결과</text>
+  <text font-size="21" font-weight="760" fill="#26354F"><tspan x="314" y="762" >슬라이드 덱 · 인포그래픽 · 3개 LLM 보고서 · 비교 평가표 · 대상별 변환본 · 최종 보고서 · AI 선택 가이드</tspan></text>
+  <g transform="translate(1176 712)">
+    <rect width="316" height="70" rx="20" fill="#FFFFFF"/>
+    <circle cx="34" cy="35" r="20" fill="#B4236B"/>
+    <path d="M24 35 L31 42 L45 27" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="68" y="30" font-size="16" font-weight="850" fill="#7C2D12">200분 학습 + 40분 휴식·정리</text>
+    <text x="68" y="52" font-size="14" font-weight="650" fill="#64748B">각 차시 결과를 저장하면 다음 단계로 이동</text>
+  </g>
+  <text x="1516" y="840" text-anchor="end" font-size="13" font-weight="700" fill="#7A879B">교육용 수강생 가이드 · 2026-08-08</text>
+</svg>

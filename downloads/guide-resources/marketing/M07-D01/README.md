@@ -27,3 +27,23 @@
 - 실제 개인정보·조직 내부 데이터·자격증명·API 키를 넣지 않습니다.
 - 기능·메뉴·요금·한도는 수업 계정에서 확인합니다.
 - 브랜드 사실·채널·타깃·권리·성과 산식를 사람이 최종 확인합니다.
+
+<!-- INSTRUCTOR-HTML-EXAMPLE-20260808:START -->
+
+## 강사용 브라우저 완성 예시
+
+- M07-D01 마케팅 네 차시의 결과 구조와 디자인을 한 화면에서 확인합니다.
+- [HTML 완성 예시 내려받기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/marketing/M07-D01/solutions/m07-d01-marketing-complete-example.html)
+- 파일을 내려받은 뒤 더블클릭하면 브라우저에서 열립니다. 실제 서비스 UI가 아닌 교육용 가상 예시입니다.
+
+<!-- INSTRUCTOR-HTML-EXAMPLE-20260808:END -->
+
+<!-- DAILY-AI-WARMUP-HTML-20260808:START -->
+
+## 수업 전 선택 5분 AI 워밍업
+
+- 오늘의 팁: 댓글 캡처에서 고객 언어 3개 찾기
+- [브라우저 예시 열기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/marketing/M07-D01/warmups/m07-d01-marketing-ai-warmup.html)
+- 정규 4차시·240분과 필수 제출물에는 포함하지 않습니다.
+
+<!-- DAILY-AI-WARMUP-HTML-20260808:END -->

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="1152" viewBox="0 0 2048 1152">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FBFCFE"/><stop offset="1" stop-color="#F1F4FA"/></linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3157D5"/><stop offset="1" stop-color="#14A89A"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#3157D5" stop-opacity=".22"/><stop offset=".72" stop-color="#3157D5" stop-opacity=".05"/><stop offset="1" stop-color="#3157D5" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#16213A" flood-opacity=".12"/></filter>
+    <filter id="softShadow" x="-20%" y="-30%" width="140%" height="180%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#16213A" flood-opacity=".10"/></filter>
+    <pattern id="dots" width="36" height="36" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#9DABC1" opacity=".18"/></pattern>
+  </defs>
+  <rect width="2048" height="1152" fill="url(#bg)"/>
+  <rect width="2048" height="1152" fill="url(#dots)"/>
+  <circle cx="1882" cy="142" r="270" fill="url(#halo)"/>
+  <style>
+    .meta{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:25px;font-weight:800;letter-spacing:1px}
+    .title{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:80px;font-weight:900;letter-spacing:-3px;fill:#10182B}
+    .subtitle{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:31px;font-weight:650;letter-spacing:-.8px;fill:#536078}
+    .label{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:31px;font-weight:850;letter-spacing:-1px}
+    .final{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:36px;font-weight:900;letter-spacing:-1px}
+    .core{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:29px;font-weight:850;letter-spacing:-.8px}
+    .small{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:23px;font-weight:650;letter-spacing:-.4px}
+    .step{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:20px;font-weight:900;letter-spacing:1px}
+    .ghost{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;font-size:64px;font-weight:900;opacity:.13}
+  </style>
+  <rect x="104" y="60" width="154" height="48" rx="24" fill="url(#brand)"/>
+  <text x="181" y="93" text-anchor="middle" class="meta" fill="#FFFFFF">예비 자료</text>
+  <text x="1944" y="93" text-anchor="end" class="meta" fill="#3157D5">경영지원 · M05 D02</text>
+  <text x="104" y="207" class="title">정보가 빠진 요청문 복구</text>
+  <text x="106" y="288" text-anchor="start" class="subtitle" fill="#536078">누락 정보를 채우기 전에는 발송 가능한 문장으로 확정하지 않는다.</text>
+  <g filter="url(#shadow)"><rect x="654" y="375" width="740" height="190" rx="48" fill="url(#brand)"/></g><g transform="translate(742 420) scale(1)"><rect x="12" y="12" width="76" height="76" rx="13" fill="none" stroke="#FFFFFF" stroke-width="7"/><path d="M50 12v76M12 50h76" stroke="#FFFFFF" stroke-width="6"/></g><text x="1080" y="485" text-anchor="middle" class="final" fill="#FFFFFF">누락 표시</text><path d="M1024 565v68M459 633h1130M459 633v57M1024 633v57M1589 633v57" fill="none" stroke="#3157D5" stroke-width="8" stroke-linecap="round" opacity=".72"/><g filter="url(#softShadow)"><rect x="220" y="690" width="478" height="180" rx="34" fill="#FFFFFF" stroke="#DFE5EF" stroke-width="2"/></g><circle cx="312" cy="780" r="52" fill="#EDF3FC"/><g transform="translate(273 741) scale(0.78)"><rect x="15" y="22" width="62" height="68" rx="14" fill="none" stroke="#3157D5" stroke-width="7"/><path d="M31 45h30M31 62h22" stroke="#3157D5" stroke-width="7" stroke-linecap="round"/><path d="M80 5l7 16 16 7-16 7-7 16-7-16-16-7 16-7z" fill="#14A89A"/></g><text x="522.5" y="790" text-anchor="middle" class="label" fill="#10182B">질문 생성</text><g filter="url(#softShadow)"><rect x="825" y="690" width="478" height="180" rx="34" fill="#FFFFFF" stroke="#DFE5EF" stroke-width="2"/></g><circle cx="917" cy="780" r="52" fill="#EDF3FC"/><g transform="translate(878 741) scale(0.78)"><path d="M12 17h76v56H50L28 91V73H12z" fill="none" stroke="#3157D5" stroke-width="7" stroke-linejoin="round"/><path d="M31 42h38M31 57h25" stroke="#14A89A" stroke-width="7" stroke-linecap="round"/></g><text x="1127.5" y="790" text-anchor="middle" class="label" fill="#10182B">답변 반영</text><g filter="url(#softShadow)"><rect x="1430" y="690" width="478" height="180" rx="34" fill="#FFFFFF" stroke="#14A89A" stroke-width="5"/></g><circle cx="1522" cy="780" r="52" fill="#EAF8F5"/><g transform="translate(1483 741) scale(0.78)"><circle cx="50" cy="50" r="39" fill="none" stroke="#14A89A" stroke-width="7"/><path d="M29 50l14 14 29-34" fill="none" stroke="#14A89A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g><text x="1732.5" y="790" text-anchor="middle" class="label" fill="#10182B">최종 확인</text>
+</svg>
