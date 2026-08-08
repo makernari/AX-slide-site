@@ -205,14 +205,6 @@ button:disabled {
   background: #f8fafc;
 }
 
-.guide-button {
-  white-space: nowrap;
-}
-
-.guide-label-short {
-  display: none;
-}
-
 .primary-button {
   display: inline-flex;
   align-items: center;
@@ -537,123 +529,6 @@ button:disabled {
 .error-card p {
   color: var(--muted);
   line-height: 1.65;
-}
-
-/* Practice guide */
-
-.guide-view {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  background: #eef2f6;
-}
-
-.guide-header {
-  position: sticky;
-  z-index: 20;
-  top: 0;
-  min-height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 11px clamp(16px, 3vw, 36px);
-  color: #e5edf7;
-  background: #050b14;
-  border-bottom: 1px solid #223149;
-}
-
-.guide-header .brand-button {
-  color: #e5edf7;
-}
-
-.guide-header .brand-mark {
-  color: var(--navy);
-  background: #dff5f2;
-}
-
-.guide-return-button {
-  flex: 0 0 auto;
-  min-height: 44px;
-  color: #0b3b38;
-  background: #dff5f2;
-}
-
-.guide-return-button:hover {
-  background: #c9ece8;
-}
-
-.guide-main {
-  min-height: 0;
-  display: grid;
-  grid-template-rows: auto minmax(600px, 1fr);
-  gap: 18px;
-  width: min(1500px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-.guide-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 28px;
-  padding: 0 4px;
-}
-
-.guide-heading h1 {
-  margin: 10px 0 0;
-  color: var(--ink);
-  font-size: clamp(1.7rem, 4vw, 2.7rem);
-  letter-spacing: -0.045em;
-}
-
-.guide-heading p {
-  max-width: 560px;
-  margin: 0 0 3px;
-  color: var(--muted);
-  line-height: 1.55;
-  text-align: right;
-}
-
-.guide-frame-shell {
-  position: relative;
-  min-height: 600px;
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid #cbd5e1;
-  border-radius: 18px;
-  box-shadow: 0 16px 42px rgba(15, 39, 66, 0.1);
-}
-
-.guide-frame {
-  width: 100%;
-  height: 100%;
-  min-height: 600px;
-  display: block;
-  background: #fff;
-  border: 0;
-}
-
-.guide-loading {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 28px;
-  color: var(--muted);
-  background: #fff;
-  font-weight: 700;
-  text-align: center;
-}
-
-.guide-loading[hidden] {
-  display: none;
-}
-
-.guide-loading[data-error="true"] {
-  color: var(--danger);
 }
 
 /* Slide viewer */
@@ -1044,15 +919,6 @@ button:disabled {
     border-bottom: 1px solid var(--line);
   }
 
-  .guide-heading {
-    align-items: start;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .guide-heading p {
-    text-align: left;
-  }
 }
 
 @media (max-width: 680px) {
@@ -1132,35 +998,6 @@ button:disabled {
     display: none;
   }
 
-  .viewer-actions .guide-label-full {
-    display: none;
-  }
-
-  .viewer-actions .guide-label-short {
-    display: inline;
-  }
-
-  .guide-header {
-    min-height: 60px;
-    padding: 8px 12px;
-  }
-
-  .guide-return-button {
-    min-height: 40px;
-    padding: 9px 12px;
-  }
-
-  .guide-main {
-    grid-template-rows: auto minmax(560px, 1fr);
-    width: min(100% - 20px, 1500px);
-    padding: 14px 0;
-  }
-
-  .guide-frame-shell,
-  .guide-frame {
-    min-height: 560px;
-    border-radius: 12px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

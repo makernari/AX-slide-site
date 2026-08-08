@@ -3,42 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>업무 요청 문장 점검기</title>
+  <title>NOVA 회의 후속조치 점검기</title>
   <style>
-    body{font-family:system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6}
-    textarea{width:100%;min-height:160px;padding:12px;box-sizing:border-box}
-    button{margin-top:12px;padding:10px 18px}
-    #result{margin-top:20px;padding:16px;background:#f4f6f8;white-space:pre-wrap}
+    :root{font-family:system-ui,sans-serif;color:#14213d;background:#eef4ff}
+    body{max-width:820px;margin:0 auto;padding:32px 18px}
+    main{background:#fff;border-radius:24px;padding:28px;box-shadow:0 16px 40px #18315320}
+    label{display:block;font-weight:700;margin:16px 0 6px}
+    select,textarea{width:100%;box-sizing:border-box;padding:12px;border:1px solid #a9bad6;border-radius:12px;font:inherit}
+    textarea{min-height:150px;resize:vertical}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    button{border:0;border-radius:12px;padding:11px 18px;font-weight:700;cursor:pointer}
+    #check{background:#155eef;color:#fff} #reset{background:#e8eef8}
+    #result{margin-top:20px;padding:18px;border-radius:16px;background:#f4f7fc;white-space:pre-wrap}
+    @media(max-width:520px){main{padding:20px}.actions button{flex:1}}
   </style>
 </head>
 <body>
-  <h1>업무 요청 문장 점검기</h1>
-  <p>요청 목적, 담당 역할, 기한, 완료 기준이 보이는 문장을 입력하세요.</p>
-  <textarea id="input" aria-label="점검할 문장"></textarea>
-  <button id="check" type="button">점검하기</button>
-  <button id="reset" type="button">초기화</button>
-  <div id="result" aria-live="polite">결과가 여기에 표시됩니다.</div>
+  <main>
+    <h1>NOVA 회의 후속조치 점검기</h1>
+    <p>가상 회의 기록만 사용합니다. 목적·담당역할·기한·완료기준을 확인하세요.</p>
+    <label for="type">조치 유형</label>
+    <select id="type"><option>자료 정리</option><option>시설 확인</option><option>일정 조정</option></select>
+    <label for="input">후속조치 문장</label>
+    <textarea id="input" maxlength="600" placeholder="예: 목적..., 담당역할..., 기한..., 완료기준..."></textarea>
+    <div class="actions"><button id="check" type="button">점검하기</button><button id="reset" type="button">초기화</button></div>
+    <div id="result" aria-live="polite">결과가 여기에 표시됩니다.</div>
+  </main>
   <script>
-    const criteria = ["목적","담당","기한","완료"];
-    const input = document.querySelector("#input");
-    const result = document.querySelector("#result");
-
-    document.querySelector("#check").addEventListener("click", () => {
+    const criteria = ['목적','담당역할','기한','완료기준'];
+    const input = document.querySelector('#input');
+    const result = document.querySelector('#result');
+    document.querySelector('#check').addEventListener('click', () => {
       const value = input.value.trim();
-      if (!value) {
-        result.textContent = "입력 필요: 점검할 문장을 작성하세요.";
-        return;
-      }
-      result.textContent = criteria.map((item) =>
-        value.includes(item) ? "확인: " + item : "확인 필요: " + item
-      ).join("\n");
+      if (!value) { result.textContent = '입력 필요: 후속조치 문장을 작성하세요.'; return; }
+      const checks = criteria.map((item) => (value.includes(item) ? '확인: ' : '확인 필요: ') + item);
+      result.textContent = '유형: ' + document.querySelector('#type').value + '\n' + checks.join('\n');
     });
-
-    document.querySelector("#reset").addEventListener("click", () => {
-      input.value = "";
-      result.textContent = "결과가 여기에 표시됩니다.";
-      input.focus();
+    document.querySelector('#reset').addEventListener('click', () => {
+      input.value = ''; result.textContent = '결과가 여기에 표시됩니다.'; input.focus();
     });
+    // TODO(M08-D02): 결과 복사 버튼을 추가하고 성공·실패 상태를 안내하세요.
   </script>
 </body>
 </html>

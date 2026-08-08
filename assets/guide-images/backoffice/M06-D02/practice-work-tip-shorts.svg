@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+  <rect width="1600" height="900" fill="#F7F9FC"/>
+  
+    <rect x="54" y="46" width="1492" height="808" rx="32" fill="#FFFFFF" stroke="#C9D7EC" stroke-width="3"/>
+    <rect x="54" y="46" width="1492" height="74" rx="32" fill="#0B1F44"/>
+    <circle cx="98" cy="83" r="9" fill="#FF6B57"/><circle cx="128" cy="83" r="9" fill="#FBBF24"/><circle cx="158" cy="83" r="9" fill="#22C55E"/>
+    <text x="800" y="93" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="23" font-weight="650" fill="#D8E5FF" text-anchor="middle"><tspan x="800" dy="0">교육용 가상 화면 · 2026-08-08 기준</tspan></text>
+    <text x="101" y="181" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" font-weight="750" fill="#155EEF" text-anchor="start"><tspan x="101" dy="0">경영지원</tspan></text>
+    <text x="101" y="240" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="43" font-weight="800" fill="#0B1F44" text-anchor="start"><tspan x="101" dy="0">업무 팁 대본 → 35초 교육 쇼츠</tspan></text>
+    <text x="1498" y="232" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="23" font-weight="550" fill="#52627A" text-anchor="end"><tspan x="1498" dy="0">절차 정확성·자막·음량·권리 기록</tspan></text>
+    <rect x="98" y="294" width="446" height="414" rx="26" fill="#EAF2FF" stroke="#155EEF" stroke-width="2"/>
+      <rect x="98" y="294" width="446" height="78" rx="26" fill="#155EEF"/>
+      <text x="321" y="344" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="30" font-weight="750" fill="#FFFFFF" text-anchor="middle"><tspan x="321" dy="0">대본</tspan></text>
+      <rect x="126" y="390" width="390" height="76" rx="16" fill="#FFFFFF" stroke="#D6DFEE" stroke-width="2"/>
+        <circle cx="164" cy="428" r="16" fill="#155EEF" opacity="0.95"/>
+        <text x="194" y="438" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="194" dy="0">4초 훅</tspan></text>
+<rect x="126" y="495" width="390" height="76" rx="16" fill="#FFFFFF" stroke="#D6DFEE" stroke-width="2"/>
+        <circle cx="164" cy="533" r="16" fill="#155EEF" opacity="0.7999999999999999"/>
+        <text x="194" y="543" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="194" dy="0">절차 3단계</tspan></text>
+<rect x="126" y="600" width="390" height="76" rx="16" fill="#FFFFFF" stroke="#D6DFEE" stroke-width="2"/>
+        <circle cx="164" cy="638" r="16" fill="#155EEF" opacity="0.6499999999999999"/>
+        <text x="194" y="648" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="194" dy="0">마무리 CTA</tspan></text>
+<rect x="590" y="294" width="446" height="414" rx="26" fill="#EAF2FF" stroke="#155EEF" stroke-width="2"/>
+      <rect x="590" y="294" width="446" height="78" rx="26" fill="#155EEF"/>
+      <text x="813" y="344" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="30" font-weight="750" fill="#FFFFFF" text-anchor="middle"><tspan x="813" dy="0">자막</tspan></text>
+      <rect x="618" y="390" width="390" height="76" rx="16" fill="#FFFFFF" stroke="#D6DFEE" stroke-width="2"/>
+        <circle cx="656" cy="428" r="16" fill="#155EEF" opacity="0.95"/>
+        <text x="686" y="438" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="686" dy="0">용어 검수</tspan></text>
+<rect x="618" y="495" width="390" height="76" rx="16" fill="#FFFFFF" stroke="#D6DFEE" stroke-width="2"/>
+        <circle cx="656" cy="533" r="16" fill="#155EEF" opacity="0.7999999999999999"/>
+        <text x="686" y="543" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="686" dy="0">두 줄 이하</tspan></text>
+<rect x="618" y="600" width="390" height="76" rx="16" fill="#FFFFFF" stroke="#D6DFEE" stroke-width="2"/>
+        <circle cx="656" cy="638" r="16" fill="#155EEF" opacity="0.6499999999999999"/>
+        <text x="686" y="648" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="686" dy="0">타이밍</tspan></text>
+<rect x="1082" y="294" width="446" height="414" rx="26" fill="#EAF2FF" stroke="#155EEF" stroke-width="2"/>
+      <rect x="1082" y="294" width="446" height="78" rx="26" fill="#155EEF"/>
+      <text x="1305" y="344" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="30" font-weight="750" fill="#FFFFFF" text-anchor="middle"><tspan x="1305" dy="0">완성</tspan></text>
+      <rect x="1110" y="390" width="390" height="76" rx="16" fill="#FFFFFF" stroke="#D6DFEE" stroke-width="2"/>
+        <circle cx="1148" cy="428" r="16" fill="#155EEF" opacity="0.95"/>
+        <text x="1178" y="438" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="1178" dy="0">중립 음악</tspan></text>
+<rect x="1110" y="495" width="390" height="76" rx="16" fill="#FFFFFF" stroke="#D6DFEE" stroke-width="2"/>
+        <circle cx="1148" cy="533" r="16" fill="#155EEF" opacity="0.7999999999999999"/>
+        <text x="1178" y="543" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="1178" dy="0">음량 조정</tspan></text>
+<rect x="1110" y="600" width="390" height="76" rx="16" fill="#FFFFFF" stroke="#D6DFEE" stroke-width="2"/>
+        <circle cx="1148" cy="638" r="16" fill="#155EEF" opacity="0.6499999999999999"/>
+        <text x="1178" y="648" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="25" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="1178" dy="0">권리표</tspan></text>
+    <path d="M544 500 H580" stroke="#8FA6C7" stroke-width="8" stroke-linecap="round"/><path d="M1070 500 H1106" stroke="#8FA6C7" stroke-width="8" stroke-linecap="round"/>
+    <rect x="98" y="742" width="1404" height="76" rx="20" fill="#0B1F44"/>
+    <text x="800" y="790" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle"><tspan x="800" dy="0">오후 마케팅과 다른 결과: 정확한 업무 절차 + 읽기 쉬운 교육 자막</tspan></text>
+  
+</svg>

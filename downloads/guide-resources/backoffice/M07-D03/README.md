@@ -1,41 +1,28 @@
 # M07-D03 경영지원 실습자료
 
-## 1. 파일 목록
+기준일: 2026-08-08
 
-- `README.md`: 실습자료 안내
-- `m07-d03-backoffice-starter.md`: 시작 파일
-- `m07-d03-backoffice-samples.csv`: 샘플 데이터
-- `m07-d03-backoffice-practice-template.md`: 빈 실습 템플릿
-- `m07-d03-backoffice-prompt-pack.txt`: 프롬프트 모음
-- `m07-d03-backoffice-complete-example.md`: 완성 예시
+## 단독·연속 수강 원칙
 
-## 2. 권장 사용 순서
+- 이 과정만 수강해도 원자료·샘플·프롬프트·템플릿·완성 예시로 네 차시를 끝낼 수 있습니다.
+- 오전·오후를 모두 수강해도 입력 데이터·업무 규칙·오류·최종 산출물을 반복하지 않습니다.
+- 오후 마케팅과 달리 요청량·완료율·평균 처리일·만족도·비용과 운영 개선이 핵심입니다.
 
-1. 시작 파일을 복사해 작업본을 만든다.
-2. 샘플 CSV 한 건으로 먼저 실습한다.
-3. 프롬프트 모음에서 해당 차시 입력을 복사한다.
-4. 빈 템플릿에 결과·근거·오류·수정을 기록한다.
-5. 완성 예시와 구조만 비교한다.
+## 오늘의 과제
 
-## 3. 수강생 배포 파일
+12주 가상 업무 요청 데이터를 사람이 먼저 계산한 뒤 ChatGPT 분석과 대조해 사실·해석·가설을 구분합니다.
 
-- 시작 파일: `downloads/guide-resources/backoffice/M07-D03/starter/m07-d03-backoffice-starter.md`
-- 샘플 데이터: `downloads/guide-resources/backoffice/M07-D03/samples/m07-d03-backoffice-samples.csv`
-- 빈 실습 템플릿: `downloads/guide-resources/backoffice/M07-D03/templates/m07-d03-backoffice-practice-template.md`
-- 프롬프트 모음: `downloads/guide-resources/backoffice/M07-D03/templates/m07-d03-backoffice-prompt-pack.txt`
+## 파일 구성
 
-## 4. 강사용 파일
+- starter/m07-d03-backoffice-source-pack.md: 직무별 교육 원자료
+- starter/m07-d03-backoffice-starter.md: 차시별 시작 파일
+- samples/m07-d03-backoffice-samples.csv: 복사 가능한 가상 입력 데이터
+- templates/m07-d03-backoffice-practice-template.md: 빈 결과물 틀
+- templates/m07-d03-backoffice-prompt-pack.txt: 복사 프롬프트
+- solutions/m07-d03-backoffice-complete-example.md: 완성 예시
 
-- 완성 예시: `downloads/guide-resources/backoffice/M07-D03/solutions/m07-d03-backoffice-complete-example.md`
-- 샘플 첫 행은 강사 시연용으로 사용한다.
+## 안전 기준
 
-## 5. 파일별 주의사항
-
-- 완성 예시는 실제 도구의 고정 출력이나 정답이 아니다.
-- 코드 파일은 실습용 사본에서만 사용하고 실행 전 설정값과 권한을 확인한다.
-- 화면이나 제공 기능이 다르면 가이드의 대체 실습으로 전환한다.
-
-## 6. 보안 및 개인정보 안내
-
-- 가상·비식별 데이터만 사용하고, AI가 계산한 수치와 해석을 원본 Sheet에서 다시 검증한다.
-- 실제 기관명·개인정보·고객정보·API 키를 입력하거나 저장하지 않는다.
+- 실제 개인정보·조직 내부 데이터·자격증명·API 키를 넣지 않습니다.
+- 기능·메뉴·요금·한도는 수업 계정에서 확인합니다.
+- 필수값·담당 역할·기한·권한·원본 수치를 사람이 최종 확인합니다.

@@ -1,43 +1,30 @@
 # M08-D02 마케팅 실습자료
 
-## 1. 파일 목록
+기준일: 2026-08-08
 
-- `README.md`: 실습자료 안내
-- `m08-d02-marketing-starter.md`: 시작 파일
-- `m08-d02-marketing-samples.csv`: 샘플 데이터
-- `m08-d02-marketing-practice-template.md`: 빈 실습 템플릿
-- `m08-d02-marketing-prompt-pack.txt`: 프롬프트 모음
-- `m08-d02-marketing-complete-example.md`: 완성 예시
-- `m08-d02-marketing-app-starter.html`: 별도 코드 파일
+## 단독·연속 수강 원칙
 
-## 2. 권장 사용 순서
+- 이 과정만 수강해도 원자료·샘플·프롬프트·템플릿·완성 예시로 네 차시를 끝낼 수 있습니다.
+- 오전·오후를 모두 수강해도 가상 조직·입력·기능·오류·최종 산출물을 반복하지 않습니다.
+- 오전 경영지원과 달리 채널·금지표현·글자 수 상태와 채널별 권장 길이를 검증합니다.
 
-1. 시작 파일을 복사해 작업본을 만든다.
-2. 샘플 CSV 한 건으로 먼저 실습한다.
-3. 프롬프트 모음에서 해당 차시 입력을 복사한다.
-4. 빈 템플릿에 결과·근거·오류·수정을 기록한다.
-5. 완성 예시와 구조만 비교한다.
+## 오늘의 과제
 
-## 3. 수강생 배포 파일
+독립 실행되는 BLOOM BITE HTML 스타터의 파일 구조를 설명하게 하고 실시간 글자 수 기능 하나를 추가한 뒤 채널별 테스트와 변경 보고서를 완성합니다.
 
-- 시작 파일: `downloads/guide-resources/marketing/M08-D02/starter/m08-d02-marketing-starter.md`
-- 샘플 데이터: `downloads/guide-resources/marketing/M08-D02/samples/m08-d02-marketing-samples.csv`
-- 빈 실습 템플릿: `downloads/guide-resources/marketing/M08-D02/templates/m08-d02-marketing-practice-template.md`
-- 프롬프트 모음: `downloads/guide-resources/marketing/M08-D02/templates/m08-d02-marketing-prompt-pack.txt`
-- 별도 코드 파일: `downloads/guide-resources/marketing/M08-D02/starter/m08-d02-marketing-app-starter.html`
+## 파일 구성
 
-## 4. 강사용 파일
+- starter/m08-d02-marketing-source-pack.md: 직무별 교육 원자료
+- starter/m08-d02-marketing-starter.md: 차시별 시작 파일
+- starter/m08-d02-marketing-app-starter.html: 로컬 실행용 교육 앱
+- samples/m08-d02-marketing-samples.csv: 복사 가능한 가상 입력 데이터
+- templates/m08-d02-marketing-practice-template.md: 빈 결과물 틀
+- templates/m08-d02-marketing-prompt-pack.txt: 복사 프롬프트
+- solutions/m08-d02-marketing-complete-example.md: 완성 예시
 
-- 완성 예시: `downloads/guide-resources/marketing/M08-D02/solutions/m08-d02-marketing-complete-example.md`
-- 샘플 첫 행은 강사 시연용으로 사용한다.
+## 안전 기준
 
-## 5. 파일별 주의사항
-
-- 완성 예시는 실제 도구의 고정 출력이나 정답이 아니다.
-- 코드 파일은 실습용 사본에서만 사용하고 실행 전 설정값과 권한을 확인한다.
-- 화면이나 제공 기능이 다르면 가이드의 대체 실습으로 전환한다.
-
-## 6. 보안 및 개인정보 안내
-
-- 저장소의 API 키·환경 변수·개인정보를 프롬프트나 보고서에 복사하지 않고, 삭제·배포·외부 전송은 별도 승인 없이 하지 않는다.
-- 실제 기관명·개인정보·고객정보·API 키를 입력하거나 저장하지 않는다.
+- 실제 개인정보·조직 내부자료·자격증명·API 키를 넣지 않습니다.
+- 도구 기능·메뉴·요금·한도는 수업 계정에서 직접 확인합니다.
+- 삭제·배포·발송·외부 등록은 사람 승인 없이 수행하지 않습니다.
+- 브랜드 사실·채널·타깃·금지 표현·검토 상태를 사람이 최종 확인합니다.

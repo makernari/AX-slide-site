@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+  <rect width="1600" height="900" fill="#F7F9FC"/>
+  
+    <rect x="64" y="54" width="1472" height="792" rx="34" fill="#FFFFFF" stroke="#C9D7EC" stroke-width="3"/>
+    <rect x="64" y="54" width="1472" height="160" rx="34" fill="#0B1F44"/>
+    <rect x="108" y="94" width="248" height="58" rx="29" fill="#FF6B57"/>
+    <text x="232" y="133" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="27" font-weight="750" fill="#FFFFFF" text-anchor="middle"><tspan x="232" dy="0">최신 업데이트 카드</tspan></text>
+    <text x="1490" y="132" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="24" font-weight="600" fill="#D8E5FF" text-anchor="end"><tspan x="1490" dy="0">2026-08-08 확인</tspan></text>
+    <text x="104" y="275" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="45" font-weight="800" fill="#0B1F44" text-anchor="start"><tspan x="104" dy="0">리서치 계획과 GPT 권한은 계정에 따라 달라집니다</tspan></text>
+    <rect x="105" y="310" width="1390" height="94" rx="22" fill="#FFFFFF" stroke="#D9E2F2" stroke-width="2"/>
+      <circle cx="158" cy="357" r="25" fill="#FF6B57"/>
+      <text x="158" y="367" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+      <text x="210" y="368" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="29" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="210" dy="0">Deep Research는 시작 전 계획과 사용할 출처 범위를 검토·수정 가능</tspan></text>
+<rect x="105" y="436" width="1390" height="94" rx="22" fill="#FFFFFF" stroke="#D9E2F2" stroke-width="2"/>
+      <circle cx="158" cy="483" r="25" fill="#FF6B57"/>
+      <text x="158" y="493" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+      <text x="210" y="494" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="29" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="210" dy="0">파일·웹사이트·연결 앱을 출처로 사용하고 보고서에서 근거를 확인</tspan></text>
+<rect x="105" y="562" width="1390" height="94" rx="22" fill="#FFFFFF" stroke="#D9E2F2" stroke-width="2"/>
+      <circle cx="158" cy="609" r="25" fill="#FF6B57"/>
+      <text x="158" y="619" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+      <text x="210" y="620" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="29" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="210" dy="0">GPT 제작·편집은 웹 유료 환경과 워크스페이스 권한이 필요</tspan></text>
+    <rect x="105" y="684" width="900" height="136" rx="22" fill="#EAF2FF"/>
+    <text x="137" y="714" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="20" font-weight="650" fill="#155EEF" text-anchor="start"><tspan x="137" dy="0">수업 반영</tspan><tspan x="137" dy="27">리서치 보고서와 GPT 설계표를 별도 문서로 완성해 유료</tspan><tspan x="137" dy="27">기능이 없어도 동일한 학습 결과를 남깁니다.</tspan></text>
+    <rect x="1030" y="684" width="465" height="136" rx="22" fill="#FFF1E8"/>
+    <text x="1060" y="714" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="19" font-weight="650" fill="#9A3412" text-anchor="start"><tspan x="1060" dy="0">확인</tspan><tspan x="1060" dy="25">모델명과 메뉴 위치를 평가하지</tspan><tspan x="1060" dy="25">않고 근거·거절·출력 형식·테스트</tspan><tspan x="1060" dy="25">결과를 평가합니다.</tspan></text>
+    <text x="800" y="842" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="18" font-weight="500" fill="#667085" text-anchor="middle"><tspan x="800" dy="0">교육용 요약 · 메뉴와 제공 범위는 수업 계정에서 확인</tspan></text>
+  
+</svg>

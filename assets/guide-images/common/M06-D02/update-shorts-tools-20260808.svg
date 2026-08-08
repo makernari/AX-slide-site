@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+  <rect width="1600" height="900" fill="#F7F9FC"/>
+  
+    <rect x="64" y="54" width="1472" height="792" rx="34" fill="#FFFFFF" stroke="#C9D7EC" stroke-width="3"/>
+    <rect x="64" y="54" width="1472" height="160" rx="34" fill="#0B1F44"/>
+    <rect x="108" y="94" width="248" height="58" rx="29" fill="#FF6B57"/>
+    <text x="232" y="133" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="27" font-weight="750" fill="#FFFFFF" text-anchor="middle"><tspan x="232" dy="0">최신 업데이트 카드</tspan></text>
+    <text x="1490" y="132" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="24" font-weight="600" fill="#D8E5FF" text-anchor="end"><tspan x="1490" dy="0">2026-08-08 확인</tspan></text>
+    <text x="104" y="275" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="45" font-weight="800" fill="#0B1F44" text-anchor="start"><tspan x="104" dy="0">쇼츠 도구보다 대본·자막·권리표를 먼저 고정하세요</tspan></text>
+    <rect x="105" y="310" width="1390" height="94" rx="22" fill="#FFFFFF" stroke="#D9E2F2" stroke-width="2"/>
+      <circle cx="158" cy="357" r="25" fill="#FF6B57"/>
+      <text x="158" y="367" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+      <text x="210" y="368" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="29" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="210" dy="0">Vrew는 자동 자막·텍스트 기반 편집·AI 음성 흐름을 제공</tspan></text>
+<rect x="105" y="436" width="1390" height="94" rx="22" fill="#FFFFFF" stroke="#D9E2F2" stroke-width="2"/>
+      <circle cx="158" cy="483" r="25" fill="#FF6B57"/>
+      <text x="158" y="493" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+      <text x="210" y="494" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="29" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="210" dy="0">Suno v5.5는 Voices·Custom Models·My Taste 기능을 추가</tspan></text>
+<rect x="105" y="562" width="1390" height="94" rx="22" fill="#FFFFFF" stroke="#D9E2F2" stroke-width="2"/>
+      <circle cx="158" cy="609" r="25" fill="#FF6B57"/>
+      <text x="158" y="619" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+      <text x="210" y="620" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="29" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="210" dy="0">CapCut 자동 자막은 Web·Desktop·Mobile에서 가능하나 세부 기능은 다름</tspan></text>
+    <rect x="105" y="684" width="900" height="136" rx="22" fill="#EAF2FF"/>
+    <text x="137" y="714" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="20" font-weight="650" fill="#155EEF" text-anchor="start"><tspan x="137" dy="0">수업 반영</tspan><tspan x="137" dy="27">35초 또는 30초 대본과 자막 타이밍을 먼저 완성하고,</tspan><tspan x="137" dy="27">음악·영상 편집 도구는 교체 가능한 단계로 사용합니다.</tspan></text>
+    <rect x="1030" y="684" width="465" height="136" rx="22" fill="#FFF1E8"/>
+    <text x="1060" y="714" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="19" font-weight="650" fill="#9A3412" text-anchor="start"><tspan x="1060" dy="0">확인</tspan><tspan x="1060" dy="25">음원 사용 권한은 생성 도구·구독</tspan><tspan x="1060" dy="25">상태·게시 채널별로 다시 확인하고</tspan><tspan x="1060" dy="25">결과물에 기록합니다.</tspan></text>
+    <text x="800" y="842" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="18" font-weight="500" fill="#667085" text-anchor="middle"><tspan x="800" dy="0">교육용 요약 · 메뉴와 제공 범위는 수업 계정에서 확인</tspan></text>
+  
+</svg>

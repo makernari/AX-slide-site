@@ -1,41 +1,37 @@
 # M09-D01 마케팅 실습자료
 
-## 1. 파일 목록
+기준일: 2026-08-08
 
-- `README.md`: 실습자료 안내
-- `m09-d01-marketing-starter.md`: 시작 파일
-- `m09-d01-marketing-samples.csv`: 샘플 데이터
-- `m09-d01-marketing-practice-template.md`: 빈 실습 템플릿
-- `m09-d01-marketing-prompt-pack.txt`: 프롬프트 모음
-- `m09-d01-marketing-complete-example.md`: 완성 예시
+## 단독·연속 수강 원칙
 
-## 2. 권장 사용 순서
+- 이 과정만 수강해도 제공 원자료·샘플·프롬프트·템플릿·완성 예시로 네 차시를 끝낼 수 있습니다.
+- 이전 모듈 결과물이 있으면 자신의 결과물을 쓰고, 없으면 m09-d01-marketing-source-pack.md의 가상 이전 결과물을 사용합니다.
+- 오전·오후를 모두 수강해도 가상 조직·입력·판정·오류·루브릭·최종 피치가 반복되지 않습니다.
+- 경영지원 과정과 달리 브랜드 팩트·금지 표현·타깃·Instagram CTA·자산 권리를 판정하며, 회의 담당 역할이나 기한을 사용하지 않습니다.
 
-1. 시작 파일을 복사해 작업본을 만든다.
-2. 샘플 CSV 한 건으로 먼저 실습한다.
-3. 프롬프트 모음에서 해당 차시 입력을 복사한다.
-4. 빈 템플릿에 결과·근거·오류·수정을 기록한다.
-5. 완성 예시와 구조만 비교한다.
+## 오늘의 과제
 
-## 3. 수강생 배포 파일
+제공된 가상 브랜드 브리프와 의도적으로 오류가 있는 AI 카피를 사용해, 재직자가 45분 안에 근거·채널 적합성 검증표와 수정 카피를 완성하는 120분 수업을 설계합니다.
 
-- 시작 파일: `downloads/guide-resources/marketing/M09-D01/starter/m09-d01-marketing-starter.md`
-- 샘플 데이터: `downloads/guide-resources/marketing/M09-D01/samples/m09-d01-marketing-samples.csv`
-- 빈 실습 템플릿: `downloads/guide-resources/marketing/M09-D01/templates/m09-d01-marketing-practice-template.md`
-- 프롬프트 모음: `downloads/guide-resources/marketing/M09-D01/templates/m09-d01-marketing-prompt-pack.txt`
+## 권장 사용 순서
 
-## 4. 강사용 파일
+1. starter/m09-d01-marketing-source-pack.md에서 대상·현업 문제·입력·완료 루브릭을 읽습니다.
+2. starter/m09-d01-marketing-starter.md의 네 차시 체크포인트를 작업본에 복사합니다.
+3. samples/m09-d01-marketing-samples.csv의 첫 사례로 시연하고 나머지를 직접 검증합니다.
+4. templates/m09-d01-marketing-practice-template.md에 네 결과물과 피드백 반영을 작성합니다.
+5. solutions/m09-d01-marketing-complete-example.md와 정답 문구가 아니라 구조·근거·합계만 비교합니다.
 
-- 완성 예시: `downloads/guide-resources/marketing/M09-D01/solutions/m09-d01-marketing-complete-example.md`
-- 샘플 첫 행은 강사 시연용으로 사용한다.
+## 파일 구성
 
-## 5. 파일별 주의사항
+- starter/m09-d01-marketing-source-pack.md: 직무별 가상 이전 결과물과 평가 기준
+- starter/m09-d01-marketing-starter.md: 네 차시 시작 파일
+- samples/m09-d01-marketing-samples.csv: 정상·오류·안전 경계 사례
+- templates/m09-d01-marketing-practice-template.md: 한 장 수업안·5단계·120분·피치 틀
+- templates/m09-d01-marketing-prompt-pack.txt: 네 차시 복사 프롬프트
+- solutions/m09-d01-marketing-complete-example.md: 완성 예시
 
-- 완성 예시는 실제 도구의 고정 출력이나 정답이 아니다.
-- 코드 파일은 실습용 사본에서만 사용하고 실행 전 설정값과 권한을 확인한다.
-- 화면이나 제공 기능이 다르면 가이드의 대체 실습으로 전환한다.
+## 안전 기준
 
-## 6. 보안 및 개인정보 안내
-
-- 수업 사례와 자료는 비식별·교육용으로 바꾸고, 수강생에게 불필요한 개인정보나 내부 자료 제출을 요구하지 않는다.
-- 실제 기관명·개인정보·고객정보·API 키를 입력하거나 저장하지 않는다.
+- 실제 개인정보·조직 내부자료·고객자료·자격증명·API 키를 넣지 않습니다.
+- 도구 메뉴·요금·한도는 추측하지 않고 수업 당일 실제 계정에서 확인합니다.
+- 승인 팩트·메시지 근거·타깃·채널·금지 표현·자산 권리를 사람이 최종 확인합니다.

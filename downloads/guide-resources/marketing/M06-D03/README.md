@@ -1,41 +1,29 @@
 # M06-D03 마케팅 실습자료
 
-## 1. 파일 목록
+기준일: 2026-08-08
 
-- `README.md`: 실습자료 안내
-- `m06-d03-marketing-starter.md`: 시작 파일
-- `m06-d03-marketing-samples.csv`: 샘플 데이터
-- `m06-d03-marketing-practice-template.md`: 빈 실습 템플릿
-- `m06-d03-marketing-prompt-pack.txt`: 프롬프트 모음
-- `m06-d03-marketing-complete-example.md`: 완성 예시
+## 단독·연속 수강 원칙
 
-## 2. 권장 사용 순서
+- 이 과정만 수강해도 원자료·프롬프트·템플릿·완성 예시만으로 실습할 수 있습니다.
+- 오전·오후를 모두 수강해도 다른 직무의 브리프와 결과물을 반복하지 않습니다.
+- 오전 경영지원과 달리 시장·채널 맥락, 브랜드 사실, 카피 과장과 CTA 적합성이 핵심입니다.
 
-1. 시작 파일을 복사해 작업본을 만든다.
-2. 샘플 CSV 한 건으로 먼저 실습한다.
-3. 프롬프트 모음에서 해당 차시 입력을 복사한다.
-4. 빈 템플릿에 결과·근거·오류·수정을 기록한다.
-5. 완성 예시와 구조만 비교한다.
+## 오늘의 과제
 
-## 3. 수강생 배포 파일
+가상 제품 자료와 채널 반응을 구분해 캠페인 방향 보고서와 과장 표현을 막는 GPT를 설계합니다.
 
-- 시작 파일: `downloads/guide-resources/marketing/M06-D03/starter/m06-d03-marketing-starter.md`
-- 샘플 데이터: `downloads/guide-resources/marketing/M06-D03/samples/m06-d03-marketing-samples.csv`
-- 빈 실습 템플릿: `downloads/guide-resources/marketing/M06-D03/templates/m06-d03-marketing-practice-template.md`
-- 프롬프트 모음: `downloads/guide-resources/marketing/M06-D03/templates/m06-d03-marketing-prompt-pack.txt`
+## 파일 구성
 
-## 4. 강사용 파일
+- starter/m06-d03-marketing-source-pack.md: 실제 실습용 교육 원자료
+- starter/m06-d03-marketing-starter.md: 단계별 시작 파일
+- samples/m06-d03-marketing-samples.csv: 검수용 표 데이터
+- templates/m06-d03-marketing-practice-template.md: 빈 결과물 틀
+- templates/m06-d03-marketing-prompt-pack.txt: 복사 프롬프트
+- solutions/m06-d03-marketing-complete-example.md: 완성 예시
 
-- 완성 예시: `downloads/guide-resources/marketing/M06-D03/solutions/m06-d03-marketing-complete-example.md`
-- 샘플 첫 행은 강사 시연용으로 사용한다.
+## 권장 순서
 
-## 5. 파일별 주의사항
-
-- 완성 예시는 실제 도구의 고정 출력이나 정답이 아니다.
-- 코드 파일은 실습용 사본에서만 사용하고 실행 전 설정값과 권한을 확인한다.
-- 화면이나 제공 기능이 다르면 가이드의 대체 실습으로 전환한다.
-
-## 6. 보안 및 개인정보 안내
-
-- 공개·교육용 자료만 조사하고 개인정보·내부 문서·로그인 정보는 Project나 GPT 지식에 넣지 않는다.
-- 실제 기관명·개인정보·고객정보·API 키를 입력하거나 저장하지 않는다.
+1. 원자료의 확정 사실·금지·권리·한계를 먼저 표시합니다.
+2. 시작 파일의 네 차시를 순서대로 수행합니다.
+3. 결과를 원자료와 대조하고 브랜드 사실·과장 표현·채널 권리를 확인합니다.
+4. 도구를 사용할 수 없으면 문서형 대체 결과물을 제출합니다.

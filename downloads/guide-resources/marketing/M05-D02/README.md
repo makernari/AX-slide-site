@@ -1,41 +1,32 @@
 # M05-D02 마케팅 실습자료
 
-## 1. 파일 목록
+기준일: 2026-08-08
 
-- `README.md`: 실습자료 안내
-- `m05-d02-marketing-starter.md`: 시작 파일
-- `m05-d02-marketing-samples.csv`: 샘플 데이터
-- `m05-d02-marketing-practice-template.md`: 빈 실습 템플릿
-- `m05-d02-marketing-prompt-pack.txt`: 프롬프트 모음
-- `m05-d02-marketing-complete-example.md`: 완성 예시
+## 핵심 원칙
 
-## 2. 권장 사용 순서
+- 이 과정만 수강해도 실습할 수 있도록 원자료·프롬프트·템플릿·완성 예시를 모두 포함합니다.
+- 오전·오후를 모두 수강해도 다른 직무의 원자료와 결과를 반복하지 않습니다.
+- 오전 경영지원과 달리 아이디어·브랜드 사실·채널·게시 상태가 핵심이며, 결과는 콘텐츠 회의록과 제작 일정표입니다.
 
-1. 시작 파일을 복사해 작업본을 만든다.
-2. 샘플 CSV 한 건으로 먼저 실습한다.
-3. 프롬프트 모음에서 해당 차시 입력을 복사한다.
-4. 빈 템플릿에 결과·근거·오류·수정을 기록한다.
-5. 완성 예시와 구조만 비교한다.
+## 파일 목록
 
-## 3. 수강생 배포 파일
+- `starter/m05-d02-marketing-starter.md`: 시작 파일
+- `starter/m05-d02-marketing-source-pack.md`: 실제 실습용 교육 원자료
+- `samples/m05-d02-marketing-samples.csv`: 원자료 검증용 표 데이터
+- `templates/m05-d02-marketing-practice-template.md`: 빈 실습 템플릿
+- `templates/m05-d02-marketing-prompt-pack.txt`: 복사 가능한 프롬프트
+- `solutions/m05-d02-marketing-complete-example.md`: 직무형 완성 예시
 
-- 시작 파일: `downloads/guide-resources/marketing/M05-D02/starter/m05-d02-marketing-starter.md`
-- 샘플 데이터: `downloads/guide-resources/marketing/M05-D02/samples/m05-d02-marketing-samples.csv`
-- 빈 실습 템플릿: `downloads/guide-resources/marketing/M05-D02/templates/m05-d02-marketing-practice-template.md`
-- 프롬프트 모음: `downloads/guide-resources/marketing/M05-D02/templates/m05-d02-marketing-prompt-pack.txt`
+## 권장 순서
 
-## 4. 강사용 파일
+1. 원자료를 먼저 읽고 사실·제안·충돌을 표시합니다.
+2. 샘플 CSV 한 건으로 출력 구조를 확인합니다.
+3. 첫 결과를 만든 뒤 원자료와 대조합니다.
+4. 정상·모호·누락 입력으로 반복 테스트합니다.
+5. 완성 예시는 마지막에 구조와 검증 방식만 비교합니다.
 
-- 완성 예시: `downloads/guide-resources/marketing/M05-D02/solutions/m05-d02-marketing-complete-example.md`
-- 샘플 첫 행은 강사 시연용으로 사용한다.
+## 보안
 
-## 5. 파일별 주의사항
-
-- 완성 예시는 실제 도구의 고정 출력이나 정답이 아니다.
-- 코드 파일은 실습용 사본에서만 사용하고 실행 전 설정값과 권한을 확인한다.
-- 화면이나 제공 기능이 다르면 가이드의 대체 실습으로 전환한다.
-
-## 6. 보안 및 개인정보 안내
-
-- 녹음 전 참여자 동의를 받고 실제 인명·연락처·기관 내부 발언을 실습 자료에 넣지 않는다.
-- 실제 기관명·개인정보·고객정보·API 키를 입력하거나 저장하지 않는다.
+- 교육용 가상 자료만 사용합니다.
+- 실제 인명·연락처·기관 내부 수치·운영 자격증명은 넣지 않습니다.
+- 공유 전 목표·타깃·브랜드 사실·채널·과장·저작권를 사람이 확인합니다.

@@ -4,7 +4,6 @@
   const MANIFEST_URL = "./data/slide-manifest.json";
   const SLIDE_ASSET_ROOT = "./assets/slides/";
   const STORAGE_KEY = "ax-slide-site-course";
-  const GUIDE_RETURN_KEY = "ax-slide-site-guide-return";
 
   const COURSE_META = {
     backoffice: {
@@ -14,8 +13,6 @@
       description:
         "문서·회의·자동화·데이터·업무 앱을 하나의 실무 흐름으로 연결하는 강의교안",
       className: "backoffice",
-      guideUrl:
-        "https://makernari.notion.site/ebd//3a858b0b4ef5809ea788e872ea472acd",
     },
     marketing: {
       dataValue: "MARKETING",
@@ -24,8 +21,6 @@
       description:
         "리서치·콘텐츠 제작·브랜딩·자동화·콘텐츠 앱을 연결하는 강의교안",
       className: "marketing",
-      guideUrl:
-        "https://makernari.notion.site/ebd//3a858b0b4ef580e4a6b7e73ddd9a488c",
     },
   };
 
@@ -129,7 +124,6 @@
     const [course, module, day, order] = segments;
     if (!COURSE_META[course]) return { screen: "not-found" };
     if (!module) return { screen: "course", course };
-    if (module === "guide") return { screen: "guide", course };
     if (!day) return { screen: "module", course, module };
     if (!order) return { screen: "day", course, module, day };
     return { screen: "viewer", course, module, day, order };
@@ -152,68 +146,9 @@
     }
   }
 
-  function guideButton(courseKey, className = "text-button") {
-    return `
-      <button
-        class="${className} guide-button"
-        type="button"
-        data-action="open-guide"
-        data-guide-course="${escapeHtml(courseKey)}"
-      >
-        <span class="guide-label-full">실습 가이드</span>
-        <span class="guide-label-short" aria-hidden="true">가이드</span>
-      </button>
-    `;
-  }
-
-  function isGuideReturnHash(hash, courseKey) {
-    const escapedCourse = courseKey.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    return new RegExp(
-      `^#/${escapedCourse}(?:/M0[5-9](?:/D\\d{2}(?:/\\d{3})?)?)?$`,
-    ).test(hash);
-  }
-
-  function saveGuideReturn(courseKey) {
-    const fallback = route(courseKey);
-    const currentHash = window.location.hash || fallback;
-    const returnHash = isGuideReturnHash(currentHash, courseKey)
-      ? currentHash
-      : fallback;
-    try {
-      window.sessionStorage.setItem(
-        `${GUIDE_RETURN_KEY}:${courseKey}`,
-        returnHash,
-      );
-    } catch {
-      // Session storage is optional; the course home remains a safe fallback.
-    }
-  }
-
-  function loadGuideReturn(courseKey) {
-    const fallback = route(courseKey);
-    try {
-      const saved = window.sessionStorage.getItem(
-        `${GUIDE_RETURN_KEY}:${courseKey}`,
-      );
-      if (saved && isGuideReturnHash(saved, courseKey)) {
-        return saved;
-      }
-    } catch {
-      // Session storage is optional; the course home remains a safe fallback.
-    }
-    return fallback;
-  }
-
-  function openGuide(courseKey) {
-    if (!COURSE_META[courseKey]) return;
-    saveGuideReturn(courseKey);
-    navigate(route(courseKey, "guide"));
-  }
-
   function siteHeader(courseKey = null) {
     const courseActions = courseKey
       ? `
-        ${guideButton(courseKey)}
         <button class="text-button" type="button" data-route="${route("select")}">과정 변경</button>
       `
       : "";
@@ -425,75 +360,6 @@
     `;
   }
 
-  function renderGuide(courseKey) {
-    const meta = COURSE_META[courseKey];
-    if (!meta?.guideUrl) {
-      renderNotFound(courseKey);
-      return;
-    }
-    const returnTarget = loadGuideReturn(courseKey);
-    app.innerHTML = `
-      <main class="guide-view" aria-labelledby="guide-title">
-        <header class="guide-header">
-          <button class="brand-button" type="button" data-route="${route(courseKey)}" aria-label="${escapeHtml(meta.fullLabel)} 강의교안 홈">
-            <span class="brand-mark" aria-hidden="true">AX</span>
-            <span class="brand-label">${escapeHtml(meta.label)} · 실습 가이드</span>
-          </button>
-          <button class="primary-button guide-return-button" type="button" data-route="${escapeHtml(returnTarget)}">
-            교안으로 돌아가기
-          </button>
-        </header>
-        <section class="guide-main">
-          <div class="guide-heading">
-            <div>
-              ${courseBadge(courseKey)}
-              <h1 id="guide-title">실습 가이드</h1>
-            </div>
-            <p>Notion에서 관리되는 최신 실습 내용을 이 화면에서 확인할 수 있습니다.</p>
-          </div>
-          <div class="guide-frame-shell">
-            <div class="guide-loading" data-guide-status role="status">실습 가이드를 불러오는 중입니다.</div>
-            <iframe
-              class="guide-frame"
-              data-guide-frame
-              src="${escapeHtml(meta.guideUrl)}"
-              title="${escapeHtml(`${meta.fullLabel} 실습 가이드`)}"
-              loading="eager"
-              referrerpolicy="strict-origin-when-cross-origin"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-modals"
-              allow="fullscreen"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </section>
-      </main>
-    `;
-    setupGuideFrame();
-  }
-
-  function setupGuideFrame() {
-    const frame = document.querySelector("[data-guide-frame]");
-    const status = document.querySelector("[data-guide-status]");
-    if (!frame || !status) return;
-    frame.addEventListener(
-      "load",
-      () => {
-        status.hidden = true;
-        frame.dataset.loaded = "true";
-      },
-      { once: true },
-    );
-    frame.addEventListener(
-      "error",
-      () => {
-        status.textContent =
-          "실습 가이드를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.";
-        status.dataset.error = "true";
-      },
-      { once: true },
-    );
-  }
-
   function imagePath(slide) {
     const courseFolder = COURSE_ASSET_FOLDER[slide.course];
     return `${SLIDE_ASSET_ROOT}${encodeURIComponent(slide.module)}/${courseFolder}/${encodeURIComponent(slide.image_filename)}`;
@@ -647,7 +513,6 @@
             <select class="viewer-select" id="day-select" data-jump="day">${dayOptions}</select>
           </div>
           <div class="viewer-actions">
-            ${guideButton(courseKey, "icon-button")}
             <button class="icon-button" type="button" data-action="open-toc" aria-label="모듈과 일자 목차 열기">목차</button>
             <button class="icon-button" type="button" data-action="fullscreen" aria-label="전체 화면 발표 시작">
               <span class="fullscreen-label">전체 화면</span>
@@ -753,9 +618,6 @@
       case "day":
         renderDay(current.course, current.module, current.day);
         break;
-      case "guide":
-        renderGuide(current.course);
-        break;
       case "viewer":
         renderViewer(
           current.course,
@@ -853,9 +715,6 @@
         break;
       case "fullscreen":
         toggleFullscreen();
-        break;
-      case "open-guide":
-        openGuide(actionTarget.dataset.guideCourse);
         break;
       case "open-toc":
         openToc();
