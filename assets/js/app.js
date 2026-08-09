@@ -282,7 +282,7 @@
   }
 
   function dayTitle(slides) {
-    return slides[0]?.title ?? "강의교안";
+    return slides[0]?.day_title ?? slides[0]?.title ?? "강의교안";
   }
 
   function renderModule(courseKey, module) {

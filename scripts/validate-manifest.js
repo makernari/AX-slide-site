@@ -27,6 +27,8 @@ const REQUIRED_FIELDS = [
   "review_status",
 ];
 
+const OPTIONAL_FIELDS = ["day_title"];
+
 const EXPECTED_MODULE_DAYS = {
   M05: 4,
   M06: 3,
@@ -129,9 +131,13 @@ function validateRecord(slide, index, seenIds, seenImages) {
     if (slide[field] === "") fail(`${label}: 빈 필드 - ${field}`);
   }
   const extras = Object.keys(slide).filter(
-    (field) => !REQUIRED_FIELDS.includes(field),
+    (field) =>
+      !REQUIRED_FIELDS.includes(field) && !OPTIONAL_FIELDS.includes(field),
   );
   if (extras.length) warn(`${label}: 정의되지 않은 추가 필드 - ${extras.join(", ")}`);
+  if ("day_title" in slide && !String(slide.day_title).trim()) {
+    fail(`${label}: 빈 선택 필드 - day_title`);
+  }
 
   if (seenIds.has(slide.id)) fail(`${label}: 중복 ID - ${slide.id}`);
   seenIds.add(slide.id);
