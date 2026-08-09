@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BASE_URL = "https://raw.githubusercontent.com/makernari/AX-slide-site/main/";
+const RESOURCE_URL = "https://makernari.github.io/AX-slide-site/";
 const AS_OF = "2026-08-08";
 const DAY_ID = "M09-D01";
 const MARKER_START = "<!-- M09-20260808-REFRESH:START -->";
@@ -804,9 +805,9 @@ function guideInsert(roleKey, pack, guideType) {
     "- 이전 결과물이 없으면 아래 원자료에 포함된 가상 이전 결과물로 네 차시를 모두 완성합니다.",
     "- 연속 수강 시 신규성: " + pack.difference,
     "",
-    "- [직무별 원자료 열기](" + BASE_URL + sourcePath + ")",
-    "- [샘플 CSV 열기](" + BASE_URL + resourceRoot + "samples/" + filePrefix + "-samples.csv)",
-    "- [빈 수업안 템플릿 열기](" + BASE_URL + resourceRoot + "templates/" + filePrefix + "-practice-template.md)",
+    "- [직무별 원자료 열기](" + RESOURCE_URL + sourcePath + ")",
+    "- [샘플 CSV 열기](" + RESOURCE_URL + resourceRoot + "samples/" + filePrefix + "-samples.csv)",
+    "- [빈 수업안 템플릿 열기](" + RESOURCE_URL + resourceRoot + "templates/" + filePrefix + "-practice-template.md)",
     "",
     "### 따라 하기 화면 1 · 5단계",
     "",

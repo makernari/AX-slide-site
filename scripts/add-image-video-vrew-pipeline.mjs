@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const AS_OF = "2026-08-08";
 const BASE = "https://raw.githubusercontent.com/makernari/AX-slide-site/main/";
+const RESOURCE_BASE = "https://makernari.github.io/AX-slide-site/";
 
 const MARKERS = {
   learnerD01: ["<!-- M06-IMAGE-VIDEO-PIPELINE-20260808:START -->", "<!-- M06-IMAGE-VIDEO-PIPELINE-20260808:END -->"],
@@ -420,8 +421,8 @@ function learnerBlock(roleKey, day, paths) {
       : `> **운영 업데이트 · ${AS_OF}** — Vrew의 계정·지역별 제공 범위를 공식 화면에서 확인하고, Flow 클립의 최종 편집·자동 자막·음량·내보내기를 Vrew에서 완료합니다.`,
     "", `![${role.label} ${isD01 ? "이미지 영상 제작 파이프라인" : "Vrew 편집 타임라인"}](${BASE}${paths.image})`,
     ...(isD01 ? ["", `![${role.characterName} 캐릭터 시트 예시](${BASE}${paths.characterImage})`] : []),
-    "", `- [초보자용 전체 실습팩](${BASE}${paths.markdown})`, `- [한 화면 결과 예시](${BASE}${paths.html})`,
-    ...(isD01 ? [`- [캐릭터 시트 HTML 예시](${BASE}${paths.characterHtml})`] : []),
+    "", `- [초보자용 전체 실습팩](${RESOURCE_BASE}${paths.markdown})`, `- [한 화면 결과 예시](${RESOURCE_BASE}${paths.html})`,
+    ...(isD01 ? [`- [캐릭터 시트 HTML 예시](${RESOURCE_BASE}${paths.characterHtml})`] : []),
     "", isD01 ? "필수 완료: 캐릭터 시트｜장면 이미지 3개｜클립 3개｜일관성 오류표｜Vrew 인계 폴더" : "필수 완료: 9:16 Vrew 프로젝트｜검수 자막｜음성·음악 권리 기록｜재생 확인 MP4｜SRT 또는 검수 대본",
     "", "- 기능·모델·무료 범위는 현재 화면에 실제 표시된 내용만 기록합니다.", "- 개인 Notion에는 입력 요약·첫 결과·수정 이유·최종 캡처·파일 링크만 남깁니다.", "", markers[1],
   ]);
@@ -438,8 +439,8 @@ function instructorBlock(roleKey, day, paths, tasks) {
       : `> **운영 변경 · ${AS_OF}** — Vrew에서 자동 자막을 검수하고 장면 길이와 음량을 조정해 최종 쇼츠를 완성합니다.`,
     "", `![${role.label} ${isD01 ? "제작 파이프라인" : "Vrew 편집 타임라인"}](${BASE}${paths.image})`,
     ...(isD01 ? ["", `![${role.characterName} 캐릭터 시트](${BASE}${paths.characterImage})`] : []),
-    "", `- [강사가 그대로 따라 하는 상세 실습팩](${BASE}${paths.markdown})`, `- [브라우저 결과 예시](${BASE}${paths.html})`,
-    ...(isD01 ? [`- [캐릭터 시트 결과 예시](${BASE}${paths.characterHtml})`] : []),
+    "", `- [강사가 그대로 따라 하는 상세 실습팩](${RESOURCE_BASE}${paths.markdown})`, `- [브라우저 결과 예시](${RESOURCE_BASE}${paths.html})`,
+    ...(isD01 ? [`- [캐릭터 시트 결과 예시](${RESOURCE_BASE}${paths.characterHtml})`] : []),
     "", "#### 시작 전 확인", "", "- [ ] 수업 계정·지역에서 실제 표시되는 모델·기능·크레딧 확인", "- [ ] 가상 인물·가상 제품·권리 확인 자산만 준비", "- [ ] 생성 불가 학습자용 HTML·CSV·Markdown 대체 실습 열기", "- [ ] 강사 생성 결과를 정답으로 강요하지 않고 동일 루브릭으로 평가", "",
     "#### 권장 시간", "", "| 실습 | 시간 | 완료 결과 |", "|---|---:|---|", ...tasks.map((task) => `| ${task.name} | ${task.minutes}분 | ${task.output} |`), "",
     "강의 팁:", "", isD01 ? "> 캐릭터 일관성은 ‘멋진 프롬프트’보다 고정 요소를 반복하고 장면마다 바꾸는 요소를 줄이는 훈련으로 설명합니다. 한 번에 세 장면을 생성하지 말고 한 장면씩 검수합니다." : "> Vrew에서는 자동 자막을 만드는 속도보다 잘못 인식된 한 단어를 원문으로 고치는 시연이 중요합니다. 내보내기 전에 소리 켬·끔 두 번 재생합니다.", "", markers[1],

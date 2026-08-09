@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const AS_OF = "2026-08-08";
 const BASE_URL = "https://raw.githubusercontent.com/makernari/AX-slide-site/main/";
+const RESOURCE_URL = "https://makernari.github.io/AX-slide-site/";
 const LEARNER_START = "<!-- DAILY-AI-WARMUP-20260808:START -->";
 const LEARNER_END = "<!-- DAILY-AI-WARMUP-20260808:END -->";
 const INSTRUCTOR_START = "<!-- INSTRUCTOR-DAILY-AI-WARMUP-20260808:START -->";
@@ -443,7 +444,7 @@ function learnerBlock(entry, pair, assetPaths) {
     "```",
     "",
     `- **완료:** ${entry.complete}`,
-    `- **계정·기능이 다르면:** [브라우저 예시를 열고](${BASE_URL}${assetPaths.html}) 완료 기준 한 가지를 찾습니다.`,
+    `- **계정·기능이 다르면:** [브라우저 예시를 열고](${RESOURCE_URL}${assetPaths.html}) 완료 기준 한 가지를 찾습니다.`,
     `- **개인 Notion:** 새 페이지 제목을 \`[${entry.day}] ${entry.title}\`로 만들고, 입력 요약·첫 결과·한 번 수정·최종 캡처만 기록합니다.`,
     `- **중복 수강:** 다른 과정은 별도 활동 ‘${pair.title}’입니다. 현재 사진·문장·결과를 넘겨 쓰지 않습니다.`,
     "- 이 선택 활동은 정규 4차시·240분과 필수 제출물에 포함되지 않습니다.",
@@ -466,7 +467,7 @@ function instructorBlock(entry, pair, assetPaths) {
     "",
     `![${entry.day} ${role.label} AI 워밍업 ${entry.title}](${BASE_URL}${assetPaths.image})`,
     "",
-    `- 브라우저 완성 예시: [${entry.title}](${BASE_URL}${assetPaths.html})`,
+    `- 브라우저 완성 예시: [${entry.title}](${RESOURCE_URL}${assetPaths.html})`,
     `- 오늘의 목적: ${entry.purpose}`,
     `- 준비물: ${entry.prep}`,
     `- 완료 상태: ${entry.complete}`,
@@ -590,7 +591,7 @@ function updateReadme(entry, assetPaths) {
     "## 수업 전 선택 5분 AI 워밍업",
     "",
     `- 오늘의 팁: ${entry.title}`,
-    `- [브라우저 예시 열기](${BASE_URL}${assetPaths.html})`,
+    `- [브라우저 예시 열기](${RESOURCE_URL}${assetPaths.html})`,
     "- 정규 4차시·240분과 필수 제출물에는 포함하지 않습니다.",
     "",
     README_END,

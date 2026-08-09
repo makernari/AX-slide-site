@@ -6,7 +6,15 @@
     document.baseURI,
   );
   const MANIFEST_URL = new URL("data/slide-manifest.json", APP_ROOT).href;
+  const RESOURCE_MANIFEST_URL = new URL(
+    "data/guide-resources.json",
+    APP_ROOT,
+  ).href;
   const SLIDE_ASSET_ROOT = new URL("assets/slides/", APP_ROOT).href;
+  const GUIDE_RESOURCE_ROOT = new URL(
+    "downloads/guide-resources/",
+    APP_ROOT,
+  ).href;
   const STORAGE_KEY = "ax-slide-site-course";
 
   const COURSE_META = {
@@ -49,9 +57,26 @@
     M09: "재직자 2시간 수업 설계",
   };
 
+  const RESOURCE_CATEGORY_META = {
+    bundle: "자료 묶음",
+    examples: "브라우저 예시",
+    "example-media": "공통 예시 이미지",
+    guide: "안내 자료",
+    samples: "샘플 데이터",
+    solutions: "완성 예시",
+    starter: "실습 시작 파일",
+    supplements: "상세 실습",
+    templates: "템플릿",
+    warmups: "도입 활동",
+  };
+
+  const PREVIEWABLE_RESOURCE_TYPES = new Set(["html", "pdf", "png"]);
+
   const state = {
     slides: [],
     manifest: null,
+    resources: null,
+    resourcePromise: null,
     currentViewer: null,
   };
 
@@ -140,6 +165,13 @@
         ? { screen: "course", course: LOCKED_COURSE }
         : { screen: "select" };
     }
+    if (segments[0] === "resources") {
+      const requestedCourse = segments[1]?.toLowerCase();
+      return {
+        screen: "resources",
+        course: LOCKED_COURSE ?? (COURSE_META[requestedCourse] ? requestedCourse : null),
+      };
+    }
     const [course, module, day, order] = segments;
     if (LOCKED_COURSE && course !== LOCKED_COURSE) {
       return { screen: "course", course: LOCKED_COURSE };
@@ -169,11 +201,18 @@
   }
 
   function siteHeader(courseKey = null) {
-    const courseActions = courseKey && !LOCKED_COURSE
-      ? `
+    const resourceCourse = LOCKED_COURSE ?? courseKey ?? loadCourse();
+    const resourceRoute = resourceCourse
+      ? route("resources", resourceCourse)
+      : route("resources");
+    const courseActions = `
+      <button class="text-button" type="button" data-route="${resourceRoute}">자료 다운로드</button>
+      ${courseKey && !LOCKED_COURSE
+        ? `
         <button class="text-button" type="button" data-route="${route("select")}">과정 변경</button>
       `
-      : "";
+        : ""}
+    `;
     return `
       <header class="site-header">
         <button class="brand-button" type="button" data-route="${courseKey ? route(courseKey) : route("select")}" aria-label="강의교안 홈">
@@ -376,6 +415,193 @@
                   .join("")}
               </ul>
             </section>
+          </div>
+        </main>
+      </div>
+    `;
+  }
+
+  function formatFileSize(bytes) {
+    const value = Number(bytes);
+    if (!Number.isFinite(value) || value < 0) return "크기 정보 없음";
+    if (value < 1024) return `${value} B`;
+    if (value < 1024 ** 2) return `${(value / 1024).toFixed(1)} KB`;
+    return `${(value / 1024 ** 2).toFixed(1)} MB`;
+  }
+
+  function resourceUrl(relativePath) {
+    const encodedPath = String(relativePath)
+      .split("/")
+      .map((segment) => encodeURIComponent(segment))
+      .join("/");
+    return new URL(encodedPath, GUIDE_RESOURCE_ROOT).href;
+  }
+
+  function resourceTypeLabel(type) {
+    const labels = {
+      csv: "CSV",
+      gs: "Apps Script",
+      html: "HTML",
+      md: "Markdown",
+      pdf: "PDF",
+      png: "PNG",
+      txt: "텍스트",
+      zip: "ZIP",
+    };
+    return labels[type] ?? String(type).toUpperCase();
+  }
+
+  function renderResourceItems(items) {
+    const categoryOrder = Object.keys(RESOURCE_CATEGORY_META);
+    return [...items]
+      .sort(
+        (a, b) =>
+          categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category) ||
+          a.name.localeCompare(b.name, "ko"),
+      )
+      .map((item) => {
+        const url = resourceUrl(item.path);
+        const category = RESOURCE_CATEGORY_META[item.category] ?? "기타 자료";
+        const previewLabel = item.category === "solutions" && item.type === "html"
+          ? "완성 예시 보기"
+          : item.type === "html"
+            ? "브라우저에서 보기"
+            : "열기";
+        const preview = PREVIEWABLE_RESOURCE_TYPES.has(item.type)
+          ? `<a class="secondary-button resource-action" href="${url}" target="_blank" rel="noopener">${previewLabel}</a>`
+          : "";
+        return `
+          <li class="resource-item">
+            <div class="resource-copy">
+              <span class="resource-category">${escapeHtml(category)}</span>
+              <strong>${escapeHtml(item.name)}</strong>
+              <span class="resource-file-meta">${escapeHtml(resourceTypeLabel(item.type))} · ${escapeHtml(formatFileSize(item.size))}</span>
+            </div>
+            <div class="resource-item-actions">
+              ${preview}
+              <a class="primary-button resource-action" href="${url}" download aria-label="${escapeHtml(item.name)} 다운로드">다운로드</a>
+            </div>
+          </li>
+        `;
+      })
+      .join("");
+  }
+
+  function renderResourceGroup(title, items, open = false) {
+    return `
+      <details class="resource-group" ${open ? "open" : ""}>
+        <summary>
+          <span>
+            <strong>${escapeHtml(title)}</strong>
+            <small>${items.length}개 파일</small>
+          </span>
+          <span class="resource-disclosure" aria-hidden="true">＋</span>
+        </summary>
+        <ul class="resource-list">${renderResourceItems(items)}</ul>
+      </details>
+    `;
+  }
+
+  function loadGuideResources() {
+    if (state.resources || state.resourcePromise) return;
+    state.resourcePromise = fetch(RESOURCE_MANIFEST_URL, { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`resource manifest request failed: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((manifest) => {
+        if (!manifest || !Array.isArray(manifest.resources)) {
+          throw new Error("resource manifest resources is not an array");
+        }
+        state.resources = manifest.resources;
+        state.resourcePromise = null;
+        if (parseRoute().screen === "resources") renderRoute();
+      })
+      .catch((error) => {
+        console.error(error);
+        state.resourcePromise = null;
+        if (parseRoute().screen === "resources") {
+          renderError(
+            "자료 목록을 불러오지 못했습니다.",
+            "배포 자료 목록과 다운로드 경로를 확인해 주세요.",
+          );
+        }
+      });
+  }
+
+  function renderResources(courseKey = null) {
+    const activeCourse = LOCKED_COURSE ?? (
+      COURSE_META[courseKey] ? courseKey : loadCourse() ?? "backoffice"
+    );
+    const meta = COURSE_META[activeCourse];
+
+    if (!state.resources) {
+      app.innerHTML = `
+        <div class="site-shell">
+          ${siteHeader(activeCourse)}
+          <main class="page page-narrow" aria-live="polite">
+            <p class="eyebrow">LEARNER RESOURCES</p>
+            <h1 class="page-title">실습 자료를 불러오는 중입니다.</h1>
+          </main>
+        </div>
+      `;
+      loadGuideResources();
+      return;
+    }
+
+    const commonResources = state.resources.filter(
+      (resource) => resource.course === "common",
+    );
+    const courseResources = state.resources.filter(
+      (resource) => resource.course === activeCourse,
+    );
+    const groups = new Map();
+    for (const resource of courseResources) {
+      const key = `${resource.module}-${resource.day}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(resource);
+    }
+    const courseGroups = [...groups.entries()].sort(([a], [b]) => {
+      const [moduleA, dayA] = a.split("-");
+      const [moduleB, dayB] = b.split("-");
+      return moduleNumber(moduleA) - moduleNumber(moduleB) || dayNumber(dayA) - dayNumber(dayB);
+    });
+    const tabEntries = LOCKED_COURSE
+      ? [[activeCourse, COURSE_META[activeCourse]]]
+      : Object.entries(COURSE_META);
+    const tabs = tabEntries
+      .map(
+        ([key, item]) => `
+          <button
+            class="resource-tab ${key === activeCourse ? "is-active" : ""}"
+            type="button"
+            data-route="${route("resources", key)}"
+            aria-current="${key === activeCourse ? "page" : "false"}"
+          >${escapeHtml(item.label)}</button>
+        `,
+      )
+      .join("");
+
+    app.innerHTML = `
+      <div class="site-shell">
+        ${siteHeader(activeCourse)}
+        <main class="page page-narrow" aria-labelledby="resources-title">
+          <p class="eyebrow">LEARNER RESOURCES</p>
+          <h1 class="page-title" id="resources-title">실습 자료 다운로드</h1>
+          <p class="page-intro">강의교안과 분리된 수강생용 자료입니다. 과정을 선택한 뒤 일자별 파일을 열거나 내려받을 수 있습니다.</p>
+          <nav class="resource-tabs" aria-label="자료 과정 선택">${tabs}</nav>
+          <section class="resource-summary" aria-label="자료 요약">
+            ${courseBadge(activeCourse)}
+            <strong>${courseResources.length + commonResources.length}개 파일</strong>
+            <span>${escapeHtml(meta.label)} 전용 ${courseResources.length}개 · 공통 ${commonResources.length}개</span>
+          </section>
+          <div class="resource-groups">
+            ${commonResources.length ? renderResourceGroup("공통 자료", commonResources, true) : ""}
+            ${courseGroups
+              .map(([key, items], index) => renderResourceGroup(key.replace("-", " · "), items, index === 0 && !commonResources.length))
+              .join("")}
           </div>
         </main>
       </div>
@@ -638,6 +864,9 @@
         break;
       case "course":
         renderCourseHome(current.course);
+        break;
+      case "resources":
+        renderResources(current.course);
         break;
       case "module":
         renderModule(current.course, current.module);

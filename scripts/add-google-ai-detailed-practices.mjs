@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const AS_OF = "2026-08-08";
 const BASE_URL = "https://raw.githubusercontent.com/makernari/AX-slide-site/main/";
+const RESOURCE_URL = "https://makernari.github.io/AX-slide-site/";
 const LEARNER_START = "<!-- GOOGLE-AI-DETAILED-PRACTICE-20260808:START -->";
 const LEARNER_END = "<!-- GOOGLE-AI-DETAILED-PRACTICE-20260808:END -->";
 const INSTRUCTOR_START = "<!-- INSTRUCTOR-GOOGLE-AI-DETAILED-PRACTICE-20260808:START -->";
@@ -894,8 +895,8 @@ function learnerBlock(roleKey, spec, rel) {
     "",
     `![${spec.day} ${role.label} ${spec.title}](${BASE_URL}${rel.image})`,
     "",
-    `- [단계별 상세 실습팩 열기](${BASE_URL}${rel.markdown})`,
-    `- [한 화면 완성 예시 열기](${BASE_URL}${rel.html})`,
+    `- [단계별 상세 실습팩 열기](${RESOURCE_URL}${rel.markdown})`,
+    `- [한 화면 완성 예시 열기](${RESOURCE_URL}${rel.html})`,
     `- 커리큘럼 연결: ${spec.curriculum}`,
     `- 꼭 기억할 점: ${spec.note}`,
     "",
@@ -934,8 +935,8 @@ function instructorBlock(roleKey, spec, rel) {
     "",
     `![${spec.day} ${role.label} ${spec.title}](${BASE_URL}${rel.image})`,
     "",
-    `- [강사가 그대로 따라 하는 상세 실습팩](${BASE_URL}${rel.markdown})`,
-    `- [브라우저 결과 구조 예시](${BASE_URL}${rel.html})`,
+    `- [강사가 그대로 따라 하는 상세 실습팩](${RESOURCE_URL}${rel.markdown})`,
+    `- [브라우저 결과 구조 예시](${RESOURCE_URL}${rel.html})`,
     `- 커리큘럼 근거: ${spec.curriculum}`,
     `- 수업 목표: ${spec.purpose}`,
     `- 기능 보정: ${spec.note}`,
@@ -1182,8 +1183,8 @@ function updateReadme(roleKey, spec, rel) {
     `## ${spec.title}`,
     "",
     `- 구분: ${spec.status}`,
-    `- [단계별 상세 실습팩](${BASE_URL}${rel.markdown})`,
-    `- [브라우저 결과 구조 예시](${BASE_URL}${rel.html})`,
+    `- [단계별 상세 실습팩](${RESOURCE_URL}${rel.markdown})`,
+    `- [브라우저 결과 구조 예시](${RESOURCE_URL}${rel.html})`,
     `- ${spec.timeRule}`,
     "",
     README_END,

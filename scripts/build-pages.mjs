@@ -5,6 +5,20 @@ import { fileURLToPath } from "node:url";
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(SCRIPT_DIR, "..");
 const OUTPUT = path.join(ROOT, ".pages-dist");
+const GUIDE_RESOURCE_SOURCE = path.join(ROOT, "downloads", "guide-resources");
+const GITHUB_PAGES_MAX_BYTES = 1_000_000_000;
+
+const GUIDE_RESOURCE_SCOPES = ["backoffice", "marketing", "common"];
+const GUIDE_RESOURCE_EXTENSIONS = new Set([
+  ".csv",
+  ".gs",
+  ".html",
+  ".md",
+  ".pdf",
+  ".png",
+  ".txt",
+]);
+const GUIDE_RESOURCE_OMITTED_ARCHIVE_EXTENSIONS = new Set([".zip"]);
 
 const RUNTIME_FILES = [
   "index.html",
@@ -82,6 +96,14 @@ function copyAllowedFile(relativePath, expectedPaths) {
   expectedPaths.add(normalized);
 }
 
+function writeGeneratedFile(relativePath, content, expectedPaths) {
+  const normalized = normalize(relativePath);
+  const destination = resolveInside(OUTPUT, normalized);
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.writeFileSync(destination, content, "utf8");
+  expectedPaths.add(normalized);
+}
+
 function walkFiles(directory, prefix = "") {
   const entries = fs.readdirSync(directory, { withFileTypes: true });
   const files = [];
@@ -94,6 +116,73 @@ function walkFiles(directory, prefix = "") {
     else fail(`Deployment artifact contains an unsupported entry: ${relative}`);
   }
   return files;
+}
+
+function collectGuideResources() {
+  if (!fs.existsSync(GUIDE_RESOURCE_SOURCE)) {
+    fail("Learner guide resource directory is missing: downloads/guide-resources");
+  }
+
+  const resources = [];
+  for (const scope of GUIDE_RESOURCE_SCOPES) {
+    const scopeDirectory = resolveInside(GUIDE_RESOURCE_SOURCE, scope);
+    if (!fs.existsSync(scopeDirectory) || !fs.statSync(scopeDirectory).isDirectory()) {
+      fail(`Learner guide resource scope is missing: ${scope}`);
+    }
+
+    for (const relativeFile of walkFiles(scopeDirectory).sort()) {
+      const extension = path.extname(relativeFile).toLowerCase();
+      const segments = normalize(relativeFile).split("/");
+      if (GUIDE_RESOURCE_OMITTED_ARCHIVE_EXTENSIONS.has(extension)) continue;
+      if (!GUIDE_RESOURCE_EXTENSIONS.has(extension)) {
+        fail(`Unsupported learner resource file type: ${scope}/${relativeFile}`);
+      }
+
+      const context = segments[0];
+      const dayMatch = /^(M0[5-9])-(D\d{2})$/.exec(context);
+      if (scope !== "common" && !dayMatch) {
+        fail(`Course learner resource must be inside a module-day folder: ${scope}/${relativeFile}`);
+      }
+      if (scope === "common" && !dayMatch && context !== "example-media") {
+        fail(`Unsupported common learner resource group: ${scope}/${relativeFile}`);
+      }
+
+      const filename = segments.at(-1);
+      const category = dayMatch
+        ? segments.length > 2
+          ? segments[1]
+          : "guide"
+        : context;
+      const sourcePath = path.join(scopeDirectory, ...segments);
+      const publicPath = `${scope}/${normalize(relativeFile)}`;
+      resources.push({
+        course: scope,
+        module: dayMatch?.[1] ?? null,
+        day: dayMatch?.[2] ?? null,
+        category,
+        name: filename,
+        path: publicPath,
+        size: fs.statSync(sourcePath).size,
+        type: extension.slice(1),
+      });
+    }
+  }
+
+  const counts = Object.fromEntries(
+    GUIDE_RESOURCE_SCOPES.map((scope) => [
+      scope,
+      resources.filter((resource) => resource.course === scope).length,
+    ]),
+  );
+  return {
+    schema_version: "1.0",
+    summary: {
+      total_files: resources.length,
+      total_bytes: resources.reduce((sum, resource) => sum + resource.size, 0),
+      course_files: counts,
+    },
+    resources,
+  };
 }
 
 function validateRelativeRuntimePaths() {
@@ -139,7 +228,9 @@ function validateRelativeRuntimePaths() {
   for (const required of [
     "const APP_ROOT = new URL(",
     'const MANIFEST_URL = new URL("data/slide-manifest.json", APP_ROOT).href;',
+    '"data/guide-resources.json",',
     'const SLIDE_ASSET_ROOT = new URL("assets/slides/", APP_ROOT).href;',
+    '"downloads/guide-resources/",',
   ]) {
     if (!app.includes(required)) fail(`app.js site-root path contract is missing: ${required}`);
   }
@@ -201,6 +292,7 @@ function validateManifest() {
 function main() {
   validateRelativeRuntimePaths();
   const imagePaths = validateManifest();
+  const guideManifest = collectGuideResources();
 
   if (fs.existsSync(OUTPUT)) {
     const resolvedOutput = path.resolve(OUTPUT);
@@ -214,6 +306,17 @@ function main() {
   const expectedPaths = new Set();
   for (const relativePath of RUNTIME_FILES) copyAllowedFile(relativePath, expectedPaths);
   for (const relativePath of imagePaths) copyAllowedFile(relativePath, expectedPaths);
+  for (const resource of guideManifest.resources) {
+    copyAllowedFile(
+      `downloads/guide-resources/${resource.path}`,
+      expectedPaths,
+    );
+  }
+  writeGeneratedFile(
+    "data/guide-resources.json",
+    `${JSON.stringify(guideManifest, null, 2)}\n`,
+    expectedPaths,
+  );
 
   fs.writeFileSync(path.join(OUTPUT, ".nojekyll"), "", "utf8");
   expectedPaths.add(".nojekyll");
@@ -234,8 +337,10 @@ function main() {
   }
 
   const blockedExtensions = new Set([".csv", ".md", ".pdf", ".py", ".pyc", ".xlsx"]);
-  const blocked = actualPaths.filter((file) =>
-    blockedExtensions.has(path.extname(file).toLowerCase()),
+  const blocked = actualPaths.filter(
+    (file) =>
+      blockedExtensions.has(path.extname(file).toLowerCase()) &&
+      !file.startsWith("downloads/guide-resources/"),
   );
   if (blocked.length) fail(`Blocked file type in deployment artifact: ${blocked.join(", ")}`);
 
@@ -243,12 +348,18 @@ function main() {
     (sum, relativePath) => sum + fs.statSync(path.join(OUTPUT, relativePath)).size,
     0,
   );
+  if (totalBytes > GITHUB_PAGES_MAX_BYTES) {
+    fail(
+      `Published Pages site exceeds the 1 GB limit: ${(totalBytes / 1024 / 1024).toFixed(2)} MiB`,
+    );
+  }
   console.log("GitHub Pages artifact ready");
   console.log(`- output: ${path.relative(ROOT, OUTPUT)}`);
   console.log(`- files: ${actualPaths.length}`);
   console.log(`- slide images: ${imagePaths.length}`);
+  console.log(`- learner resources: ${guideManifest.resources.length}`);
   console.log(`- size: ${(totalBytes / 1024 / 1024).toFixed(2)} MiB`);
-  console.log("- excluded source groups: guides, guide images, guide resources, local instructions, docs, prompts, references, scripts, original spreadsheets and PDFs");
+  console.log("- excluded source groups: duplicate resource ZIP archives, instructor guides, guide images, guide audits, reference guides, local instructions, docs, prompts, references, scripts, original spreadsheets and PDFs");
 }
 
 main();

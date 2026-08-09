@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BASE_URL = "https://raw.githubusercontent.com/makernari/AX-slide-site/main/";
+const RESOURCE_URL = "https://makernari.github.io/AX-slide-site/";
 const AS_OF = "2026-08-08";
 const MARKER_START = "<!-- M05-20260808-REFRESH:START -->";
 const MARKER_END = "<!-- M05-20260808-REFRESH:END -->";
@@ -1079,7 +1080,7 @@ function guideInsert(dayId, roleKey) {
       "",
       `![${pack.screen.title}](${BASE_URL}${roleImage})`,
       "",
-      `- [직무별 실제 원자료 열기](${BASE_URL}${sourcePath})`,
+      `- [직무별 실제 원자료 열기](${RESOURCE_URL}${sourcePath})`,
     );
   } else {
     lines.push(

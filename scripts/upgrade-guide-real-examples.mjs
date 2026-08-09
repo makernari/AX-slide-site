@@ -7,8 +7,6 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const AS_OF = "2026-08-09";
 const RAW_ROOT = "https://raw.githubusercontent.com/makernari/AX-slide-site/main";
 const MEDIA_ROOT = path.join(ROOT, "downloads", "guide-resources", "common", "example-media");
-const TEMP_ROOT = path.join(ROOT, ".tmp-guide-browser-packages-20260809");
-const TAR = path.join(process.env.SystemRoot || "C:\\Windows", "System32", "tar.exe");
 const ROLES = {
   backoffice: { label: "경영지원", course: "스마트 경영지원", accent: "#155EEF", dark: "#0B3B8F", soft: "#EAF2FF" },
   marketing: { label: "마케팅", course: "마케팅·SNS 콘텐츠 기획·브랜딩", accent: "#C2410C", dark: "#8A2D0B", soft: "#FFF1E8" },
@@ -458,132 +456,15 @@ function buildCharacterSheet(roleKey) {
   ]);
 }
 
-function bundleUrl(roleKey, dayId) {
-  return `${RAW_ROOT}/downloads/guide-resources/${roleKey}/${dayId}/browser-examples-${roleKey}-${dayId.toLowerCase()}-${AS_OF.replaceAll("-", "")}.zip`;
-}
-
-function rewriteGuideLinks() {
-  const roots = [path.join(ROOT, "guides", "notion"), path.join(ROOT, "downloads", "guide-resources")];
-  let filesChanged = 0;
-  let linksRewritten = 0;
-  for (const root of roots) {
-    const stack = [root];
-    while (stack.length) {
-      const current = stack.pop();
-      for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
-        const absolute = path.join(current, entry.name);
-        if (entry.isDirectory()) stack.push(absolute);
-        else if (entry.isFile() && absolute.toLowerCase().endsWith(".md")) {
-          const original = fs.readFileSync(absolute, "utf8");
-          let next = original.replace(
-            /https:\/\/raw\.githubusercontent\.com\/makernari\/AX-slide-site\/main\/downloads\/guide-resources\/(backoffice|marketing)\/(M\d\d-D\d\d)\/[^)\s]+\.(?:html|md)/g,
-            (match, roleKey, dayId) => {
-              if (!/\.html$|\/solutions\/[^/]+-complete-example\.md$/i.test(match)) return match;
-              linksRewritten += 1;
-              return bundleUrl(roleKey, dayId);
-            },
-          );
-          next = next
-            .replaceAll("브라우저용 HTML 완성 예시 내려받기", "브라우저 예시 ZIP 내려받기")
-            .replaceAll("HTML 완성 예시 내려받기", "브라우저 예시 ZIP 내려받기")
-            .replaceAll("브라우저 예시 열기", "브라우저 예시 ZIP 내려받기")
-            .replaceAll("HTML 파일을 내려받아 더블클릭하면 설치 없이 브라우저에서 열립니다.", "ZIP을 내려받아 압축을 푼 뒤 `START_HERE.html`을 더블클릭하면 설치 없이 브라우저에서 열립니다.")
-            .replaceAll("파일을 내려받은 뒤 더블클릭하면 브라우저에서 열립니다.", "ZIP을 내려받아 압축을 푼 뒤 `START_HERE.html`을 더블클릭하면 브라우저에서 열립니다.");
-          if (/guides[\\/]notion[\\/](?:backoffice|marketing)[\\/](?:learner|instructor)[\\/]M\d\d-D\d\d\.md$/i.test(absolute) && !next.includes("OFFLINE-BROWSER-EXAMPLE-20260809")) {
-            const notice = lines([
-              "<!-- OFFLINE-BROWSER-EXAMPLE-20260809:START -->",
-              "> 브라우저 예시는 ZIP 다운로드 전용입니다. 압축을 푼 뒤 `START_HERE.html`을 더블클릭하세요. GitHub 원본 링크를 탭에서 바로 열면 HTML 소스가 텍스트로 보일 수 있습니다.",
-              "<!-- OFFLINE-BROWSER-EXAMPLE-20260809:END -->",
-            ]);
-            const anchor = next.match(/^> 실습자료 위치:.*$/m)?.[0] || next.match(/^> 필요한 실습 파일:.*$/m)?.[0];
-            if (anchor) next = next.replace(anchor, `${anchor}\n\n${notice}`);
-            else next = next.replace(/^# .+$/m, (heading) => `${heading}\n\n${notice}`);
-          }
-          if (next !== original) {
-            fs.writeFileSync(absolute, next, "utf8");
-            filesChanged += 1;
-          }
-        }
-      }
-    }
+function updateGuideLinks() {
+  const result = spawnSync(process.execPath, [path.join(ROOT, "scripts", "update-guide-pages-links.mjs")], {
+    cwd: ROOT,
+    encoding: "utf8",
+  });
+  if (result.status !== 0) {
+    throw new Error(`Guide Pages link update failed: ${result.stderr || result.stdout}`);
   }
-  return { filesChanged, linksRewritten };
-}
-
-function launcherHtml(roleKey, dayId, examples) {
-  const role = ROLES[roleKey];
-  const links = examples.map((example) => `<a href="examples/${encodeURI(example.name)}"><span>${escapeHtml(example.label)}</span><b>브라우저에서 열기 →</b></a>`).join("\n");
-  return lines([
-    "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
-    `<title>${dayId} ${role.label} 브라우저 예시</title><style>:root{font-family:Arial,'Noto Sans KR',system-ui,sans-serif;--accent:${role.accent};--dark:${role.dark};--soft:${role.soft}}*{box-sizing:border-box}body{margin:0;background:#edf3f9;color:#172b4d}.page{width:min(980px,100%);margin:auto;padding:28px}header{background:linear-gradient(135deg,var(--dark),var(--accent));color:#fff;border-radius:24px;padding:28px}h1{margin:7px 0;font-size:34px}header p{margin:0;color:#e6efff}.notice{margin:18px 0;background:#fff7d6;border-left:5px solid #f59e0b;border-radius:12px;padding:16px;line-height:1.55}.links{display:grid;grid-template-columns:1fr 1fr;gap:12px}.links a{background:#fff;border:1px solid #cad7e7;border-radius:14px;padding:17px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:9px}.links a:hover,.links a:focus{outline:3px solid var(--accent)}.links span{font-weight:850;color:var(--dark)}.links b{font-size:13px;color:var(--accent)}footer{margin-top:18px;color:#52627a;font-size:13px;line-height:1.5}@media(max-width:650px){.page{padding:14px}.links{grid-template-columns:1fr}h1{font-size:27px}}</style></head><body><main class="page"><header><small>OFFLINE BROWSER EXAMPLES · ${AS_OF}</small><h1>${dayId} ${role.label} 실습 예시</h1><p>설치 없이 로컬 브라우저에서 실행되는 교육용 가상 결과입니다.</p></header><div class="notice"><b>사용 방법</b><br>ZIP 전체를 먼저 압축 해제한 뒤 이 파일을 여세요. 아래 예시는 새 탭 또는 현재 탭에서 실제 HTML 화면으로 렌더링됩니다.</div><section class="links">${links}</section><footer>실제 개인정보·기관 내부자료·고객자료를 포함하지 않습니다. 화면은 기능 메뉴를 추측하는 서비스 복제가 아니라, 수업에서 완성할 결과 구조와 검수 기준을 보여 주는 독립 실행 예시입니다.</footer></main></body></html>`,
-  ]);
-}
-
-function safeRemoveTemp() {
-  const resolved = path.resolve(TEMP_ROOT);
-  if (!resolved.startsWith(`${ROOT}${path.sep}`) || path.basename(resolved) !== ".tmp-guide-browser-packages-20260809") {
-    throw new Error(`Unsafe temp path: ${resolved}`);
-  }
-  if (fs.existsSync(resolved)) fs.rmSync(resolved, { recursive: true, force: true });
-}
-
-function createBundles() {
-  safeRemoveTemp();
-  fs.mkdirSync(TEMP_ROOT, { recursive: true });
-  const packages = [];
-  try {
-    for (const roleKey of Object.keys(ROLES)) {
-      for (const dayId of DAYS) {
-        const sourceRoot = path.join(ROOT, "downloads", "guide-resources", roleKey, dayId);
-        const htmlFiles = [];
-        const stack = [sourceRoot];
-        while (stack.length) {
-          const current = stack.pop();
-          for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
-            const absolute = path.join(current, entry.name);
-            if (entry.isDirectory()) stack.push(absolute);
-            else if (entry.isFile() && entry.name.toLowerCase().endsWith(".html")) htmlFiles.push(absolute);
-          }
-        }
-        if (dayId === "M05-D01") {
-          htmlFiles.push(path.join(ROOT, "downloads", "guide-resources", "common", "M05-D01", "markdown-to-notion-learner-guide-20260808.html"));
-        }
-        if (dayId === "M09-D01") {
-          htmlFiles.push(path.join(ROOT, "downloads", "guide-resources", "reference-guides", "reference-materials-dashboard.html"));
-        }
-        htmlFiles.sort();
-        const bundleDir = path.join(TEMP_ROOT, roleKey, dayId);
-        const examplesDir = path.join(bundleDir, "examples");
-        fs.mkdirSync(examplesDir, { recursive: true });
-        const examples = htmlFiles.map((source) => {
-          const name = path.basename(source);
-          fs.copyFileSync(source, path.join(examplesDir, name));
-          const html = fs.readFileSync(source, "utf8");
-          const label = html.match(/<title>([^<]+)<\/title>/i)?.[1] || name;
-          return { name, label };
-        });
-        fs.writeFileSync(path.join(bundleDir, "START_HERE.html"), launcherHtml(roleKey, dayId, examples), "utf8");
-        fs.writeFileSync(path.join(bundleDir, "README.txt"), lines([
-          `${dayId} ${ROLES[roleKey].label} 브라우저 예시`,
-          "",
-          "1. ZIP 전체를 압축 해제합니다.",
-          "2. START_HERE.html을 더블클릭합니다.",
-          "3. 목록에서 필요한 예시를 선택합니다.",
-          "",
-          "HTML을 GitHub 원본 주소에서 직접 열면 소스 텍스트로 보일 수 있으므로 이 ZIP을 사용하세요.",
-        ]), "utf8");
-        const zipName = `browser-examples-${roleKey}-${dayId.toLowerCase()}-${AS_OF.replaceAll("-", "")}.zip`;
-        const zipPath = path.join(sourceRoot, zipName);
-        if (fs.existsSync(zipPath)) fs.rmSync(zipPath, { force: true });
-        const result = spawnSync(TAR, ["-a", "-c", "-f", zipPath, "-C", bundleDir, "."], { encoding: "utf8" });
-        if (result.status !== 0) throw new Error(`ZIP failed ${roleKey}/${dayId}: ${result.error?.message || result.stderr || result.stdout || `status ${result.status}`}`);
-        packages.push({ roleKey, dayId, zipPath, examples: examples.length });
-      }
-    }
-  } finally {
-    safeRemoveTemp();
-  }
-  return packages;
+  return JSON.parse(result.stdout);
 }
 
 function main() {
@@ -608,20 +489,19 @@ function main() {
   write("downloads/guide-resources/backoffice/M06-D01/examples/m06-d01-backoffice-character-sheet.html", buildCharacterSheet("backoffice"));
   write("downloads/guide-resources/marketing/M06-D01/examples/m06-d01-marketing-character-sheet.html", buildCharacterSheet("marketing"));
 
-  const rewritten = rewriteGuideLinks();
-  const packages = createBundles();
+  const linkUpdate = updateGuideLinks();
   write("docs/review/guide-real-example-upgrade-2026-08-09.md", lines([
-    "# 가이드 실사용 예시·오프라인 HTML 개선 기록",
+    "# 가이드 실사용 예시·Pages 직접 열기 개선 기록",
     "",
     `기준일: ${AS_OF}`,
     "",
     `- 실제 작성형 완성 예시 HTML: ${completeFiles.length}개`,
     `- 실제 사용형 AI 워밍업 HTML: ${warmupFiles.length}개`,
     "- 실제 이미지 기반 캐릭터 시트 HTML: 2개",
-    `- 오프라인 브라우저 예시 ZIP: ${packages.length}개`,
-    `- ZIP에 포함된 기존 HTML 합계: ${packages.reduce((sum, item) => sum + item.examples, 0)}개`,
-    `- 가이드·README 수정 파일: ${rewritten.filesChanged}개`,
-    `- raw HTML/완성 예시 링크를 ZIP으로 교체: ${rewritten.linksRewritten}건`,
+    "- HTML 예시는 GitHub Pages에서 브라우저로 직접 열고 파일별로 다운로드",
+    "- 중복 브라우저 예시 ZIP은 생성하지 않음",
+    `- 가이드·README 수정 파일: ${linkUpdate.changedFiles}개`,
+    `- 이전 ZIP 링크를 직접 HTML 링크로 교체: ${linkUpdate.rewrittenZipLinks}건`,
     "- GPT Image 생성 원본: 8개, 모두 비식별 가상 장면이며 한글 설명은 HTML 레이어로 처리",
     "- 외부 런타임·외부 링크·API 키·실제 개인정보 없음",
   ]));
@@ -630,9 +510,8 @@ function main() {
     completeExamples: completeFiles.length,
     warmupExamples: warmupFiles.length,
     characterSheets: 2,
-    browserPackages: packages.length,
-    packagedHtmlFiles: packages.reduce((sum, item) => sum + item.examples, 0),
-    ...rewritten,
+    browserPackages: 0,
+    guideLinkUpdate: linkUpdate,
   }, null, 2));
 }
 

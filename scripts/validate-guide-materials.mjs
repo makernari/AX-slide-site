@@ -23,6 +23,7 @@ const DAYS = [
 ];
 const TEXT_EXTENSIONS = new Set([".csv", ".html", ".js", ".json", ".md", ".mjs", ".svg"]);
 const RAW_PREFIX = "https://raw.githubusercontent.com/makernari/AX-slide-site/main/";
+const DEPLOYED_RESOURCE_EXTENSIONS = new Set([".csv", ".gs", ".html", ".md", ".pdf", ".png", ".txt"]);
 
 const failures = [];
 const counts = {
@@ -30,7 +31,7 @@ const counts = {
   imageReferences: 0,
   guideImages: 0,
   htmlExamples: 0,
-  browserExamplePackages: 0,
+  directResourceLinks: 0,
   resourceReadmes: 0,
   referenceSources: 0,
 };
@@ -115,7 +116,6 @@ function validateGuideDocument(role, day, kind) {
   if (kind === "learner") {
     requireMarker(text, "LEARNER-ESSENTIAL-GUIDE-20260809", relativePath);
     requireMarker(text, "LEARNER-PUBLIC-DASHBOARD-20260809", relativePath);
-    requireMarker(text, "OFFLINE-BROWSER-EXAMPLE-20260809", relativePath);
     for (const marker of [
       "LEARNER-CLASS-PREVIEW-20260808",
       "DAILY-AI-WARMUP-20260808",
@@ -144,7 +144,6 @@ function validateGuideDocument(role, day, kind) {
     requireMarker(text, "INSTRUCTOR-DAY-OF-TOOL-CHECK-20260809", relativePath);
     requireMarker(text, "INSTRUCTOR-ONE-PAGE-20260809", relativePath);
     requireMarker(text, "INSTRUCTOR-PUBLIC-DASHBOARD-20260809", relativePath);
-    requireMarker(text, "OFFLINE-BROWSER-EXAMPLE-20260809", relativePath);
     for (const marker of [
       "LEARNER-ESSENTIAL-GUIDE-20260809",
       "LEARNER-PUBLIC-DASHBOARD-20260809",
@@ -169,6 +168,11 @@ function validateGuideDocument(role, day, kind) {
 
   assert(!/(?:ablearn|에이블런)/i.test(text), `${relativePath}: previous vendor name leaked into guide`);
   assert(!/(?:CapCut|캡컷)/i.test(text), `${relativePath}: CapCut is not allowed; use Vrew only`);
+  requireMarker(text, "GUIDE-PAGES-RESOURCES-20260810", relativePath);
+  assert(
+    text.includes(`https://makernari.github.io/AX-slide-site/#/resources/${role}`),
+    `${relativePath}: course resource screen link is missing`,
+  );
 
   if (day === "M05-D01") {
     for (const phrase of ["비공개 작업실", "자기소개", "30초", "로그아웃", "Text & Markdown"]) {
@@ -239,21 +243,33 @@ function validateHtmlExamples() {
   assert(htmlFiles.length === 82, `Expected 82 guide HTML examples, found ${htmlFiles.length}`);
 }
 
-function validateBrowserExamplePackages() {
-  for (const role of ROLES) {
-    for (const day of DAYS) {
-      const filename = `browser-examples-${role}-${day.toLowerCase()}-20260809.zip`;
-      const relativePath = `downloads/guide-resources/${role}/${day}/${filename}`;
-      const absolute = resolveInside(relativePath);
-      assert(fs.existsSync(absolute), `Missing browser example package: ${relativePath}`);
-      if (!fs.existsSync(absolute)) continue;
-      const buffer = fs.readFileSync(absolute);
-      assert(buffer.length >= 4 && buffer.subarray(0, 2).toString("ascii") === "PK", `${relativePath}: invalid ZIP signature`);
-      assert(buffer.length > 8000, `${relativePath}: browser example package is unexpectedly small`);
-      counts.browserExamplePackages += 1;
+function validatePublishedResourceLinks() {
+  const activeMarkdown = [
+    ...walk("guides/notion"),
+    ...walk("downloads/guide-resources/backoffice"),
+    ...walk("downloads/guide-resources/marketing"),
+  ].filter((file) => file.endsWith(".md"));
+
+  for (const relativePath of activeMarkdown) {
+    const text = read(relativePath);
+    assert(!text.includes("browser-examples-"), `${relativePath}: legacy browser ZIP link remains`);
+    assert(!text.includes("START_HERE.html"), `${relativePath}: legacy ZIP launcher instruction remains`);
+    assert(
+      !text.includes("https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/"),
+      `${relativePath}: raw guide resource link remains`,
+    );
+
+    for (const match of text.matchAll(/https:\/\/makernari\.github\.io\/AX-slide-site\/downloads\/guide-resources\/([^)\s]+)/g)) {
+      const localPath = `downloads/guide-resources/${decodeURI(match[1])}`;
+      const extension = path.extname(localPath).toLowerCase();
+      counts.directResourceLinks += 1;
+      assert(fs.existsSync(resolveInside(localPath)), `${relativePath}: missing published resource ${localPath}`);
+      assert(DEPLOYED_RESOURCE_EXTENSIONS.has(extension), `${relativePath}: resource type is not deployed ${localPath}`);
+      assert(!localPath.includes("/reference-guides/"), `${relativePath}: instructor reference resource must not be published`);
     }
   }
-  assert(counts.browserExamplePackages === 30, `Expected 30 browser example packages, found ${counts.browserExamplePackages}`);
+
+  assert(counts.directResourceLinks >= 800, `Expected at least 800 direct resource links, found ${counts.directResourceLinks}`);
 }
 
 function validateTextIntegrity() {
@@ -269,7 +285,7 @@ function validateTextIntegrity() {
     assert(!text.includes("\uFFFD"), `${relativePath}: Unicode replacement character found`);
     if (relativePath.endsWith(".md")) {
       assert(!/https:\/\/raw\.githubusercontent\.com\/makernari\/AX-slide-site\/main\/downloads\/guide-resources\/(?:backoffice|marketing)\/M\d\d-D\d\d\/[^)\s]+\.html/i.test(text), `${relativePath}: raw HTML link would open as source text`);
-      assert(!/https:\/\/raw\.githubusercontent\.com\/makernari\/AX-slide-site\/main\/downloads\/guide-resources\/(?:backoffice|marketing)\/M\d\d-D\d\d\/solutions\/[^)\s]+-complete-example\.md/i.test(text), `${relativePath}: raw Markdown completion link should use browser ZIP`);
+      assert(!/https:\/\/raw\.githubusercontent\.com\/makernari\/AX-slide-site\/main\/downloads\/guide-resources\//i.test(text), `${relativePath}: raw resource link should use GitHub Pages`);
     }
     for (const pattern of secretPatterns) {
       assert(!pattern.test(text), `${relativePath}: possible credential found`);
@@ -332,7 +348,7 @@ function main() {
   }
   validateGuideImages();
   validateHtmlExamples();
-  validateBrowserExamplePackages();
+  validatePublishedResourceLinks();
   validateTextIntegrity();
   validateReferenceOperations();
 

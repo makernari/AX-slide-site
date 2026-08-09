@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const AS_OF = "2026-08-08";
 const BASE_URL = "https://raw.githubusercontent.com/makernari/AX-slide-site/main/";
+const RESOURCE_URL = "https://makernari.github.io/AX-slide-site/";
 const GUIDE_MARKER_START = "<!-- INSTRUCTOR-BEGINNER-RUNBOOK-20260808:START -->";
 const GUIDE_MARKER_END = "<!-- INSTRUCTOR-BEGINNER-RUNBOOK-20260808:END -->";
 const README_MARKER_START = "<!-- INSTRUCTOR-HTML-EXAMPLE-20260808:START -->";
@@ -345,7 +346,7 @@ function buildRunbook(guide, htmlRelative, imageRelative) {
     "",
     "![" + guide.dayId + " " + role.label + " 차시별 완성 결과 예시](" + BASE_URL + imageRelative + ")",
     "",
-    "- [브라우저용 HTML 완성 예시 내려받기](" + BASE_URL + htmlRelative + ")",
+    "- [브라우저용 HTML 완성 예시 바로 보기](" + RESOURCE_URL + htmlRelative + ")",
     "- HTML 파일을 내려받아 더블클릭하면 설치 없이 브라우저에서 열립니다.",
     "- 이 화면은 실제 서비스 UI가 아니라 결과 구조·배치·완료 상태를 보여 주는 교육용 가상 디자인입니다.",
     "- 문구를 그대로 복사하게 하지 말고 자신의 결과에서 같은 구조와 검증 근거가 보이는지 확인하게 합니다.",
@@ -442,7 +443,7 @@ function enhanceReadme(readmePath, htmlRelative, guide) {
     "## 강사용 브라우저 완성 예시",
     "",
     "- " + guide.dayId + " " + guide.role.label + " 네 차시의 결과 구조와 디자인을 한 화면에서 확인합니다.",
-    "- [HTML 완성 예시 내려받기](" + BASE_URL + htmlRelative + ")",
+    "- [HTML 완성 예시 바로 보기](" + RESOURCE_URL + htmlRelative + ")",
     "- 파일을 내려받은 뒤 더블클릭하면 브라우저에서 열립니다. 실제 서비스 UI가 아닌 교육용 가상 예시입니다.",
     "",
     README_MARKER_END,

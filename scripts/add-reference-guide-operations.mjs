@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const AS_OF = "2026-08-08";
 const RAW_ROOT = "https://raw.githubusercontent.com/makernari/AX-slide-site/main";
+const PAGES_ROOT = "https://makernari.github.io/AX-slide-site";
 const markers = {
   learnerStart: "<!-- LEARNER-NOTION-PRECLASS-20260808:START -->",
   learnerEnd: "<!-- LEARNER-NOTION-PRECLASS-20260808:END -->",
@@ -160,8 +161,8 @@ function notionDashboardHtml(roleKey) {
 
 function learnerPreclassBlock(roleKey) {
   const role = roles[roleKey];
-  const htmlUrl = `${RAW_ROOT}/downloads/guide-resources/${roleKey}/M05-D01/examples/m05-d01-${roleKey}-notion-dashboard.html`;
-  const markdownGuideUrl = `${RAW_ROOT}/downloads/guide-resources/common/M05-D01/markdown-to-notion-learner-guide-20260808.pdf`;
+  const htmlUrl = `${PAGES_ROOT}/downloads/guide-resources/${roleKey}/M05-D01/examples/m05-d01-${roleKey}-notion-dashboard.html`;
+  const markdownGuideUrl = `${PAGES_ROOT}/downloads/guide-resources/common/M05-D01/markdown-to-notion-learner-guide-20260808.pdf`;
   return [
     markers.learnerStart,
     "",
@@ -285,7 +286,7 @@ function instructorBlock(roleKey, dayId) {
 
 function readmeBlock(roleKey, dayId) {
   const prefix = dayId === "M05-D01"
-    ? `- 수강생 첫 시간 안내 PDF: [Markdown(.md) 실습 문서를 Notion에서 작성하는 방법](${RAW_ROOT}/downloads/guide-resources/common/M05-D01/markdown-to-notion-learner-guide-20260808.pdf)\n- Notion 사전 준비 완성 구조: \`examples/m05-d01-${roleKey}-notion-dashboard.html\`\n- 원본 Notion PDF는 전체 과정 종료 후 강사가 별도 제공합니다.`
+    ? `- 수강생 첫 시간 안내 PDF: [Markdown(.md) 실습 문서를 Notion에서 작성하는 방법](${PAGES_ROOT}/downloads/guide-resources/common/M05-D01/markdown-to-notion-learner-guide-20260808.pdf)\n- Notion 사전 준비 완성 구조: \`examples/m05-d01-${roleKey}-notion-dashboard.html\`\n- 원본 Notion PDF는 전체 과정 종료 후 강사가 별도 제공합니다.`
     : "- 전체 과정 종료 후 제공되는 원본 3종은 이 폴더에 복사하지 않으며 강사가 승인 채널로 별도 제공합니다.";
   return `${markers.readmeStart}\n\n## 제공 교재 운영\n\n${prefix}\n\n${markers.readmeEnd}`;
 }

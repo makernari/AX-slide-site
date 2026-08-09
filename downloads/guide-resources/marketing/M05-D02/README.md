@@ -36,8 +36,8 @@
 ## 강사용 브라우저 완성 예시
 
 - M05-D02 마케팅 네 차시의 결과 구조와 디자인을 한 화면에서 확인합니다.
-- [브라우저 예시 ZIP 내려받기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/marketing/M05-D02/browser-examples-marketing-m05-d02-20260809.zip)
-- ZIP을 내려받아 압축을 푼 뒤 `START_HERE.html`을 더블클릭하면 브라우저에서 열립니다. 실제 서비스 UI가 아닌 교육용 가상 예시입니다.
+- [완성 예시 바로 보기](https://makernari.github.io/AX-slide-site/downloads/guide-resources/marketing/M05-D02/solutions/m05-d02-marketing-complete-example.html)
+- 배포 링크를 선택하면 브라우저에서 바로 열립니다. 실제 서비스 UI가 아닌 교육용 가상 예시입니다.
 
 <!-- INSTRUCTOR-HTML-EXAMPLE-20260808:END -->
 
@@ -46,7 +46,7 @@
 ## 수업 전 선택 5분 AI 워밍업
 
 - 오늘의 팁: 음성 아이디어를 3초 훅 3개로
-- [브라우저 예시 ZIP 내려받기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/marketing/M05-D02/browser-examples-marketing-m05-d02-20260809.zip)
+- [브라우저 예시 바로 보기](https://makernari.github.io/AX-slide-site/downloads/guide-resources/marketing/M05-D02/warmups/m05-d02-marketing-ai-warmup.html)
 - 정규 4차시·240분과 필수 제출물에는 포함하지 않습니다.
 
 <!-- DAILY-AI-WARMUP-HTML-20260808:END -->
@@ -56,8 +56,8 @@
 ## 기본 Gem 체험·직무 Gem 제작·공유 실습
 
 - 구분: 커리큘럼 핵심 보강
-- [단계별 상세 실습팩](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/marketing/M05-D02/supplements/m05-d02-marketing-detailed-practice.md)
-- [브라우저 결과 구조 예시](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/marketing/M05-D02/browser-examples-marketing-m05-d02-20260809.zip)
+- [단계별 상세 실습팩](https://makernari.github.io/AX-slide-site/downloads/guide-resources/marketing/M05-D02/supplements/m05-d02-marketing-detailed-practice.md)
+- [브라우저 결과 구조 바로 보기](https://makernari.github.io/AX-slide-site/downloads/guide-resources/marketing/M05-D02/supplements/m05-d02-marketing-detailed-practice.html)
 - 4차시 Gem 제작·검증 50분 안에서 운영. 영어·생활습관 Gem은 빠른 학습자 선택입니다.
 
 <!-- GOOGLE-AI-DETAILED-PRACTICE-HTML-20260808:END -->
