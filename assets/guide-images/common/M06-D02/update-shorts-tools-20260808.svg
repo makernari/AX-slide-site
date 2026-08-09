@@ -18,7 +18,7 @@
 <rect x="105" y="562" width="1390" height="94" rx="22" fill="#FFFFFF" stroke="#D9E2F2" stroke-width="2"/>
       <circle cx="158" cy="609" r="25" fill="#FF6B57"/>
       <text x="158" y="619" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
-      <text x="210" y="620" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="29" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="210" dy="0">CapCut 자동 자막은 Web·Desktop·Mobile에서 가능하나 세부 기능은 다름</tspan></text>
+      <text x="210" y="620" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="29" font-weight="650" fill="#172B4D" text-anchor="start"><tspan x="210" dy="0">Vrew는 음성 인식으로 자동 자막 초안을 만들고 텍스트로 수정 가능</tspan></text>
     <rect x="105" y="684" width="900" height="136" rx="22" fill="#EAF2FF"/>
     <text x="137" y="714" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="20" font-weight="650" fill="#155EEF" text-anchor="start"><tspan x="137" dy="0">수업 반영</tspan><tspan x="137" dy="27">35초 또는 30초 대본과 자막 타이밍을 먼저 완성하고,</tspan><tspan x="137" dy="27">음악·영상 편집 도구는 교체 가능한 단계로 사용합니다.</tspan></text>
     <rect x="1030" y="684" width="465" height="136" rx="22" fill="#FFF1E8"/>

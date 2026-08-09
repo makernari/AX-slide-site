@@ -3,64 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>M08-D04 · MCP·Function Calling·AI 에이전트 · 완성 결과 예시</title>
+  <title>M08-D04 · 경영지원 · 실제 작성형 완성 예시</title>
   <style>
-    :root{font-family:Arial,'Noto Sans KR',system-ui,sans-serif;color:#172b4d;background:#eef3f9;--accent:#155EEF;--dark:#0B3B8F;--soft:#EAF2FF}
-    *{box-sizing:border-box}body{margin:0;min-width:320px}.page{width:min(1540px,100%);min-height:100vh;margin:0 auto;padding:22px}
-    header{height:126px;border-radius:26px;background:var(--dark);color:#fff;padding:23px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 14px 38px #10244724}
-    .eyebrow{font-size:15px;font-weight:800;letter-spacing:.08em;color:#d8e5ff;margin:0 0 7px}.title{font-size:34px;line-height:1.15;margin:0}.header-meta{text-align:right;min-width:260px}.role{display:inline-block;padding:8px 16px;border-radius:999px;background:#fff;color:var(--dark);font-weight:800}.date{font-size:14px;color:#d8e5ff;margin:10px 0 0}
-    .summary{height:78px;margin:14px 0;border-radius:20px;background:#fff;border:2px solid #d7e1ef;padding:14px 22px;display:grid;grid-template-columns:120px 1fr 310px;align-items:center;gap:18px}.summary strong{color:var(--accent)}.required{font-size:15px;line-height:1.35}.notice{font-size:13px;color:#52627a;text-align:right}
-    .grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;height:620px}.session-card{background:#fff;border:2px solid #d7e1ef;border-radius:22px;padding:13px;display:grid;grid-template-columns:43% 57%;gap:15px;overflow:hidden}.visual{display:flex;align-items:center}.visual svg{width:100%;height:auto;display:block}.session-copy{padding:5px 8px 5px 0;min-width:0}.session-top{display:flex;justify-content:space-between;align-items:center}.session-badge{display:inline-flex;background:var(--accent);color:#fff;border-radius:999px;padding:7px 12px;font-size:14px;font-weight:800}.status{color:#166534;background:#ecfdf3;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:750}.session-copy h2{font-size:21px;line-height:1.25;margin:13px 0 12px;color:#0b1f44}.session-copy p{font-size:14px;line-height:1.48;margin:8px 0}.session-copy strong{display:inline-block;color:var(--dark);margin-right:6px}.check{padding:10px 12px;border-radius:12px;background:var(--soft)}
-    @media(max-width:760px){.page{padding:12px}header{height:auto;min-height:150px;align-items:flex-start;flex-direction:column}.title{font-size:26px}.header-meta{text-align:left}.summary{height:auto;grid-template-columns:1fr}.notice{text-align:left}.grid{height:auto;grid-template-columns:1fr;grid-template-rows:none}.session-card{grid-template-columns:1fr}.session-copy{padding:4px}.visual svg{max-height:260px}}
-    @media print{body{background:#fff}.page{padding:0}header{box-shadow:none}.session-card{break-inside:avoid}}
+    :root{font-family:Arial,'Noto Sans KR',system-ui,sans-serif;color:#132746;background:#edf3f9;--accent:#155EEF;--dark:#0B3B8F;--soft:#EAF2FF}
+    *{box-sizing:border-box}body{margin:0;min-width:320px}.page{width:min(1600px,100%);height:900px;margin:0 auto;padding:22px;display:grid;grid-template-rows:112px 68px 1fr;gap:14px}
+    header{border-radius:24px;background:linear-gradient(135deg,var(--dark),var(--accent));color:#fff;padding:20px 30px;display:flex;align-items:center;justify-content:space-between;gap:22px;box-shadow:0 14px 34px #12345a22}.eyebrow{font-size:14px;font-weight:800;letter-spacing:.08em;margin:0 0 7px;color:#dce9ff}.title{font-size:30px;line-height:1.15;margin:0}.meta{text-align:right}.role{display:inline-block;background:#fff;color:var(--dark);padding:8px 14px;border-radius:999px;font-weight:850}.meta p{font-size:13px;margin:9px 0 0;color:#e5efff}
+    .summary{background:#fff;border:1px solid #ccdaeb;border-radius:18px;padding:12px 20px;display:grid;grid-template-columns:116px 1fr 260px;gap:16px;align-items:center}.summary b{color:var(--accent)}.summary span{font-size:14px;line-height:1.35}.summary small{text-align:right;color:#52627a;line-height:1.35}
+    .grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;min-height:0}.session-card{background:#fff;border:1px solid #cbd9e9;border-radius:20px;padding:14px 16px;min-height:0;display:grid;grid-template-rows:30px 32px 1fr 30px 30px;gap:6px;overflow:hidden}.card-top{display:flex;justify-content:space-between;align-items:center}.session,.done{padding:6px 10px;border-radius:999px;font-size:12px;font-weight:850}.session{background:var(--accent);color:#fff}.done{background:#eaf8ef;color:#14723b}.session-card h2{font-size:18px;line-height:1.2;margin:0;color:#0b1f44}.artifact{border:1px solid #d8e2ef;background:#f8fafc;border-radius:13px;padding:10px 12px;overflow:hidden}.artifact ul{margin:0;padding-left:18px;display:grid;gap:4px}.artifact li,.artifact p{font-size:12px;line-height:1.34;margin:0}.artifact table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:11px}.artifact th,.artifact td{padding:5px 6px;border-bottom:1px solid #dbe4ef;text-align:left;overflow-wrap:anywhere}.artifact th{color:var(--dark);background:var(--soft)}.result,.verify{display:grid;grid-template-columns:48px 1fr;align-items:center;border-radius:9px;padding:5px 9px;font-size:12px}.result{background:var(--soft)}.verify{background:#f3f6fa}.result b,.verify b{color:var(--dark)}
+    @media(max-width:760px){.page{height:auto;min-height:100vh;padding:12px;grid-template-rows:auto auto auto}header{align-items:flex-start;flex-direction:column}.title{font-size:25px}.meta{text-align:left}.summary{grid-template-columns:1fr}.summary small{text-align:left}.grid{grid-template-columns:1fr;grid-template-rows:none}.session-card{min-height:390px}.artifact li,.artifact p{font-size:13px}}
+    @media print{body{background:#fff}.page{padding:0}}
   </style>
 </head>
 <body data-example-ready="true">
   <main class="page">
-    <header>
-      <div><p class="eyebrow">INSTRUCTOR COMPLETE EXAMPLE · M08-D04</p><h1 class="title">MCP·Function Calling·AI 에이전트</h1></div>
-      <div class="header-meta"><span class="role">스마트 경영지원</span><p class="date">교육용 가상 완성 화면 · 2026-08-08</p></div>
-    </header>
-    <section class="summary" aria-label="완성 결과 요약"><strong>최종 결과물</strong><div class="required">MCP 도구 흐름도 · 에이전트 미션 결과 · 권한·승인·보안 체크표</div><div class="notice">실제 서비스 화면이 아닌 강의용 디자인 예시<br>문구보다 구조·근거·완료 상태를 확인하세요.</div></section>
-    <section class="grid" aria-label="차시별 완성 예시">
-<article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="MCP 도구 흐름도 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#0B3B8F"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">MCP 도구 흐름도</text><rect x="52" y="132" width="100" height="56" rx="16" fill="#EAF2FF" stroke="#155EEF"/><text x="102" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#0B3B8F">읽기</text><rect x="194" y="132" width="100" height="56" rx="16" fill="#EAF2FF" stroke="#155EEF"/><text x="244" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#0B3B8F">초안</text><path d="M336 160 L386 112 L436 160 L386 208 Z" fill="#FFF1E8" stroke="#F97316" stroke-width="2"/><text x="386" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="15" font-weight="750" fill="#9A3412">사람 승인</text><rect x="458" y="132" width="76" height="56" rx="16" fill="#ECFDF3" stroke="#22C55E"/><text x="496" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#166534">기록</text><path d="M152 160 H184 M294 160 H328 M436 160 H450" stroke="#8FA6C7" stroke-width="6"/><rect x="74" y="230" width="430" height="34" rx="11" fill="#0B1F44"/><text x="289" y="252" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="14" font-weight="650" fill="#FFFFFF">승인 없는 발송·게시·삭제 없음</text></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">1차시</span><span class="status">완성 예시</span></div>
-    <h2>MCP 도구 흐름도</h2>
-    <p class="activity"><strong>학습자 수행</strong> 조회·문서 생성·등록·알림 기능을 도구 카드로 정리</p>
-    <p class="check"><strong>확인</strong> 최소 권한</p>
-  </div>
+    <header><div><p class="eyebrow">REAL-WORLD PRACTICE EXAMPLE · M08-D04</p><h1 class="title">경영지원 강사용 운영 가이드</h1></div><div class="meta"><span class="role">스마트 경영지원</span><p>교육용 가상 데이터 · 브라우저 독립 실행 · 2026-08-09</p></div></header>
+    <section class="summary"><b>오늘의 완성물</b><span>MCP 도구 흐름도 · 에이전트 미션 결과 · 권한·승인·보안 체크표  </span><small>실제 기관 자료가 아닌 실습용 결과입니다.<br>표현보다 근거·검수·완료 상태를 확인하세요.</small></section>
+    <section class="grid"><article class="session-card">
+  <div class="card-top"><span class="session">1차시</span><span class="done">검수 완료</span></div>
+  <h2>실행 로그</h2>
+  <div class="artifact"><table><thead><tr><th>순서</th><th>도구</th><th>입력</th></tr></thead><tbody><tr><td>1</td><td>listvirtualrequests</td><td>검토 필요</td></tr><tr><td>2</td><td>draftopsreport</td><td>요청ID·유형·기한</td></tr><tr><td>3</td><td>requesthumanapproval</td><td>DRAFT-BO-01·인젝션 경고</td></tr><tr><td>4</td><td>draftemail</td><td>approved DRAFT-BO-01</td></tr></tbody></table></div>
+  <div class="result"><b>결과</b><span>MCP 도구 흐름도</span></div>
+  <div class="verify"><b>확인</b><span>최소 권한</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="에이전트 미션 결과 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#0B3B8F"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">에이전트 미션 결과</text><rect x="52" y="132" width="100" height="56" rx="16" fill="#EAF2FF" stroke="#155EEF"/><text x="102" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#0B3B8F">읽기</text><rect x="194" y="132" width="100" height="56" rx="16" fill="#EAF2FF" stroke="#155EEF"/><text x="244" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#0B3B8F">초안</text><path d="M336 160 L386 112 L436 160 L386 208 Z" fill="#FFF1E8" stroke="#F97316" stroke-width="2"/><text x="386" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="15" font-weight="750" fill="#9A3412">사람 승인</text><rect x="458" y="132" width="76" height="56" rx="16" fill="#ECFDF3" stroke="#22C55E"/><text x="496" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#166534">기록</text><path d="M152 160 H184 M294 160 H328 M436 160 H450" stroke="#8FA6C7" stroke-width="6"/><rect x="74" y="230" width="430" height="34" rx="11" fill="#0B1F44"/><text x="289" y="252" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="14" font-weight="650" fill="#FFFFFF">승인 없는 발송·게시·삭제 없음</text></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">2차시</span><span class="status">완성 예시</span></div>
-    <h2>에이전트 미션 결과</h2>
-    <p class="activity"><strong>학습자 수행</strong> Sheets 조회→보고서 생성→승인→메일 초안 순서 구성</p>
-    <p class="check"><strong>확인</strong> 쓰기 전 승인</p>
-  </div>
+  <div class="card-top"><span class="session">2차시</span><span class="done">검수 완료</span></div>
+  <h2>에이전트 미션 결과</h2>
+  <div class="artifact"><ul><li>작성 내용: Sheets 조회→보고서 생성→승인→메일 초안 순서 구성</li><li>완료 결과: 에이전트 미션 결과</li><li>검수 기준: 쓰기 전 승인</li><li>저장 상태: 파일을 닫고 다시 찾아 열어 확인함</li></ul></div>
+  <div class="result"><b>결과</b><span>에이전트 미션 결과</span></div>
+  <div class="verify"><b>확인</b><span>쓰기 전 승인</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="권한·승인·보안 체크표 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#0B3B8F"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">권한·승인·보안 체크표</text><rect x="52" y="132" width="100" height="56" rx="16" fill="#EAF2FF" stroke="#155EEF"/><text x="102" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#0B3B8F">읽기</text><rect x="194" y="132" width="100" height="56" rx="16" fill="#EAF2FF" stroke="#155EEF"/><text x="244" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#0B3B8F">초안</text><path d="M336 160 L386 112 L436 160 L386 208 Z" fill="#FFF1E8" stroke="#F97316" stroke-width="2"/><text x="386" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="15" font-weight="750" fill="#9A3412">사람 승인</text><rect x="458" y="132" width="76" height="56" rx="16" fill="#ECFDF3" stroke="#22C55E"/><text x="496" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#166534">기록</text><path d="M152 160 H184 M294 160 H328 M436 160 H450" stroke="#8FA6C7" stroke-width="6"/><rect x="74" y="230" width="430" height="34" rx="11" fill="#0B1F44"/><text x="289" y="252" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="14" font-weight="650" fill="#FFFFFF">승인 없는 발송·게시·삭제 없음</text></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">3차시</span><span class="status">완성 예시</span></div>
-    <h2>권한·승인·보안 체크표</h2>
-    <p class="activity"><strong>학습자 수행</strong> 업무 요청 조회 후 보고서 초안과 승인 요청</p>
-    <p class="check"><strong>확인</strong> 외부 지시문 무시</p>
-  </div>
+  <div class="card-top"><span class="session">3차시</span><span class="done">검수 완료</span></div>
+  <h2>보안 판정</h2>
+  <div class="artifact"><p>최소 읽기, 승인 전 중지, 키 비기록, 1회 재시도, 발송 없는 초안 생성 기준을 모두 충족했다.</p></div>
+  <div class="result"><b>결과</b><span>권한·승인·보안 체크표</span></div>
+  <div class="verify"><b>확인</b><span>외부 지시문 무시</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="권한·승인·보안 체크표 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#0B3B8F"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">권한·승인·보안 체크표</text><rect x="52" y="132" width="100" height="56" rx="16" fill="#EAF2FF" stroke="#155EEF"/><text x="102" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#0B3B8F">읽기</text><rect x="194" y="132" width="100" height="56" rx="16" fill="#EAF2FF" stroke="#155EEF"/><text x="244" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#0B3B8F">초안</text><path d="M336 160 L386 112 L436 160 L386 208 Z" fill="#FFF1E8" stroke="#F97316" stroke-width="2"/><text x="386" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="15" font-weight="750" fill="#9A3412">사람 승인</text><rect x="458" y="132" width="76" height="56" rx="16" fill="#ECFDF3" stroke="#22C55E"/><text x="496" y="166" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="750" fill="#166534">기록</text><path d="M152 160 H184 M294 160 H328 M436 160 H450" stroke="#8FA6C7" stroke-width="6"/><rect x="74" y="230" width="430" height="34" rx="11" fill="#0B1F44"/><text x="289" y="252" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="14" font-weight="650" fill="#FFFFFF">승인 없는 발송·게시·삭제 없음</text></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">4차시</span><span class="status">완성 예시</span></div>
-    <h2>권한·승인·보안 체크표</h2>
-    <p class="activity"><strong>학습자 수행</strong> 민감정보·오발송·삭제 위험 대응</p>
-    <p class="check"><strong>확인</strong> API 키 비노출</p>
-  </div>
-</article>
-    </section>
+  <div class="card-top"><span class="session">4차시</span><span class="done">검수 완료</span></div>
+  <h2>권한·승인·보안 체크표</h2>
+  <div class="artifact"><ul><li>작성 내용: 민감정보·오발송·삭제 위험 대응</li><li>완료 결과: 권한·승인·보안 체크표</li><li>검수 기준: API 키 비노출</li><li>저장 상태: 파일을 닫고 다시 찾아 열어 확인함</li></ul></div>
+  <div class="result"><b>결과</b><span>권한·승인·보안 체크표</span></div>
+  <div class="verify"><b>확인</b><span>API 키 비노출</span></div>
+</article></section>
   </main>
-  <script>document.documentElement.dataset.exampleReady = "true";</script>
+  <script>document.documentElement.dataset.exampleReady='true'</script>
 </body>
 </html>

@@ -3,64 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>M06-D03 · ChatGPT 유료 리서치와 맞춤형 GPT · 완성 결과 예시</title>
+  <title>M06-D03 · 마케팅 · 실제 작성형 완성 예시</title>
   <style>
-    :root{font-family:Arial,'Noto Sans KR',system-ui,sans-serif;color:#172b4d;background:#eef3f9;--accent:#C2410C;--dark:#8A2D0B;--soft:#FFF1E8}
-    *{box-sizing:border-box}body{margin:0;min-width:320px}.page{width:min(1540px,100%);min-height:100vh;margin:0 auto;padding:22px}
-    header{height:126px;border-radius:26px;background:var(--dark);color:#fff;padding:23px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 14px 38px #10244724}
-    .eyebrow{font-size:15px;font-weight:800;letter-spacing:.08em;color:#d8e5ff;margin:0 0 7px}.title{font-size:34px;line-height:1.15;margin:0}.header-meta{text-align:right;min-width:260px}.role{display:inline-block;padding:8px 16px;border-radius:999px;background:#fff;color:var(--dark);font-weight:800}.date{font-size:14px;color:#d8e5ff;margin:10px 0 0}
-    .summary{height:78px;margin:14px 0;border-radius:20px;background:#fff;border:2px solid #d7e1ef;padding:14px 22px;display:grid;grid-template-columns:120px 1fr 310px;align-items:center;gap:18px}.summary strong{color:var(--accent)}.required{font-size:15px;line-height:1.35}.notice{font-size:13px;color:#52627a;text-align:right}
-    .grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;height:620px}.session-card{background:#fff;border:2px solid #d7e1ef;border-radius:22px;padding:13px;display:grid;grid-template-columns:43% 57%;gap:15px;overflow:hidden}.visual{display:flex;align-items:center}.visual svg{width:100%;height:auto;display:block}.session-copy{padding:5px 8px 5px 0;min-width:0}.session-top{display:flex;justify-content:space-between;align-items:center}.session-badge{display:inline-flex;background:var(--accent);color:#fff;border-radius:999px;padding:7px 12px;font-size:14px;font-weight:800}.status{color:#166534;background:#ecfdf3;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:750}.session-copy h2{font-size:21px;line-height:1.25;margin:13px 0 12px;color:#0b1f44}.session-copy p{font-size:14px;line-height:1.48;margin:8px 0}.session-copy strong{display:inline-block;color:var(--dark);margin-right:6px}.check{padding:10px 12px;border-radius:12px;background:var(--soft)}
-    @media(max-width:760px){.page{padding:12px}header{height:auto;min-height:150px;align-items:flex-start;flex-direction:column}.title{font-size:26px}.header-meta{text-align:left}.summary{height:auto;grid-template-columns:1fr}.notice{text-align:left}.grid{height:auto;grid-template-columns:1fr;grid-template-rows:none}.session-card{grid-template-columns:1fr}.session-copy{padding:4px}.visual svg{max-height:260px}}
-    @media print{body{background:#fff}.page{padding:0}header{box-shadow:none}.session-card{break-inside:avoid}}
+    :root{font-family:Arial,'Noto Sans KR',system-ui,sans-serif;color:#132746;background:#edf3f9;--accent:#C2410C;--dark:#8A2D0B;--soft:#FFF1E8}
+    *{box-sizing:border-box}body{margin:0;min-width:320px}.page{width:min(1600px,100%);height:900px;margin:0 auto;padding:22px;display:grid;grid-template-rows:112px 68px 1fr;gap:14px}
+    header{border-radius:24px;background:linear-gradient(135deg,var(--dark),var(--accent));color:#fff;padding:20px 30px;display:flex;align-items:center;justify-content:space-between;gap:22px;box-shadow:0 14px 34px #12345a22}.eyebrow{font-size:14px;font-weight:800;letter-spacing:.08em;margin:0 0 7px;color:#dce9ff}.title{font-size:30px;line-height:1.15;margin:0}.meta{text-align:right}.role{display:inline-block;background:#fff;color:var(--dark);padding:8px 14px;border-radius:999px;font-weight:850}.meta p{font-size:13px;margin:9px 0 0;color:#e5efff}
+    .summary{background:#fff;border:1px solid #ccdaeb;border-radius:18px;padding:12px 20px;display:grid;grid-template-columns:116px 1fr 260px;gap:16px;align-items:center}.summary b{color:var(--accent)}.summary span{font-size:14px;line-height:1.35}.summary small{text-align:right;color:#52627a;line-height:1.35}
+    .grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;min-height:0}.session-card{background:#fff;border:1px solid #cbd9e9;border-radius:20px;padding:14px 16px;min-height:0;display:grid;grid-template-rows:30px 32px 1fr 30px 30px;gap:6px;overflow:hidden}.card-top{display:flex;justify-content:space-between;align-items:center}.session,.done{padding:6px 10px;border-radius:999px;font-size:12px;font-weight:850}.session{background:var(--accent);color:#fff}.done{background:#eaf8ef;color:#14723b}.session-card h2{font-size:18px;line-height:1.2;margin:0;color:#0b1f44}.artifact{border:1px solid #d8e2ef;background:#f8fafc;border-radius:13px;padding:10px 12px;overflow:hidden}.artifact ul{margin:0;padding-left:18px;display:grid;gap:4px}.artifact li,.artifact p{font-size:12px;line-height:1.34;margin:0}.artifact table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:11px}.artifact th,.artifact td{padding:5px 6px;border-bottom:1px solid #dbe4ef;text-align:left;overflow-wrap:anywhere}.artifact th{color:var(--dark);background:var(--soft)}.result,.verify{display:grid;grid-template-columns:48px 1fr;align-items:center;border-radius:9px;padding:5px 9px;font-size:12px}.result{background:var(--soft)}.verify{background:#f3f6fa}.result b,.verify b{color:var(--dark)}
+    @media(max-width:760px){.page{height:auto;min-height:100vh;padding:12px;grid-template-rows:auto auto auto}header{align-items:flex-start;flex-direction:column}.title{font-size:25px}.meta{text-align:left}.summary{grid-template-columns:1fr}.summary small{text-align:left}.grid{grid-template-columns:1fr;grid-template-rows:none}.session-card{min-height:390px}.artifact li,.artifact p{font-size:13px}}
+    @media print{body{background:#fff}.page{padding:0}}
   </style>
 </head>
 <body data-example-ready="true">
   <main class="page">
-    <header>
-      <div><p class="eyebrow">INSTRUCTOR COMPLETE EXAMPLE · M06-D03</p><h1 class="title">ChatGPT 유료 리서치와 맞춤형 GPT</h1></div>
-      <div class="header-meta"><span class="role">마케팅·SNS 콘텐츠 기획·브랜딩</span><p class="date">교육용 가상 완성 화면 · 2026-08-08</p></div>
-    </header>
-    <section class="summary" aria-label="완성 결과 요약"><strong>최종 결과물</strong><div class="required">리서치 보고서 · ChatGPT Project · 맞춤형 GPT 1종 · 테스트표</div><div class="notice">실제 서비스 화면이 아닌 강의용 디자인 예시<br>문구보다 구조·근거·완료 상태를 확인하세요.</div></section>
-    <section class="grid" aria-label="차시별 완성 예시">
-<article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="리서치 보고서 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#8A2D0B"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">리서치 보고서</text><rect x="48" y="86" width="464" height="46" rx="15" fill="#FFF1E8" stroke="#C2410C"/><circle cx="74" cy="109" r="10" fill="#C2410C"/><rect x="96" y="103" width="260" height="11" rx="5" fill="#B7C7DE"/><rect x="48" y="150" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="164" r="7" fill="#C2410C"/><rect x="84" y="159" width="180" height="9" rx="4" fill="#D7E1EF"/><rect x="48" y="190" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="204" r="7" fill="#9AAAC0"/><rect x="84" y="199" width="162" height="9" rx="4" fill="#D7E1EF"/><rect x="48" y="230" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="244" r="7" fill="#9AAAC0"/><rect x="84" y="239" width="144" height="9" rx="4" fill="#D7E1EF"/><rect x="356" y="150" width="156" height="108" rx="14" fill="#FFFFFF" stroke="#C2410C"/><text x="434" y="180" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="17" font-weight="750" fill="#8A2D0B">근거 보고서</text><rect x="378" y="198" width="112" height="9" rx="4" fill="#C2410C"/><rect x="378" y="220" width="90" height="8" rx="4" fill="#D7E1EF"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">1차시</span><span class="status">완성 예시</span></div>
-    <h2>리서치 보고서</h2>
-    <p class="activity"><strong>학습자 수행</strong> 시장·트렌드·브랜드 사례 리서치 질문과 자료 범위 설정</p>
-    <p class="check"><strong>확인</strong> 질문 범위</p>
-  </div>
+    <header><div><p class="eyebrow">REAL-WORLD PRACTICE EXAMPLE · M06-D03</p><h1 class="title">마케팅 강사용 운영 가이드</h1></div><div class="meta"><span class="role">마케팅·SNS 콘텐츠 기획·브랜딩</span><p>교육용 가상 데이터 · 브라우저 독립 실행 · 2026-08-09</p></div></header>
+    <section class="summary"><b>오늘의 완성물</b><span>리서치 보고서 · ChatGPT Project · 맞춤형 GPT 1종 · 테스트표  </span><small>실제 기관 자료가 아닌 실습용 결과입니다.<br>표현보다 근거·검수·완료 상태를 확인하세요.</small></section>
+    <section class="grid"><article class="session-card">
+  <div class="card-top"><span class="session">1차시</span><span class="done">검수 완료</span></div>
+  <h2>리서치 요약</h2>
+  <div class="artifact"><p>확인된 제품 사실은 밝기 3단계·2700K·120g이다. [MK-R1] 가상 채널 자료에서는 저장 42, 댓글 11, 링크 클릭 18이지만 표본과 광고비 정보가 없어 성과 우열을 확정할 수 없다. [MK-R2] 8명 인터뷰에서 고정…</p><p>‘집중력 향상’은 근거 없는 옛 카피이므로 제외하고, 현재 승인된 ‘조용한 저녁 루틴’과 ‘직접 비교’ CTA를 사용한다. [MK-R4][MK-R5]</p></div>
+  <div class="result"><b>결과</b><span>리서치 보고서</span></div>
+  <div class="verify"><b>확인</b><span>질문 범위</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="ChatGPT Project 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#8A2D0B"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">ChatGPT Project</text><rect x="48" y="86" width="464" height="46" rx="15" fill="#FFF1E8" stroke="#C2410C"/><circle cx="74" cy="109" r="10" fill="#C2410C"/><rect x="96" y="103" width="260" height="11" rx="5" fill="#B7C7DE"/><rect x="48" y="150" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="164" r="7" fill="#C2410C"/><rect x="84" y="159" width="180" height="9" rx="4" fill="#D7E1EF"/><rect x="48" y="190" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="204" r="7" fill="#9AAAC0"/><rect x="84" y="199" width="162" height="9" rx="4" fill="#D7E1EF"/><rect x="48" y="230" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="244" r="7" fill="#9AAAC0"/><rect x="84" y="239" width="144" height="9" rx="4" fill="#D7E1EF"/><rect x="356" y="150" width="156" height="108" rx="14" fill="#FFFFFF" stroke="#C2410C"/><text x="434" y="180" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="17" font-weight="750" fill="#8A2D0B">근거 보고서</text><rect x="378" y="198" width="112" height="9" rx="4" fill="#C2410C"/><rect x="378" y="220" width="90" height="8" rx="4" fill="#D7E1EF"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">2차시</span><span class="status">완성 예시</span></div>
-    <h2>ChatGPT Project</h2>
-    <p class="activity"><strong>학습자 수행</strong> 시장 동향과 브랜드·캠페인 사례 조사 보고서 작성</p>
-    <p class="check"><strong>확인</strong> 출처 날짜·공식성</p>
-  </div>
+  <div class="card-top"><span class="session">2차시</span><span class="done">검수 완료</span></div>
+  <h2>ChatGPT Project</h2>
+  <div class="artifact"><ul><li>작성 내용: 시장 동향과 브랜드·캠페인 사례 조사 보고서 작성</li><li>완료 결과: ChatGPT Project</li><li>검수 기준: 출처 날짜·공식성</li><li>저장 상태: 파일을 닫고 다시 찾아 열어 확인함</li></ul></div>
+  <div class="result"><b>결과</b><span>ChatGPT Project</span></div>
+  <div class="verify"><b>확인</b><span>출처 날짜·공식성</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="맞춤형 GPT 1종 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#8A2D0B"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">맞춤형 GPT 1종</text><rect x="48" y="86" width="464" height="46" rx="15" fill="#FFF1E8" stroke="#C2410C"/><circle cx="74" cy="109" r="10" fill="#C2410C"/><rect x="96" y="103" width="260" height="11" rx="5" fill="#B7C7DE"/><rect x="48" y="150" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="164" r="7" fill="#C2410C"/><rect x="84" y="159" width="180" height="9" rx="4" fill="#D7E1EF"/><rect x="48" y="190" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="204" r="7" fill="#9AAAC0"/><rect x="84" y="199" width="162" height="9" rx="4" fill="#D7E1EF"/><rect x="48" y="230" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="244" r="7" fill="#9AAAC0"/><rect x="84" y="239" width="144" height="9" rx="4" fill="#D7E1EF"/><rect x="356" y="150" width="156" height="108" rx="14" fill="#FFFFFF" stroke="#C2410C"/><text x="434" y="180" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="17" font-weight="750" fill="#8A2D0B">근거 보고서</text><rect x="378" y="198" width="112" height="9" rx="4" fill="#C2410C"/><rect x="378" y="220" width="90" height="8" rx="4" fill="#D7E1EF"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">3차시</span><span class="status">완성 예시</span></div>
-    <h2>맞춤형 GPT 1종</h2>
-    <p class="activity"><strong>학습자 수행</strong> 콘텐츠 기획·브랜드 톤·카피 검토 중 GPT 제작</p>
-    <p class="check"><strong>확인</strong> 문장별 근거</p>
-  </div>
+  <div class="card-top"><span class="session">3차시</span><span class="done">검수 완료</span></div>
+  <h2>GPT 명세</h2>
+  <div class="artifact"><ul><li>목적: 제품 사실·과장·채널·CTA 검토</li><li>지식: MK-R1~R5</li><li>출력: 카피 | 근거 ID | 판단 | 채널 | 대체 문장</li><li>거절: 효능·순위·매출·실제 후기·할인 확정</li><li>시작문: ‘이 카피에서 근거 없는 표현을 찾아줘.’</li></ul></div>
+  <div class="result"><b>결과</b><span>맞춤형 GPT 1종</span></div>
+  <div class="verify"><b>확인</b><span>문장별 근거</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="테스트표 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#8A2D0B"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">테스트표</text><rect x="48" y="86" width="464" height="46" rx="15" fill="#FFF1E8" stroke="#C2410C"/><circle cx="74" cy="109" r="10" fill="#C2410C"/><rect x="96" y="103" width="260" height="11" rx="5" fill="#B7C7DE"/><rect x="48" y="150" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="164" r="7" fill="#C2410C"/><rect x="84" y="159" width="180" height="9" rx="4" fill="#D7E1EF"/><rect x="48" y="190" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="204" r="7" fill="#9AAAC0"/><rect x="84" y="199" width="162" height="9" rx="4" fill="#D7E1EF"/><rect x="48" y="230" width="280" height="28" rx="9" fill="#FFFFFF" stroke="#D7E1EF"/><circle cx="68" cy="244" r="7" fill="#9AAAC0"/><rect x="84" y="239" width="144" height="9" rx="4" fill="#D7E1EF"/><rect x="356" y="150" width="156" height="108" rx="14" fill="#FFFFFF" stroke="#C2410C"/><text x="434" y="180" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="17" font-weight="750" fill="#8A2D0B">근거 보고서</text><rect x="378" y="198" width="112" height="9" rx="4" fill="#C2410C"/><rect x="378" y="220" width="90" height="8" rx="4" fill="#D7E1EF"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">4차시</span><span class="status">완성 예시</span></div>
-    <h2>테스트표</h2>
-    <p class="activity"><strong>학습자 수행</strong> 마케팅 GPT의 톤·과장표현·사실성 점검</p>
-    <p class="check"><strong>확인</strong> 역할 밖 거절</p>
-  </div>
-</article>
-    </section>
+  <div class="card-top"><span class="session">4차시</span><span class="done">검수 완료</span></div>
+  <h2>유료 기능 대체</h2>
+  <div class="artifact"><p>Deep Research와 GPT Builder가 없으면 동일한 근거표·보고서·GPT 명세·수동 테스트표를 일반 문서와 채팅으로 완성한다.</p></div>
+  <div class="result"><b>결과</b><span>테스트표</span></div>
+  <div class="verify"><b>확인</b><span>역할 밖 거절</span></div>
+</article></section>
   </main>
-  <script>document.documentElement.dataset.exampleReady = "true";</script>
+  <script>document.documentElement.dataset.exampleReady='true'</script>
 </body>
 </html>

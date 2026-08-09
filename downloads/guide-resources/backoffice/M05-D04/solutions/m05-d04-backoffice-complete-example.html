@@ -3,64 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>M05-D04 · 한 자료 5종 변신과 무료 LLM 보고서 비교 · 완성 결과 예시</title>
+  <title>M05-D04 · 경영지원 · 실제 작성형 완성 예시</title>
   <style>
-    :root{font-family:Arial,'Noto Sans KR',system-ui,sans-serif;color:#172b4d;background:#eef3f9;--accent:#155EEF;--dark:#0B3B8F;--soft:#EAF2FF}
-    *{box-sizing:border-box}body{margin:0;min-width:320px}.page{width:min(1540px,100%);min-height:100vh;margin:0 auto;padding:22px}
-    header{height:126px;border-radius:26px;background:var(--dark);color:#fff;padding:23px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 14px 38px #10244724}
-    .eyebrow{font-size:15px;font-weight:800;letter-spacing:.08em;color:#d8e5ff;margin:0 0 7px}.title{font-size:34px;line-height:1.15;margin:0}.header-meta{text-align:right;min-width:260px}.role{display:inline-block;padding:8px 16px;border-radius:999px;background:#fff;color:var(--dark);font-weight:800}.date{font-size:14px;color:#d8e5ff;margin:10px 0 0}
-    .summary{height:78px;margin:14px 0;border-radius:20px;background:#fff;border:2px solid #d7e1ef;padding:14px 22px;display:grid;grid-template-columns:120px 1fr 310px;align-items:center;gap:18px}.summary strong{color:var(--accent)}.required{font-size:15px;line-height:1.35}.notice{font-size:13px;color:#52627a;text-align:right}
-    .grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;height:620px}.session-card{background:#fff;border:2px solid #d7e1ef;border-radius:22px;padding:13px;display:grid;grid-template-columns:43% 57%;gap:15px;overflow:hidden}.visual{display:flex;align-items:center}.visual svg{width:100%;height:auto;display:block}.session-copy{padding:5px 8px 5px 0;min-width:0}.session-top{display:flex;justify-content:space-between;align-items:center}.session-badge{display:inline-flex;background:var(--accent);color:#fff;border-radius:999px;padding:7px 12px;font-size:14px;font-weight:800}.status{color:#166534;background:#ecfdf3;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:750}.session-copy h2{font-size:21px;line-height:1.25;margin:13px 0 12px;color:#0b1f44}.session-copy p{font-size:14px;line-height:1.48;margin:8px 0}.session-copy strong{display:inline-block;color:var(--dark);margin-right:6px}.check{padding:10px 12px;border-radius:12px;background:var(--soft)}
-    @media(max-width:760px){.page{padding:12px}header{height:auto;min-height:150px;align-items:flex-start;flex-direction:column}.title{font-size:26px}.header-meta{text-align:left}.summary{height:auto;grid-template-columns:1fr}.notice{text-align:left}.grid{height:auto;grid-template-columns:1fr;grid-template-rows:none}.session-card{grid-template-columns:1fr}.session-copy{padding:4px}.visual svg{max-height:260px}}
-    @media print{body{background:#fff}.page{padding:0}header{box-shadow:none}.session-card{break-inside:avoid}}
+    :root{font-family:Arial,'Noto Sans KR',system-ui,sans-serif;color:#132746;background:#edf3f9;--accent:#155EEF;--dark:#0B3B8F;--soft:#EAF2FF}
+    *{box-sizing:border-box}body{margin:0;min-width:320px}.page{width:min(1600px,100%);height:900px;margin:0 auto;padding:22px;display:grid;grid-template-rows:112px 68px 1fr;gap:14px}
+    header{border-radius:24px;background:linear-gradient(135deg,var(--dark),var(--accent));color:#fff;padding:20px 30px;display:flex;align-items:center;justify-content:space-between;gap:22px;box-shadow:0 14px 34px #12345a22}.eyebrow{font-size:14px;font-weight:800;letter-spacing:.08em;margin:0 0 7px;color:#dce9ff}.title{font-size:30px;line-height:1.15;margin:0}.meta{text-align:right}.role{display:inline-block;background:#fff;color:var(--dark);padding:8px 14px;border-radius:999px;font-weight:850}.meta p{font-size:13px;margin:9px 0 0;color:#e5efff}
+    .summary{background:#fff;border:1px solid #ccdaeb;border-radius:18px;padding:12px 20px;display:grid;grid-template-columns:116px 1fr 260px;gap:16px;align-items:center}.summary b{color:var(--accent)}.summary span{font-size:14px;line-height:1.35}.summary small{text-align:right;color:#52627a;line-height:1.35}
+    .grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;min-height:0}.session-card{background:#fff;border:1px solid #cbd9e9;border-radius:20px;padding:14px 16px;min-height:0;display:grid;grid-template-rows:30px 32px 1fr 30px 30px;gap:6px;overflow:hidden}.card-top{display:flex;justify-content:space-between;align-items:center}.session,.done{padding:6px 10px;border-radius:999px;font-size:12px;font-weight:850}.session{background:var(--accent);color:#fff}.done{background:#eaf8ef;color:#14723b}.session-card h2{font-size:18px;line-height:1.2;margin:0;color:#0b1f44}.artifact{border:1px solid #d8e2ef;background:#f8fafc;border-radius:13px;padding:10px 12px;overflow:hidden}.artifact ul{margin:0;padding-left:18px;display:grid;gap:4px}.artifact li,.artifact p{font-size:12px;line-height:1.34;margin:0}.artifact table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:11px}.artifact th,.artifact td{padding:5px 6px;border-bottom:1px solid #dbe4ef;text-align:left;overflow-wrap:anywhere}.artifact th{color:var(--dark);background:var(--soft)}.result,.verify{display:grid;grid-template-columns:48px 1fr;align-items:center;border-radius:9px;padding:5px 9px;font-size:12px}.result{background:var(--soft)}.verify{background:#f3f6fa}.result b,.verify b{color:var(--dark)}
+    @media(max-width:760px){.page{height:auto;min-height:100vh;padding:12px;grid-template-rows:auto auto auto}header{align-items:flex-start;flex-direction:column}.title{font-size:25px}.meta{text-align:left}.summary{grid-template-columns:1fr}.summary small{text-align:left}.grid{grid-template-columns:1fr;grid-template-rows:none}.session-card{min-height:390px}.artifact li,.artifact p{font-size:13px}}
+    @media print{body{background:#fff}.page{padding:0}}
   </style>
 </head>
 <body data-example-ready="true">
   <main class="page">
-    <header>
-      <div><p class="eyebrow">INSTRUCTOR COMPLETE EXAMPLE · M05-D04</p><h1 class="title">한 자료 5종 변신과 무료 LLM 보고서 비교</h1></div>
-      <div class="header-meta"><span class="role">스마트 경영지원</span><p class="date">교육용 가상 완성 화면 · 2026-08-08</p></div>
-    </header>
-    <section class="summary" aria-label="완성 결과 요약"><strong>최종 결과물</strong><div class="required">슬라이드 덱 · 인포그래픽 · 3개 LLM 보고서 · 비교 평가표 · 대상별 변환본 · 최종 보고서 · AI 선택 가이드</div><div class="notice">실제 서비스 화면이 아닌 강의용 디자인 예시<br>문구보다 구조·근거·완료 상태를 확인하세요.</div></section>
-    <section class="grid" aria-label="차시별 완성 예시">
-<article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="슬라이드 덱 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#0B3B8F"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">슬라이드 덱</text><rect x="54" y="84" width="266" height="188" rx="12" fill="#FFFFFF" stroke="#155EEF" stroke-width="2"/><text x="76" y="116" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="19" font-weight="750" fill="#0B3B8F">한 페이지 결과</text><rect x="76" y="134" width="218" height="14" rx="7" fill="#155EEF" opacity="0.85"/><rect x="76" y="165" width="205" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="187" width="187" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="209" width="169" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="231" width="151" height="8" rx="4" fill="#D7E1EF"/><rect x="344" y="84" width="162" height="82" rx="14" fill="#EAF2FF"/><text x="425" y="116" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#0B3B8F">비교</text><rect x="365" y="132" width="120" height="9" rx="4" fill="#155EEF"/><rect x="344" y="184" width="162" height="88" rx="14" fill="#FFF1E8"/><text x="425" y="217" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#9A3412">검증</text><circle cx="380" cy="241" r="10" fill="#22C55E"/><rect x="398" y="236" width="70" height="9" rx="4" fill="#D7E1EF"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">1차시</span><span class="status">완성 예시</span></div>
-    <h2>슬라이드 덱</h2>
-    <p class="activity"><strong>학습자 수행</strong> 업무 브리핑 슬라이드와 한 장 인포그래픽 제작</p>
-    <p class="check"><strong>확인</strong> 원문 충실도</p>
-  </div>
+    <header><div><p class="eyebrow">REAL-WORLD PRACTICE EXAMPLE · M05-D04</p><h1 class="title">경영지원 강사용 운영 가이드</h1></div><div class="meta"><span class="role">스마트 경영지원</span><p>교육용 가상 데이터 · 브라우저 독립 실행 · 2026-08-09</p></div></header>
+    <section class="summary"><b>오늘의 완성물</b><span>슬라이드 덱 · 인포그래픽 · 3개 LLM 보고서 · 비교 평가표 · 대상별 변환본 · 최종 보고서 · AI 선택 가이드  </span><small>실제 기관 자료가 아닌 실습용 결과입니다.<br>표현보다 근거·검수·완료 상태를 확인하세요.</small></section>
+    <section class="grid"><article class="session-card">
+  <div class="card-top"><span class="session">1차시</span><span class="done">검수 완료</span></div>
+  <h2>슬라이드 덱</h2>
+  <div class="artifact"><ul><li>작성 내용: 업무 브리핑 슬라이드와 한 장 인포그래픽 제작</li><li>완료 결과: 슬라이드 덱</li><li>검수 기준: 원문 충실도</li><li>저장 상태: 파일을 닫고 다시 찾아 열어 확인함</li></ul></div>
+  <div class="result"><b>결과</b><span>슬라이드 덱</span></div>
+  <div class="verify"><b>확인</b><span>원문 충실도</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="인포그래픽 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#0B3B8F"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">인포그래픽</text><rect x="54" y="84" width="266" height="188" rx="12" fill="#FFFFFF" stroke="#155EEF" stroke-width="2"/><text x="76" y="116" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="19" font-weight="750" fill="#0B3B8F">한 페이지 결과</text><rect x="76" y="134" width="218" height="14" rx="7" fill="#155EEF" opacity="0.85"/><rect x="76" y="165" width="205" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="187" width="187" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="209" width="169" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="231" width="151" height="8" rx="4" fill="#D7E1EF"/><rect x="344" y="84" width="162" height="82" rx="14" fill="#EAF2FF"/><text x="425" y="116" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#0B3B8F">비교</text><rect x="365" y="132" width="120" height="9" rx="4" fill="#155EEF"/><rect x="344" y="184" width="162" height="88" rx="14" fill="#FFF1E8"/><text x="425" y="217" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#9A3412">검증</text><circle cx="380" cy="241" r="10" fill="#22C55E"/><rect x="398" y="236" width="70" height="9" rx="4" fill="#D7E1EF"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">2차시</span><span class="status">완성 예시</span></div>
-    <h2>인포그래픽</h2>
-    <p class="activity"><strong>학습자 수행</strong> 현황–문제–대안–권고안–실행 일정 구조의 보고서 작성</p>
-    <p class="check"><strong>확인</strong> 보고서 구조</p>
-  </div>
+  <div class="card-top"><span class="session">2차시</span><span class="done">검수 완료</span></div>
+  <h2>인포그래픽</h2>
+  <div class="artifact"><ul><li>작성 내용: 현황–문제–대안–권고안–실행 일정 구조의 보고서 작성</li><li>완료 결과: 인포그래픽</li><li>검수 기준: 보고서 구조</li><li>저장 상태: 파일을 닫고 다시 찾아 열어 확인함</li></ul></div>
+  <div class="result"><b>결과</b><span>인포그래픽</span></div>
+  <div class="verify"><b>확인</b><span>보고서 구조</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="3개 LLM 보고서 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#0B3B8F"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">3개 LLM 보고서</text><rect x="54" y="84" width="266" height="188" rx="12" fill="#FFFFFF" stroke="#155EEF" stroke-width="2"/><text x="76" y="116" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="19" font-weight="750" fill="#0B3B8F">한 페이지 결과</text><rect x="76" y="134" width="218" height="14" rx="7" fill="#155EEF" opacity="0.85"/><rect x="76" y="165" width="205" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="187" width="187" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="209" width="169" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="231" width="151" height="8" rx="4" fill="#D7E1EF"/><rect x="344" y="84" width="162" height="82" rx="14" fill="#EAF2FF"/><text x="425" y="116" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#0B3B8F">비교</text><rect x="365" y="132" width="120" height="9" rx="4" fill="#155EEF"/><rect x="344" y="184" width="162" height="88" rx="14" fill="#FFF1E8"/><text x="425" y="217" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#9A3412">검증</text><circle cx="380" cy="241" r="10" fill="#22C55E"/><rect x="398" y="236" width="70" height="9" rx="4" fill="#D7E1EF"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">3차시</span><span class="status">완성 예시</span></div>
-    <h2>3개 LLM 보고서</h2>
-    <p class="activity"><strong>학습자 수행</strong> 관리자 요약·실무 체크리스트·안내문 변환</p>
-    <p class="check"><strong>확인</strong> 조건·예외 보존</p>
-  </div>
+  <div class="card-top"><span class="session">3차시</span><span class="done">검수 완료</span></div>
+  <h2>세 LLM 블라인드 비교</h2>
+  <div class="artifact"><table><thead><tr><th>기준</th><th>A</th><th>B</th></tr></thead><tbody><tr><td>원문 충실도</td><td>낮음</td><td>중간</td></tr><tr><td>근거 없는 수치</td><td>25%·300만 원</td><td>없음</td></tr><tr><td>조건·예외</td><td>누락</td><td>일부</td></tr><tr><td>실행 가능성</td><td>전면 자동화로 과도</td><td>담당·기한 부족</td></tr></tbody></table></div>
+  <div class="result"><b>결과</b><span>3개 LLM 보고서</span></div>
+  <div class="verify"><b>확인</b><span>조건·예외 보존</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="비교 평가표 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#0B3B8F"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">비교 평가표</text><rect x="54" y="84" width="266" height="188" rx="12" fill="#FFFFFF" stroke="#155EEF" stroke-width="2"/><text x="76" y="116" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="19" font-weight="750" fill="#0B3B8F">한 페이지 결과</text><rect x="76" y="134" width="218" height="14" rx="7" fill="#155EEF" opacity="0.85"/><rect x="76" y="165" width="205" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="187" width="187" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="209" width="169" height="8" rx="4" fill="#D7E1EF"/><rect x="76" y="231" width="151" height="8" rx="4" fill="#D7E1EF"/><rect x="344" y="84" width="162" height="82" rx="14" fill="#EAF2FF"/><text x="425" y="116" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#0B3B8F">비교</text><rect x="365" y="132" width="120" height="9" rx="4" fill="#155EEF"/><rect x="344" y="184" width="162" height="88" rx="14" fill="#FFF1E8"/><text x="425" y="217" text-anchor="middle" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#9A3412">검증</text><circle cx="380" cy="241" r="10" fill="#22C55E"/><rect x="398" y="236" width="70" height="9" rx="4" fill="#D7E1EF"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">4차시</span><span class="status">완성 예시</span></div>
-    <h2>비교 평가표</h2>
-    <p class="activity"><strong>학습자 수행</strong> 보고서 최종본과 업무별 도구 선택표 완성</p>
-    <p class="check"><strong>확인</strong> 독자에게 필요한 정보</p>
-  </div>
-</article>
-    </section>
+  <div class="card-top"><span class="session">4차시</span><span class="done">검수 완료</span></div>
+  <h2>실습 구분</h2>
+  <div class="artifact"><ul><li>직무 문제: 업무 요청 지연 근거를 세 LLM로 비교해 관리자 결정 보고서로 전환</li><li>신규성: 오후 마케팅과 달리 지연 현황·승인 병목·담당과 실행 일정이 핵심이며, 관리자 요약과 체크리스트를 만듭니다.</li><li>사람 검증: 담당 역할·기한·수치·규정·승인 상태</li></ul></div>
+  <div class="result"><b>결과</b><span>비교 평가표</span></div>
+  <div class="verify"><b>확인</b><span>독자에게 필요한 정보</span></div>
+</article></section>
   </main>
-  <script>document.documentElement.dataset.exampleReady = "true";</script>
+  <script>document.documentElement.dataset.exampleReady='true'</script>
 </body>
 </html>

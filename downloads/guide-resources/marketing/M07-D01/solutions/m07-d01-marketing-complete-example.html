@@ -3,64 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>M07-D01 · Google Forms·Apps Script·Notion · 완성 결과 예시</title>
+  <title>M07-D01 · 마케팅 · 실제 작성형 완성 예시</title>
   <style>
-    :root{font-family:Arial,'Noto Sans KR',system-ui,sans-serif;color:#172b4d;background:#eef3f9;--accent:#C2410C;--dark:#8A2D0B;--soft:#FFF1E8}
-    *{box-sizing:border-box}body{margin:0;min-width:320px}.page{width:min(1540px,100%);min-height:100vh;margin:0 auto;padding:22px}
-    header{height:126px;border-radius:26px;background:var(--dark);color:#fff;padding:23px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 14px 38px #10244724}
-    .eyebrow{font-size:15px;font-weight:800;letter-spacing:.08em;color:#d8e5ff;margin:0 0 7px}.title{font-size:34px;line-height:1.15;margin:0}.header-meta{text-align:right;min-width:260px}.role{display:inline-block;padding:8px 16px;border-radius:999px;background:#fff;color:var(--dark);font-weight:800}.date{font-size:14px;color:#d8e5ff;margin:10px 0 0}
-    .summary{height:78px;margin:14px 0;border-radius:20px;background:#fff;border:2px solid #d7e1ef;padding:14px 22px;display:grid;grid-template-columns:120px 1fr 310px;align-items:center;gap:18px}.summary strong{color:var(--accent)}.required{font-size:15px;line-height:1.35}.notice{font-size:13px;color:#52627a;text-align:right}
-    .grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;height:620px}.session-card{background:#fff;border:2px solid #d7e1ef;border-radius:22px;padding:13px;display:grid;grid-template-columns:43% 57%;gap:15px;overflow:hidden}.visual{display:flex;align-items:center}.visual svg{width:100%;height:auto;display:block}.session-copy{padding:5px 8px 5px 0;min-width:0}.session-top{display:flex;justify-content:space-between;align-items:center}.session-badge{display:inline-flex;background:var(--accent);color:#fff;border-radius:999px;padding:7px 12px;font-size:14px;font-weight:800}.status{color:#166534;background:#ecfdf3;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:750}.session-copy h2{font-size:21px;line-height:1.25;margin:13px 0 12px;color:#0b1f44}.session-copy p{font-size:14px;line-height:1.48;margin:8px 0}.session-copy strong{display:inline-block;color:var(--dark);margin-right:6px}.check{padding:10px 12px;border-radius:12px;background:var(--soft)}
-    @media(max-width:760px){.page{padding:12px}header{height:auto;min-height:150px;align-items:flex-start;flex-direction:column}.title{font-size:26px}.header-meta{text-align:left}.summary{height:auto;grid-template-columns:1fr}.notice{text-align:left}.grid{height:auto;grid-template-columns:1fr;grid-template-rows:none}.session-card{grid-template-columns:1fr}.session-copy{padding:4px}.visual svg{max-height:260px}}
-    @media print{body{background:#fff}.page{padding:0}header{box-shadow:none}.session-card{break-inside:avoid}}
+    :root{font-family:Arial,'Noto Sans KR',system-ui,sans-serif;color:#132746;background:#edf3f9;--accent:#C2410C;--dark:#8A2D0B;--soft:#FFF1E8}
+    *{box-sizing:border-box}body{margin:0;min-width:320px}.page{width:min(1600px,100%);height:900px;margin:0 auto;padding:22px;display:grid;grid-template-rows:112px 68px 1fr;gap:14px}
+    header{border-radius:24px;background:linear-gradient(135deg,var(--dark),var(--accent));color:#fff;padding:20px 30px;display:flex;align-items:center;justify-content:space-between;gap:22px;box-shadow:0 14px 34px #12345a22}.eyebrow{font-size:14px;font-weight:800;letter-spacing:.08em;margin:0 0 7px;color:#dce9ff}.title{font-size:30px;line-height:1.15;margin:0}.meta{text-align:right}.role{display:inline-block;background:#fff;color:var(--dark);padding:8px 14px;border-radius:999px;font-weight:850}.meta p{font-size:13px;margin:9px 0 0;color:#e5efff}
+    .summary{background:#fff;border:1px solid #ccdaeb;border-radius:18px;padding:12px 20px;display:grid;grid-template-columns:116px 1fr 260px;gap:16px;align-items:center}.summary b{color:var(--accent)}.summary span{font-size:14px;line-height:1.35}.summary small{text-align:right;color:#52627a;line-height:1.35}
+    .grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;min-height:0}.session-card{background:#fff;border:1px solid #cbd9e9;border-radius:20px;padding:14px 16px;min-height:0;display:grid;grid-template-rows:30px 32px 1fr 30px 30px;gap:6px;overflow:hidden}.card-top{display:flex;justify-content:space-between;align-items:center}.session,.done{padding:6px 10px;border-radius:999px;font-size:12px;font-weight:850}.session{background:var(--accent);color:#fff}.done{background:#eaf8ef;color:#14723b}.session-card h2{font-size:18px;line-height:1.2;margin:0;color:#0b1f44}.artifact{border:1px solid #d8e2ef;background:#f8fafc;border-radius:13px;padding:10px 12px;overflow:hidden}.artifact ul{margin:0;padding-left:18px;display:grid;gap:4px}.artifact li,.artifact p{font-size:12px;line-height:1.34;margin:0}.artifact table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:11px}.artifact th,.artifact td{padding:5px 6px;border-bottom:1px solid #dbe4ef;text-align:left;overflow-wrap:anywhere}.artifact th{color:var(--dark);background:var(--soft)}.result,.verify{display:grid;grid-template-columns:48px 1fr;align-items:center;border-radius:9px;padding:5px 9px;font-size:12px}.result{background:var(--soft)}.verify{background:#f3f6fa}.result b,.verify b{color:var(--dark)}
+    @media(max-width:760px){.page{height:auto;min-height:100vh;padding:12px;grid-template-rows:auto auto auto}header{align-items:flex-start;flex-direction:column}.title{font-size:25px}.meta{text-align:left}.summary{grid-template-columns:1fr}.summary small{text-align:left}.grid{grid-template-columns:1fr;grid-template-rows:none}.session-card{min-height:390px}.artifact li,.artifact p{font-size:13px}}
+    @media print{body{background:#fff}.page{padding:0}}
   </style>
 </head>
 <body data-example-ready="true">
   <main class="page">
-    <header>
-      <div><p class="eyebrow">INSTRUCTOR COMPLETE EXAMPLE · M07-D01</p><h1 class="title">Google Forms·Apps Script·Notion</h1></div>
-      <div class="header-meta"><span class="role">마케팅·SNS 콘텐츠 기획·브랜딩</span><p class="date">교육용 가상 완성 화면 · 2026-08-08</p></div>
-    </header>
-    <section class="summary" aria-label="완성 결과 요약"><strong>최종 결과물</strong><div class="required">Google Form · 응답 Sheet · Apps Script 자동 보고서 · Notion 포트폴리오 DB</div><div class="notice">실제 서비스 화면이 아닌 강의용 디자인 예시<br>문구보다 구조·근거·완료 상태를 확인하세요.</div></section>
-    <section class="grid" aria-label="차시별 완성 예시">
-<article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="Google Form 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#8A2D0B"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Google Form</text><rect x="48" y="84" width="190" height="188" rx="14" fill="#FFF1E8"/><text x="66" y="112" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#8A2D0B">입력 폼</text><rect x="66" y="132" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><rect x="66" y="174" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><rect x="66" y="216" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><path d="M252 178 H290" stroke="#C2410C" stroke-width="8"/><path d="M282 166 L296 178 L282 190" fill="none" stroke="#C2410C" stroke-width="5"/><rect x="314" y="84" width="198" height="188" rx="14" fill="#FFFFFF" stroke="#C7D4E6"/><text x="332" y="112" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#8A2D0B">응답·결과</text><line x1="332" y1="139" x2="492" y2="139" stroke="#D7E1EF"/><rect x="342" y="148" width="70" height="9" rx="4" fill="#9EB0C8"/><line x1="332" y1="168" x2="492" y2="168" stroke="#D7E1EF"/><rect x="342" y="177" width="83" height="9" rx="4" fill="#9EB0C8"/><line x1="332" y1="197" x2="492" y2="197" stroke="#D7E1EF"/><rect x="342" y="206" width="96" height="9" rx="4" fill="#C2410C"/><line x1="332" y1="226" x2="492" y2="226" stroke="#D7E1EF"/><rect x="342" y="235" width="109" height="9" rx="4" fill="#9EB0C8"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">1차시</span><span class="status">완성 예시</span></div>
-    <h2>Google Form</h2>
-    <p class="activity"><strong>학습자 수행</strong> 콘텐츠 요청·고객 설문·캠페인 폼 제작</p>
-    <p class="check"><strong>확인</strong> 최소 수집</p>
-  </div>
+    <header><div><p class="eyebrow">REAL-WORLD PRACTICE EXAMPLE · M07-D01</p><h1 class="title">마케팅 강사용 운영 가이드</h1></div><div class="meta"><span class="role">마케팅·SNS 콘텐츠 기획·브랜딩</span><p>교육용 가상 데이터 · 브라우저 독립 실행 · 2026-08-09</p></div></header>
+    <section class="summary"><b>오늘의 완성물</b><span>Google Form · 응답 Sheet · Apps Script 자동 보고서 · Notion 포트폴리오 DB  </span><small>실제 기관 자료가 아닌 실습용 결과입니다.<br>표현보다 근거·검수·완료 상태를 확인하세요.</small></section>
+    <section class="grid"><article class="session-card">
+  <div class="card-top"><span class="session">1차시</span><span class="done">검수 완료</span></div>
+  <h2>Form·Sheet</h2>
+  <div class="artifact"><ul><li>필수: 요청ID·캠페인명·채널·목표·가상타깃·핵심사실·금지표현·마감일</li><li>삭제: 고객 이름·전화번호·개인 SNS 계정·실제 후기</li><li>게시: PICO-CREATORS만 응답 가능, 응답 요약 공개 끔</li><li>CNT-204는 채널·타깃·사실·금지 표현이 부적절해 ‘확인 필요’로 분리</li></ul></div>
+  <div class="result"><b>결과</b><span>Google Form</span></div>
+  <div class="verify"><b>확인</b><span>최소 수집</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="응답 Sheet 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#8A2D0B"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">응답 Sheet</text><rect x="48" y="84" width="190" height="188" rx="14" fill="#FFF1E8"/><text x="66" y="112" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#8A2D0B">입력 폼</text><rect x="66" y="132" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><rect x="66" y="174" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><rect x="66" y="216" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><path d="M252 178 H290" stroke="#C2410C" stroke-width="8"/><path d="M282 166 L296 178 L282 190" fill="none" stroke="#C2410C" stroke-width="5"/><rect x="314" y="84" width="198" height="188" rx="14" fill="#FFFFFF" stroke="#C7D4E6"/><text x="332" y="112" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#8A2D0B">응답·결과</text><line x1="332" y1="139" x2="492" y2="139" stroke="#D7E1EF"/><rect x="342" y="148" width="70" height="9" rx="4" fill="#9EB0C8"/><line x1="332" y1="168" x2="492" y2="168" stroke="#D7E1EF"/><rect x="342" y="177" width="83" height="9" rx="4" fill="#9EB0C8"/><line x1="332" y1="197" x2="492" y2="197" stroke="#D7E1EF"/><rect x="342" y="206" width="96" height="9" rx="4" fill="#C2410C"/><line x1="332" y1="226" x2="492" y2="226" stroke="#D7E1EF"/><rect x="342" y="235" width="109" height="9" rx="4" fill="#9EB0C8"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">2차시</span><span class="status">완성 예시</span></div>
-    <h2>응답 Sheet</h2>
-    <p class="activity"><strong>학습자 수행</strong> 채널·목표·타깃별 응답 확인</p>
-    <p class="check"><strong>확인</strong> 열 이름 일치</p>
-  </div>
+  <div class="card-top"><span class="session">2차시</span><span class="done">검수 완료</span></div>
+  <h2>자동 카드</h2>
+  <div class="artifact"><p>카드 제목은 ‘PICO 캠페인 콘텐츠 요청 카드 - CNT-201’이다. 핵심사실과 금지표현을 별도 구역으로 두고 기획서URL·PDFURL을 응답 행에 기록했다. 설치형 제출 트리거는 수동 1회 성공 후 연결했다.</p></div>
+  <div class="result"><b>결과</b><span>응답 Sheet</span></div>
+  <div class="verify"><b>확인</b><span>열 이름 일치</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="Apps Script 자동 보고서 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#8A2D0B"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Apps Script 자동 보고서</text><rect x="48" y="84" width="190" height="188" rx="14" fill="#FFF1E8"/><text x="66" y="112" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#8A2D0B">입력 폼</text><rect x="66" y="132" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><rect x="66" y="174" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><rect x="66" y="216" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><path d="M252 178 H290" stroke="#C2410C" stroke-width="8"/><path d="M282 166 L296 178 L282 190" fill="none" stroke="#C2410C" stroke-width="5"/><rect x="314" y="84" width="198" height="188" rx="14" fill="#FFFFFF" stroke="#C7D4E6"/><text x="332" y="112" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#8A2D0B">응답·결과</text><line x1="332" y1="139" x2="492" y2="139" stroke="#D7E1EF"/><rect x="342" y="148" width="70" height="9" rx="4" fill="#9EB0C8"/><line x1="332" y1="168" x2="492" y2="168" stroke="#D7E1EF"/><rect x="342" y="177" width="83" height="9" rx="4" fill="#9EB0C8"/><line x1="332" y1="197" x2="492" y2="197" stroke="#D7E1EF"/><rect x="342" y="206" width="96" height="9" rx="4" fill="#C2410C"/><line x1="332" y1="226" x2="492" y2="226" stroke="#D7E1EF"/><rect x="342" y="235" width="109" height="9" rx="4" fill="#9EB0C8"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">3차시</span><span class="status">완성 예시</span></div>
-    <h2>Apps Script 자동 보고서</h2>
-    <p class="activity"><strong>학습자 수행</strong> 콘텐츠 요청·설문 결과 보고서 또는 추천 카드 생성</p>
-    <p class="check"><strong>확인</strong> 생성 문서 내용</p>
-  </div>
+  <div class="card-top"><span class="session">3차시</span><span class="done">검수 완료</span></div>
+  <h2>Apps Script 자동 보고서</h2>
+  <div class="artifact"><ul><li>작성 내용: 콘텐츠 요청·설문 결과 보고서 또는 추천 카드 생성</li><li>완료 결과: Apps Script 자동 보고서</li><li>검수 기준: 생성 문서 내용</li><li>저장 상태: 파일을 닫고 다시 찾아 열어 확인함</li></ul></div>
+  <div class="result"><b>결과</b><span>Apps Script 자동 보고서</span></div>
+  <div class="verify"><b>확인</b><span>생성 문서 내용</span></div>
 </article>
 <article class="session-card">
-  <div class="visual"><svg viewBox="0 0 560 315" role="img" aria-label="Notion 포트폴리오 DB 시각 예시" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="315" rx="24" fill="#F7F9FC"/><rect x="22" y="20" width="516" height="275" rx="20" fill="#FFFFFF" stroke="#D7E1EF" stroke-width="2"/><rect x="22" y="20" width="516" height="46" rx="20" fill="#8A2D0B"/><circle cx="48" cy="43" r="6" fill="#FF6B57"/><circle cx="68" cy="43" r="6" fill="#FBBF24"/><circle cx="88" cy="43" r="6" fill="#22C55E"/><text x="512" y="50" text-anchor="end" font-family="Arial,'Noto Sans KR',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Notion 포트폴리오 DB</text><rect x="48" y="84" width="190" height="188" rx="14" fill="#FFF1E8"/><text x="66" y="112" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#8A2D0B">입력 폼</text><rect x="66" y="132" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><rect x="66" y="174" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><rect x="66" y="216" width="152" height="28" rx="8" fill="#FFFFFF" stroke="#C7D4E6"/><path d="M252 178 H290" stroke="#C2410C" stroke-width="8"/><path d="M282 166 L296 178 L282 190" fill="none" stroke="#C2410C" stroke-width="5"/><rect x="314" y="84" width="198" height="188" rx="14" fill="#FFFFFF" stroke="#C7D4E6"/><text x="332" y="112" text-anchor="start" font-family="Arial,'Noto Sans KR',sans-serif" font-size="18" font-weight="750" fill="#8A2D0B">응답·결과</text><line x1="332" y1="139" x2="492" y2="139" stroke="#D7E1EF"/><rect x="342" y="148" width="70" height="9" rx="4" fill="#9EB0C8"/><line x1="332" y1="168" x2="492" y2="168" stroke="#D7E1EF"/><rect x="342" y="177" width="83" height="9" rx="4" fill="#9EB0C8"/><line x1="332" y1="197" x2="492" y2="197" stroke="#D7E1EF"/><rect x="342" y="206" width="96" height="9" rx="4" fill="#C2410C"/><line x1="332" y1="226" x2="492" y2="226" stroke="#D7E1EF"/><rect x="342" y="235" width="109" height="9" rx="4" fill="#9EB0C8"/></svg></div>
-  <div class="session-copy">
-    <div class="session-top"><span class="session-badge">4차시</span><span class="status">완성 예시</span></div>
-    <h2>Notion 포트폴리오 DB</h2>
-    <p class="activity"><strong>학습자 수행</strong> 콘텐츠 결과물 DB 구성</p>
-    <p class="check"><strong>확인</strong> 링크 재탐색</p>
-  </div>
-</article>
-    </section>
+  <div class="card-top"><span class="session">4차시</span><span class="done">검수 완료</span></div>
+  <h2>Notion 등록</h2>
+  <div class="artifact"><table><thead><tr><th>요청 ID</th><th>채널</th><th>목표</th></tr></thead><tbody><tr><td>CNT-201</td><td>Instagram</td><td>인지도</td></tr></tbody></table></div>
+  <div class="result"><b>결과</b><span>Notion 포트폴리오 DB</span></div>
+  <div class="verify"><b>확인</b><span>링크 재탐색</span></div>
+</article></section>
   </main>
-  <script>document.documentElement.dataset.exampleReady = "true";</script>
+  <script>document.documentElement.dataset.exampleReady='true'</script>
 </body>
 </html>

@@ -10,13 +10,13 @@
   <rect x="54" y="168" width="1492" height="38" fill="#7C2D12"/>
   <rect x="88" y="76" width="196" height="36" rx="18" fill="#FFFFFF" fill-opacity="0.16"/>
   <text x="186" y="101" text-anchor="middle" font-size="17" font-weight="850" fill="#FFFFFF">LEARNER PREVIEW</text>
-  <text x="88" y="154" font-size="34" font-weight="900" fill="#FFFFFF">M06-D02 · Vrew·Suno·CapCut 쇼츠</text>
+  <text x="88" y="154" font-size="34" font-weight="900" fill="#FFFFFF">M06-D02 · Vrew·Suno 쇼츠</text>
   <rect x="1254" y="82" width="244" height="78" rx="24" fill="#FFFFFF"/>
   <text x="1376" y="112" text-anchor="middle" font-size="17" font-weight="800" fill="#7C2D12">마케팅 과정</text>
   <text x="1376" y="145" text-anchor="middle" font-size="25" font-weight="900" fill="#EA580C">총 4시간 · 4차시</text>
   <text x="82" y="229" font-size="18" font-weight="750" fill="#64748B">준비 → 이해 → 직접 실행 → 검수 → 저장까지, 오늘의 결과물이 만들어지는 순서</text>
   
-      <g aria-label="1차시 30~60초 쇼츠의 훅–핵심–마무리 구조와 Vrew 중심 제작 흐름·Suno/CapCut 역할 비교, 세로 영상 기본 이해">
+      <g aria-label="1차시 30~60초 쇼츠의 훅–핵심–마무리 구조와 Vrew 중심 제작 흐름·Suno 음악 역할 비교, 세로 영상 기본 이해">
         <rect x="82" y="246" width="318" height="390" rx="28" fill="#FFFFFF" stroke="#D8E2EF" stroke-width="3"/>
         <rect x="82" y="246" width="318" height="86" rx="28" fill="#EA580C"/>
         <rect x="82" y="304" width="318" height="28" fill="#EA580C"/>
@@ -24,7 +24,7 @@
         <text x="126" y="296" text-anchor="middle" font-size="26" font-weight="900" fill="#FFFFFF">1</text>
         <text x="164" y="281" font-size="23" font-weight="850" fill="#FFFFFF">1차시</text>
         <text x="164" y="309" font-size="17" font-weight="700" fill="#FFFFFF" fill-opacity="0.9">50분 · LEARN</text>
-        <text font-size="20" font-weight="780" fill="#17233B"><tspan x="106" y="372" >30~60초 쇼츠의</tspan><tspan x="106" y="400" >훅–핵심–마무리 구조와</tspan><tspan x="106" y="428" >Vrew 중심 제작</tspan><tspan x="106" y="456" >흐름·Suno/CapCu…</tspan></text>
+        <text font-size="20" font-weight="780" fill="#17233B"><tspan x="106" y="372" >30~60초 쇼츠의</tspan><tspan x="106" y="400" >훅–핵심–마무리 구조와</tspan><tspan x="106" y="428" >Vrew 중심 제작</tspan><tspan x="106" y="456" >흐름·Suno 음악 역할</tspan></text>
         <line x1="106" y1="490" x2="376" y2="490" stroke="#E5EBF3" stroke-width="2"/>
         <rect x="106" y="518" width="82" height="31" rx="15" fill="#FFF0E8"/>
         <text x="147" y="540" text-anchor="middle" font-size="15" font-weight="850" fill="#7C2D12">OUTPUT</text>

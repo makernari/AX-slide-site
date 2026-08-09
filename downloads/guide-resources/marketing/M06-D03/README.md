@@ -33,8 +33,8 @@
 ## 강사용 브라우저 완성 예시
 
 - M06-D03 마케팅 네 차시의 결과 구조와 디자인을 한 화면에서 확인합니다.
-- [HTML 완성 예시 내려받기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/marketing/M06-D03/solutions/m06-d03-marketing-complete-example.html)
-- 파일을 내려받은 뒤 더블클릭하면 브라우저에서 열립니다. 실제 서비스 UI가 아닌 교육용 가상 예시입니다.
+- [브라우저 예시 ZIP 내려받기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/marketing/M06-D03/browser-examples-marketing-m06-d03-20260809.zip)
+- ZIP을 내려받아 압축을 푼 뒤 `START_HERE.html`을 더블클릭하면 브라우저에서 열립니다. 실제 서비스 UI가 아닌 교육용 가상 예시입니다.
 
 <!-- INSTRUCTOR-HTML-EXAMPLE-20260808:END -->
 
@@ -43,7 +43,7 @@
 ## 수업 전 선택 5분 AI 워밍업
 
 - 오늘의 팁: 유행 주장에 근거·확신도 카드 붙이기
-- [브라우저 예시 열기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/marketing/M06-D03/warmups/m06-d03-marketing-ai-warmup.html)
+- [브라우저 예시 ZIP 내려받기](https://raw.githubusercontent.com/makernari/AX-slide-site/main/downloads/guide-resources/marketing/M06-D03/browser-examples-marketing-m06-d03-20260809.zip)
 - 정규 4차시·240분과 필수 제출물에는 포함하지 않습니다.
 
 <!-- DAILY-AI-WARMUP-HTML-20260808:END -->

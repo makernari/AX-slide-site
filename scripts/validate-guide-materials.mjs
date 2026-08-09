@@ -30,6 +30,7 @@ const counts = {
   imageReferences: 0,
   guideImages: 0,
   htmlExamples: 0,
+  browserExamplePackages: 0,
   resourceReadmes: 0,
   referenceSources: 0,
 };
@@ -114,6 +115,7 @@ function validateGuideDocument(role, day, kind) {
   if (kind === "learner") {
     requireMarker(text, "LEARNER-ESSENTIAL-GUIDE-20260809", relativePath);
     requireMarker(text, "LEARNER-PUBLIC-DASHBOARD-20260809", relativePath);
+    requireMarker(text, "OFFLINE-BROWSER-EXAMPLE-20260809", relativePath);
     for (const marker of [
       "LEARNER-CLASS-PREVIEW-20260808",
       "DAILY-AI-WARMUP-20260808",
@@ -142,6 +144,7 @@ function validateGuideDocument(role, day, kind) {
     requireMarker(text, "INSTRUCTOR-DAY-OF-TOOL-CHECK-20260809", relativePath);
     requireMarker(text, "INSTRUCTOR-ONE-PAGE-20260809", relativePath);
     requireMarker(text, "INSTRUCTOR-PUBLIC-DASHBOARD-20260809", relativePath);
+    requireMarker(text, "OFFLINE-BROWSER-EXAMPLE-20260809", relativePath);
     for (const marker of [
       "LEARNER-ESSENTIAL-GUIDE-20260809",
       "LEARNER-PUBLIC-DASHBOARD-20260809",
@@ -236,6 +239,23 @@ function validateHtmlExamples() {
   assert(htmlFiles.length === 82, `Expected 82 guide HTML examples, found ${htmlFiles.length}`);
 }
 
+function validateBrowserExamplePackages() {
+  for (const role of ROLES) {
+    for (const day of DAYS) {
+      const filename = `browser-examples-${role}-${day.toLowerCase()}-20260809.zip`;
+      const relativePath = `downloads/guide-resources/${role}/${day}/${filename}`;
+      const absolute = resolveInside(relativePath);
+      assert(fs.existsSync(absolute), `Missing browser example package: ${relativePath}`);
+      if (!fs.existsSync(absolute)) continue;
+      const buffer = fs.readFileSync(absolute);
+      assert(buffer.length >= 4 && buffer.subarray(0, 2).toString("ascii") === "PK", `${relativePath}: invalid ZIP signature`);
+      assert(buffer.length > 8000, `${relativePath}: browser example package is unexpectedly small`);
+      counts.browserExamplePackages += 1;
+    }
+  }
+  assert(counts.browserExamplePackages === 30, `Expected 30 browser example packages, found ${counts.browserExamplePackages}`);
+}
+
 function validateTextIntegrity() {
   const roots = ["assets/guide-images", "downloads/guide-resources", "guides/notion", "scripts"];
   const secretPatterns = [
@@ -247,6 +267,10 @@ function validateTextIntegrity() {
     if (!TEXT_EXTENSIONS.has(path.extname(relativePath).toLowerCase())) continue;
     const text = read(relativePath);
     assert(!text.includes("\uFFFD"), `${relativePath}: Unicode replacement character found`);
+    if (relativePath.endsWith(".md")) {
+      assert(!/https:\/\/raw\.githubusercontent\.com\/makernari\/AX-slide-site\/main\/downloads\/guide-resources\/(?:backoffice|marketing)\/M\d\d-D\d\d\/[^)\s]+\.html/i.test(text), `${relativePath}: raw HTML link would open as source text`);
+      assert(!/https:\/\/raw\.githubusercontent\.com\/makernari\/AX-slide-site\/main\/downloads\/guide-resources\/(?:backoffice|marketing)\/M\d\d-D\d\d\/solutions\/[^)\s]+-complete-example\.md/i.test(text), `${relativePath}: raw Markdown completion link should use browser ZIP`);
+    }
     for (const pattern of secretPatterns) {
       assert(!pattern.test(text), `${relativePath}: possible credential found`);
     }
@@ -279,6 +303,14 @@ function validateReferenceOperations() {
     "assets/guide-images/common/M05-D01/notion-preclass-system-gpt-image-2-20260808.png",
     "assets/guide-images/common/M09-D01/reference-release-timeline-20260808.svg",
     "assets/guide-images/common/M09-D01/reference-release-timeline-gpt-image-2-20260808.png",
+    "downloads/guide-resources/common/example-media/fictional-cafe-product-photo.png",
+    "downloads/guide-resources/common/example-media/fictional-office-safety-photo.png",
+    "downloads/guide-resources/common/example-media/fictional-coral-speaker-photo.png",
+    "downloads/guide-resources/common/example-media/fictional-coral-speaker-ms-paint.png",
+    "downloads/guide-resources/common/example-media/fictional-character-three-scenes.png",
+    "downloads/guide-resources/common/example-media/fictional-training-facilitator-sheet.png",
+    "downloads/guide-resources/common/example-media/ai-workbench-reflection.png",
+    "downloads/guide-resources/common/example-media/brand-collaboration-collage.png",
   ]) {
     assert(fs.existsSync(resolveInside(relativePath)), `Missing reference operation artifact: ${relativePath}`);
   }
@@ -300,6 +332,7 @@ function main() {
   }
   validateGuideImages();
   validateHtmlExamples();
+  validateBrowserExamplePackages();
   validateTextIntegrity();
   validateReferenceOperations();
 
