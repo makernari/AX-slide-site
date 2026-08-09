@@ -234,6 +234,12 @@ function validateRelativeRuntimePaths() {
   ]) {
     if (!app.includes(required)) fail(`app.js site-root path contract is missing: ${required}`);
   }
+  if (/과정\s*변경/.test(app)) {
+    fail("app.js must not expose a course-change control after a course is selected");
+  }
+  if (/resource-tabs|resource-tab/.test(app)) {
+    fail("app.js must not expose cross-course tabs on the learner resource screen");
+  }
 
   const externalUrls = [...new Set(app.match(/https:\/\/[^"'`\s]+/g) ?? [])].sort();
   if (externalUrls.length) {

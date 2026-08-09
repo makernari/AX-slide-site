@@ -520,34 +520,6 @@ button:disabled {
 
 /* Learner resources */
 
-.resource-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 30px 0 20px;
-}
-
-.resource-tab {
-  min-height: 44px;
-  padding: 10px 16px;
-  color: var(--muted);
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-weight: 800;
-}
-
-.resource-tab:hover {
-  color: var(--ink);
-  border-color: #93a5ba;
-}
-
-.resource-tab.is-active {
-  color: #fff;
-  background: var(--navy);
-  border-color: var(--navy);
-}
-
 .resource-summary {
   display: grid;
   grid-template-columns: auto auto minmax(0, 1fr);

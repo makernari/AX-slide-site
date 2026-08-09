@@ -207,11 +207,6 @@
       : route("resources");
     const courseActions = `
       <button class="text-button" type="button" data-route="${resourceRoute}">자료 다운로드</button>
-      ${courseKey && !LOCKED_COURSE
-        ? `
-        <button class="text-button" type="button" data-route="${route("select")}">과정 변경</button>
-      `
-        : ""}
     `;
     return `
       <header class="site-header">
@@ -232,7 +227,7 @@
   function renderSelect() {
     const recent = loadCourse();
     const recentCopy = recent
-      ? `<p class="page-intro">최근 선택: ${escapeHtml(COURSE_META[recent].fullLabel)}. 아래에서 같은 과정이나 다른 과정을 선택할 수 있습니다.</p>`
+      ? `<p class="page-intro">최근 선택: ${escapeHtml(COURSE_META[recent].fullLabel)}. 교안을 열면 해당 과정으로 고정됩니다.</p>`
       : `<p class="page-intro">강의할 과정을 선택하면 모듈 05~09의 일자별 강의교안으로 이동합니다.</p>`;
     app.innerHTML = `
       <div class="site-shell">
@@ -568,30 +563,13 @@
       const [moduleB, dayB] = b.split("-");
       return moduleNumber(moduleA) - moduleNumber(moduleB) || dayNumber(dayA) - dayNumber(dayB);
     });
-    const tabEntries = LOCKED_COURSE
-      ? [[activeCourse, COURSE_META[activeCourse]]]
-      : Object.entries(COURSE_META);
-    const tabs = tabEntries
-      .map(
-        ([key, item]) => `
-          <button
-            class="resource-tab ${key === activeCourse ? "is-active" : ""}"
-            type="button"
-            data-route="${route("resources", key)}"
-            aria-current="${key === activeCourse ? "page" : "false"}"
-          >${escapeHtml(item.label)}</button>
-        `,
-      )
-      .join("");
-
     app.innerHTML = `
       <div class="site-shell">
         ${siteHeader(activeCourse)}
         <main class="page page-narrow" aria-labelledby="resources-title">
           <p class="eyebrow">LEARNER RESOURCES</p>
           <h1 class="page-title" id="resources-title">실습 자료 다운로드</h1>
-          <p class="page-intro">강의교안과 분리된 수강생용 자료입니다. 과정을 선택한 뒤 일자별 파일을 열거나 내려받을 수 있습니다.</p>
-          <nav class="resource-tabs" aria-label="자료 과정 선택">${tabs}</nav>
+          <p class="page-intro">강의교안과 분리된 수강생용 자료입니다. 현재 과정의 일자별 파일만 열거나 내려받을 수 있습니다.</p>
           <section class="resource-summary" aria-label="자료 요약">
             ${courseBadge(activeCourse)}
             <strong>${courseResources.length + commonResources.length}개 파일</strong>
@@ -738,15 +716,6 @@
         ${placeholderMarkup(slide)}
       `
       : placeholderMarkup(slide);
-    const courseChangeAction = LOCKED_COURSE
-      ? ""
-      : `
-        <button class="text-button" type="button" data-route="${route("select")}">
-          <span class="change-label">과정 변경</span>
-          <span aria-hidden="true">↺</span>
-        </button>
-      `;
-
     state.currentViewer = {
       courseKey,
       module,
@@ -774,7 +743,6 @@
               <span class="fullscreen-label">전체 화면</span>
               <span aria-hidden="true">⛶</span>
             </button>
-            ${courseChangeAction}
           </div>
         </header>
         <section class="viewer-stage-area" aria-label="현재 슬라이드">
